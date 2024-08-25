@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1>Welcome to the Svelte / SvelteKit manual</h1>
+<p> This project is intended to give you an overview of the main features of Svelte / SvelteKit with practical examples so you can get up to speed quickly</p>
