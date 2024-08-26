@@ -6,4 +6,7 @@
 	<li>
 		<a href="/svelte-basics/reactivity">Reactivity</a>
 	</li>
+	<li>
+		<a href="/svelte-basics/props">Props</a>
+	</li>
 </ul>
