@@ -9,4 +9,7 @@
 	<li>
 		<a href="/svelte-basics/props">Props</a>
 	</li>
+	<li>
+		<a href="/svelte-basics/logic">Logic</a>
+	</li>
 </ul>
