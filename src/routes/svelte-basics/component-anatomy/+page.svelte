@@ -1,4 +1,6 @@
 <script lang="ts">
+	import sanitizeHtml from 'sanitize-html';
+
 	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
 
 	const sampleCode1 = `
@@ -17,8 +19,15 @@
         font-family: 'Comic Sans MS', cursive;
             font-size: 2em;
             }
-</${''}style>
+<\/${''}style>
         `;
+
+	const htmlCodeExample =
+		'<div class="bg-[lightgray] flex flex-col items-center p-3"><h4 class="text-[red]">This is an H4 tag</h4><p class="text-[1rem] text-[#fff]">This is a p tag</p></div>';
+	const sanitizedHTML = sanitizeHtml(
+		'<strong>hello world</strong><p>I was sanitized before rendering!</p>'
+	);
+	const href = 'https://www.npmjs.com/package/sanitize-html';
 </script>
 
 <div>
@@ -62,4 +71,34 @@
 		component's scope - i.e, if we define styles for <code>p</code> elements in a component, they
 		won't be applied to <code>p</code> elements in other components throughout the application
 	</p>
+
+	<h2>Render/Inject HTML from plain text</h2>
+	<p>
+		In order to render/inject HTML code directly in a component, we should use the special
+		<code>&#123;@html ...&#125;</code>. This is useful when we want to render HTML code that is
+		dynamically generated.
+	</p>
+	<br />
+	<p>
+		For example, if we have a string with HTML code, we can render it like this:
+		{@html htmlCodeExample}
+	</p>
+	<br />
+	<p>
+		<span class="underline">
+			Svelte doesn't perform any sanitization of the expression before it gets inserted into the
+			DOM.</span
+		>
+		This isn't an issue if the content is something you trust like an article you wrote yourself. However,
+		if the content is user-generated or you don't know it's source, you should sanitize it before rendering
+		it. For this, you can use the
+		<a class="text-[blue] underline" {href} target="_blank" rel="noopener noreferrer"
+			>sanitize-html</a
+		> package. Click the link to learn more about it.
+	</p>
+	<br />
+	<p>Here's an example of sanitized code using the package mentioned before:</p>
+	<div class="flex flex-col items-center bg-[lightgray] p-3">
+		{@html sanitizedHTML}
+	</div>
 </div>
