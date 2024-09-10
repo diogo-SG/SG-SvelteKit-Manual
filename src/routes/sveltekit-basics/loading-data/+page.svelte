@@ -69,6 +69,14 @@ export async function load() {
 	{/each}
 {/if}
 
+<h3>Where can load functions be used?</h3>
+<p>
+	Load functions declared in <code>+page.server.ts</code> files run exclusively on the server, which
+	is the usual desired behaviour. However, you can also create them in +page.ts, which will make the
+	load function run on both the client and the server. If for some reason you want to run it in the
+	client only, you can add <code>export const ssr = false</code> to script tag in the file.
+</p>
+
 <h2>+layout.server.ts files</h2>
 
 <p>
@@ -78,6 +86,22 @@ export async function load() {
 		>/sveltekit-basics/loading-data/loading-data-layout-example</Link
 	>, you'll see that the jokes are the same.
 </p>
+
+<h2>Load function params</h2>
+
+<p>The load function makes several params available, including:</p>
+<ul>
+	<li>
+		<b>url</b>: an instance of URL, which provides properties like <code>origin</code>,
+		<code>hostname</code>, <code>pathname</code> and <code>searchParams</code>
+	</li>
+	<li>
+		<b>route</b>: the name of the current route directory, relative to <code>src/routes</code>
+	</li>
+	<li>
+		<b>params</b>: which is derived from <code>url.pathname</code> and <code>route.id</code>
+	</li>
+</ul>
 
 <style>
 	.setup {
