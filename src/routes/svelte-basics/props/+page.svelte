@@ -64,3 +64,22 @@
 
 <PropsMultipleExample {...props} />`}
 </CodeBlock>
+<br />
+<p>
+	Another nifty trick that Svelte allows is to access props that were not exported/declared on the
+	component.
+	<br /> Imagine that the component is only exporting
+	<span class="font-bold">firstName</span>, but we are passing
+	<span class="font-bold">lastName</span>
+	prop as well. The <span class="font-bold">lastName</span> can still be used and we can access it
+	by writing:<br />
+	<code class="flex justify-center bg-[lightgrey] p-3"
+		>&#123;firstName&#125; + &#123;$$props.lastName&#125;</code
+	>
+	<br />
+	<span class="font-semibold underline"
+		>It's not generally recommended, since it's difficult for Svelte to optimise. But it can still
+		be a very useful trick in some rare cases.</span
+	>
+</p>
+<br />
