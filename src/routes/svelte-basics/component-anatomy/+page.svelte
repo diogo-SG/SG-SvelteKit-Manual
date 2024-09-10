@@ -90,8 +90,8 @@
 			DOM.</span
 		>
 		This isn't an issue if the content is something you trust like an article you wrote yourself. However,
-		if the content is user-generated or you don't know it's source, you should sanitize it before rendering
-		it. For this, you can use the
+		if the content is user-generated or you don't know its source, you should sanitize it before rendering.
+		For this, you can use the
 		<a class="text-[blue] underline" {href} target="_blank" rel="noopener noreferrer"
 			>sanitize-html</a
 		> package. Click the link to learn more about it.
