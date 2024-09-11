@@ -1,4 +1,5 @@
 <script lang="ts">
+	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
 </script>
 
 <h1>Events</h1>
