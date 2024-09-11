@@ -112,3 +112,9 @@ button {
 input {
 	@apply text-base;
 }
+
+code {
+	background-color: #f4f4f4;
+	padding: 0.2rem 0.4rem;
+	border-radius: 4px;
+}
