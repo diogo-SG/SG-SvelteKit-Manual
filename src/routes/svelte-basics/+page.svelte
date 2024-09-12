@@ -1,15 +1,38 @@
+<script>
+	const svelteBasicsNav = [
+		{
+			id: 1,
+			title: 'Component Anatomy',
+			href: '/svelte-basics/component-anatomy'
+		},
+		{
+			id: 2,
+			title: 'Reactivity',
+			href: '/svelte-basics/reactivity'
+		},
+		{
+			id: 3,
+			title: 'Props',
+			href: '/svelte-basics/props'
+		},
+		{
+			id: 4,
+			title: 'Logic',
+			href: '/svelte-basics/logic'
+		},
+		{
+			id: 5,
+			title: 'Events',
+			href: '/svelte-basics/events'
+		}
+	];
+</script>
+
 <h1>A list of basic Svelte topics</h1>
 <ul>
-	<li>
-		<a href="/svelte-basics/component-anatomy">Component Anatomy</a>
-	</li>
-	<li>
-		<a href="/svelte-basics/reactivity">Reactivity</a>
-	</li>
-	<li>
-		<a href="/svelte-basics/props">Props</a>
-	</li>
-	<li>
-		<a href="/svelte-basics/logic">Logic</a>
-	</li>
+	{#each svelteBasicsNav as { title, href }}
+		<li>
+			<a {href}>{title}</a>
+		</li>
+	{/each}
 </ul>
