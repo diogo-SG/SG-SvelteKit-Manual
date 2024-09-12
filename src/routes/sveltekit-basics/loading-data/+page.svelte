@@ -4,7 +4,30 @@
 	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
 
 	export let data: any;
-	console.log(data);
+
+	const loadFunctionParams = [
+		{
+			param: 'url',
+			description:
+				'An instance of URL, which provides properties like origin, hostname, pathname and searchParams'
+		},
+		{
+			param: 'route',
+			description: 'The name of the current route directory, relative to src/routes'
+		},
+		{ param: 'params', description: 'Derived from url.pathname and route.id' },
+		{
+			param: 'fetch',
+			description:
+				'A function which behaves identically to the native fetch API, but with a few additional features. See: https://kit.svelte.dev/docs/load#making-fetch-requests'
+		},
+		{ param: 'cookies', description: 'Provides getters and setters for cookies' },
+		{
+			param: 'setHeaders',
+			description: 'Sets headers for the response (available when running on the server only)'
+		},
+		{ param: 'parents', description: 'Allows for accessing data from a parent load function' }
+	];
 </script>
 
 <h1>Loading data</h1>
@@ -52,7 +75,7 @@ export async function load() {
 <script lang="ts">
 	export let data: any;
 	console.log(data);
-</script>
+<\/script>
 `}
 </CodeBlock>
 
@@ -91,16 +114,9 @@ export async function load() {
 
 <p>The load function makes several params available, including:</p>
 <ul>
-	<li>
-		<b>url</b>: an instance of URL, which provides properties like <code>origin</code>,
-		<code>hostname</code>, <code>pathname</code> and <code>searchParams</code>
-	</li>
-	<li>
-		<b>route</b>: the name of the current route directory, relative to <code>src/routes</code>
-	</li>
-	<li>
-		<b>params</b>: which is derived from <code>url.pathname</code> and <code>route.id</code>
-	</li>
+	{#each loadFunctionParams as { param, description }}
+		<li><code>{param}</code> - {description}</li>
+	{/each}
 </ul>
 
 <style>
