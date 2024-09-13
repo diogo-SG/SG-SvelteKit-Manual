@@ -24,6 +24,21 @@
 			id: 5,
 			title: 'Events',
 			href: '/svelte-basics/events'
+		},
+		{
+			id: 6,
+			title: 'Bindings',
+			href: '/svelte-basics/bindings'
+		},
+		{
+			id: 7,
+			title: 'Lifecycle',
+			href: '/svelte-basics/lifecycle'
+		},
+		{
+			id: 8,
+			title: 'Stores',
+			href: '/svelte-basics/stores'
 		}
 	];
 </script>
