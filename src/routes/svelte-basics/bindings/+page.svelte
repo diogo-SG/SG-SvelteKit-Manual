@@ -47,3 +47,127 @@
 				<input type="range" bind:value={age} min="0" max="10" />
 	`}
 </CodeBlock>
+
+<h2>Checkbox inputs</h2>
+
+<p>
+	For checkbox inputs, you can use the <code>bind:checked</code> directive. This will create a two-way
+	binding between the checkbox input and a variable in your component.
+</p>
+
+<CodeBlock>
+	{`<script>
+				let isChecked;
+			<\/script>
+
+				<input type="checkbox" bind:checked={isChecked} />
+	`}
+</CodeBlock>
+
+<h2>Select bindings</h2>
+
+<p>We can also use <code>bind:value</code> with <span class="font-bold">select</span> elements.</p>
+
+<CodeBlock>
+	{`<script>
+				let selectedOption;
+			<\/script>
+
+				<select bind:value={selectedOption}>
+					<option value="1">Option 1</option>
+					<option value="2">Option 2</option>
+					<option value="3">Option 3</option>
+				</select>
+	`}
+</CodeBlock>
+
+<h2>Select multiple</h2>
+
+<p>
+	For <span class="font-bold">select</span> elements with the <code>multiple</code> attribute, the options
+	selected will populate an array rather than selecting a single value.
+</p>
+
+<CodeBlock>
+	{`<script>
+				let selectedOptions = [];
+			<\/script>
+
+				<select multiple bind:value={selectedOptions}>
+					<option value="1">Option 1</option>
+					<option value="2">Option 2</option>
+					<option value="3">Option 3</option>
+				</select>
+	`}
+</CodeBlock>
+
+<p>
+	Press and hold the <kbd>Ctrl</kbd> key or the <kbd>command</kbd> key on MacOS to select multiple options.
+</p>
+
+<h2>Group inputs</h2>
+
+<p>
+	When you have a group of radio or checkbox inputs relating to the same value, you can use the <code
+		>bind:group</code
+	>
+	directive along with the <code>value</code> attribute to create a two-way binding between the inputs
+	and a variable in your component. Radio inputs in the same group are mutually exclusive and checkbox
+	inputs in the same group form an array of selected values.
+</p>
+
+<CodeBlock>
+	{`<script>
+				let radioOption = 1;
+				let checkboxOptions = [];
+			<\/script>
+
+				<input type="radio" value="1" bind:group={radioOption} />
+				<input type="radio" value="2" bind:group={radioOption} />
+				<input type="radio" value="3" bind:group={radioOption} />
+
+				<input type="checkbox" value="1" bind:group={checkboxOptions} />
+				<input type="checkbox" value="2" bind:group={checkboxOptions} />
+				<input type="checkbox" value="3" bind:group={checkboxOptions} />
+
+	`}
+</CodeBlock>
+
+<p>
+	Now, when you select a radio option, the value of <code>radioOption</code> will be updated. When
+	you select a checkbox option, the value of <code>checkboxOptions</code> will be updated.
+</p>
+
+<h2>Textarea inputs</h2>
+
+<p>
+	The <code>textarea</code> element behaves similarly to text inputs in Svelte. So you can use
+	<code>bind:value</code>.
+</p>
+
+<CodeBlock>
+	{`<script>
+				let value;
+			<\/script>
+
+				<textarea bind:value={value}></textarea>
+	`}
+</CodeBlock>
+
+<p>
+	A really cool feature of Svelte is that, since the name of the variable is equal to the name of
+	the input property (value), you can use the shorthand syntax:
+</p>
+
+<CodeBlock>
+	{`
+				<textarea bind:value />
+	`}
+</CodeBlock>
+
+<p>
+	<span class="underline">This trick applies to all bindings, not just textareas.</span>
+	<br />
+	And that's it! Now you know how to use bindings in Svelte. They are a powerful feature that can help
+	you create more interactive components with less code.
+</p>
