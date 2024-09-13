@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
+	import { onDestroy } from 'svelte';
 	const href = '/svelte-basics/stores';
 </script>
 
@@ -68,6 +69,24 @@
 	need to check if the component is mounted before running any code that interacts with the DOM.
 </p>
 
+<h2>onDestroy</h2>
+
+<p>
+	<code>onDestroy</code> is a function that runs when the component is removed from the DOM. It is useful
+	to clean up any resources that the component is using, such as event listeners, timers or store subsctiptions.
+</p>
+
+<CodeBlock>
+	{`<script>
+				import { onDestroy } from 'svelte';
+
+				onDestroy(() => {
+					console.log('The component has been removed from the DOM');
+					});
+			<\/script>
+`}
+</CodeBlock>
+
 <h2>tick</h2>
 
 <p>
@@ -101,6 +120,8 @@
 </p>
 
 <p>
-	Now that we covered component lifecycles in Svelte, let's move on to the next <a {href}>section</a
+	Now that we covered component lifecycles in Svelte, let's move on to the next <a
+		class="text-[blue] underline"
+		{href}>section</a
 	>.
 </p>
