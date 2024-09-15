@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
-	import { Code } from 'lucide-svelte';
+	import { CodeBlock } from 'svhighlight';
 
 	export let form;
 	$: console.log(form);
@@ -44,8 +43,9 @@
 	form submission. Here's the code for the form above:
 </p>
 
-<CodeBlock>
-	{`
+<CodeBlock
+	language="svelte"
+	code={`
 	export const actions = {
 	default: async ({ request, fetch }) => {
 		const formData = await request.formData();
@@ -61,7 +61,7 @@
 	}
 };
 	`}
-</CodeBlock>
+></CodeBlock>
 
 <style>
 	form {

@@ -8,6 +8,7 @@
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import { Input } from '$lib/components/ui/input/index.js';
 	import * as Sheet from '$lib/components/ui/sheet/index.js';
+	import 'highlight.js/styles/base16/dracula.css';
 </script>
 
 <div class="flex min-h-screen w-full flex-col">
