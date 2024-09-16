@@ -1,5 +1,6 @@
 <script>
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import { CODE, HEADER } from './constants';
 </script>
 
 <h1>Sharing modules</h1>
@@ -17,10 +18,4 @@
 	directory. You can then import this code into any component or page using the <code>$lib</code> alias.
 	For example:
 </p>
-
-<CodeBlock>
-	{`<script>
-        import CodeBlock from "$lib/components/ui/code-block/code-block.svelte";
-    
-    <\/script>`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.SHARED_MODULES} code={CODE.SHARING_MODULES} />

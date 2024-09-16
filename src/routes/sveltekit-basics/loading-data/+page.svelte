@@ -1,33 +1,9 @@
 <script lang="ts">
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
-
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
+	import { CODE, HEADER, LOAD_FUNCTIONS_PARAMS } from './constants';
 
 	export let data: any;
-
-	const loadFunctionParams = [
-		{
-			param: 'url',
-			description:
-				'An instance of URL, which provides properties like origin, hostname, pathname and searchParams'
-		},
-		{
-			param: 'route',
-			description: 'The name of the current route directory, relative to src/routes'
-		},
-		{ param: 'params', description: 'Derived from url.pathname and route.id' },
-		{
-			param: 'fetch',
-			description:
-				'A function which behaves identically to the native fetch API, but with a few additional features. See: https://kit.svelte.dev/docs/load#making-fetch-requests'
-		},
-		{ param: 'cookies', description: 'Provides getters and setters for cookies' },
-		{
-			param: 'setHeaders',
-			description: 'Sets headers for the response (available when running on the server only)'
-		},
-		{ param: 'parents', description: 'Allows for accessing data from a parent load function' }
-	];
 </script>
 
 <h1>Loading data</h1>
@@ -50,34 +26,14 @@
 	Here's an example of a <code>load</code> function that fetches some jokes from an API:
 </p>
 
-<CodeBlock>
-	{`
-import axios from 'axios';
-
-export async function load() {
-	const jokes = await axios.get('https://api.sampleapis.com/jokes/goodJokes');
-	return {
-		props: {
-			jokes: jokes.data.slice(0, 5)
-		}
-	};
-}
-`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.LOADING} code={CODE.FETCH_JOKES} />
 
 <p>
 	On the corresponding component file, you can then access the data returned by the <code>load</code
 	> function via the data prop, which you declare like any other prop:
 </p>
 
-<CodeBlock>
-	{`
-<script lang="ts">
-	export let data: any;
-	console.log(data);
-<\/script>
-`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.COMPONENT} code={CODE.COMPONENT} />
 
 <p>And here's a selection of (somewhat) funny jokes fetched from that load function.</p>
 {#if data?.props.jokes?.length === 0}
@@ -85,9 +41,9 @@ export async function load() {
 {:else}
 	{#each data.props.jokes as joke}
 		<p>
-			<span class="setup">
+			<span class="font-bold">
 				{joke.setup}
-			</span> <span class="punchline">{joke.punchline}</span>
+			</span> <span class="italic">{joke.punchline}</span>
 		</p>
 	{/each}
 {/if}
@@ -114,16 +70,7 @@ export async function load() {
 
 <p>The load function makes several params available, including:</p>
 <ul>
-	{#each loadFunctionParams as { param, description }}
+	{#each LOAD_FUNCTIONS_PARAMS as { param, description }}
 		<li><code>{param}</code> - {description}</li>
 	{/each}
 </ul>
-
-<style>
-	.setup {
-		font-weight: bold;
-	}
-	.punchline {
-		font-style: italic;
-	}
-</style>

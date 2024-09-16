@@ -7,18 +7,9 @@
 {:else}
 	{#each data.props.jokes as joke}
 		<p>
-			<span class="setup">
+			<span class="font-bold">
 				{joke.setup}
-			</span> <span class="punchline">{joke.punchline}</span>
+			</span> <span class="italic">{joke.punchline}</span>
 		</p>
 	{/each}
 {/if}
-
-<style>
-	.setup {
-		font-weight: bold;
-	}
-	.punchline {
-		font-style: italic;
-	}
-</style>
