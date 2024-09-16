@@ -4,7 +4,7 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { CodeBlock } from 'svhighlight';
 	import { actionExampleCode, actionExampleCode2, actionExampleCode3 } from './example-code.js';
-	import { Accordion } from '$lib/components/ui/accordion/index.js';
+	import { Accordion } from '$lib/components/ui/accordion/index';
 	import AccordionItem from '$lib/components/ui/accordion/accordion-item.svelte';
 	import AccordionTrigger from '$lib/components/ui/accordion/accordion-trigger.svelte';
 	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
