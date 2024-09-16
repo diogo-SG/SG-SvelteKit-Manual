@@ -1,13 +1,12 @@
 <script lang="ts">
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
-	const readableStoreSteps = [
-		`The first argument to readable is an initial value,
-	which can be null or undefined if you don't have one yet;`,
-		`The second argument is a start function that takes a set callback and returns a stop function;`,
-		`The start function is called when the store gets its
-	first subscriber;`,
-		`The stop function is called when the last subscriber unsubscribes.`
-	];
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import {
+		HEADERS,
+		WRITABLESTORES,
+		AUTOSUBSCRIPTION,
+		READABLESTORE,
+		CUSTOMSTORE
+	} from './constants';
 </script>
 
 <h1>Stores</h1>
@@ -30,13 +29,7 @@
 	will have a <code>count</code> variable:
 </p>
 
-<CodeBlock>
-	{`
-	stores.js
-
-	import { writable } from 'svelte/store';
-	export const count = writable(0);`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.STORES} code={WRITABLESTORES.STORES} />
 
 <p>
 	Next, let's create a incrementer component that will add +1 to the count variable using the <code
@@ -44,68 +37,18 @@
 	> method:
 </p>
 
-<CodeBlock>
-	{`
-	Incrementer.svelte
-
-	<script>
-		import { count } from './stores.js';
-
-		function increment() {
-			count.update(n => n + 1);
-		}
-	<\/script>
-
-	<button on:click={increment}>Increment</button>
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.INCREMENTER} code={WRITABLESTORES.INCREMENTER} />
 
 <p>And now a component that will <code>set</code> the count back to 0:</p>
 
-<CodeBlock>
-	{`
-	Reset.svelte
-
-	<script>
-		import { count } from './stores.js';
-
-		function reset() {
-			count.set(0);
-		}
-	<\/script>
-
-	<button on:click={reset}>Reset</button>
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.RESET} code={WRITABLESTORES.RESET} />
 
 <p>
 	Finally, let's create a component that will <code>subscribe</code> to the count store and display the
 	current count:
 </p>
 
-<CodeBlock>
-	{`
-	Counter.svelte
-
-	<script>
-		import { count } from './stores.js';
-		import Incrementer from './Incrementer.svelte';
-		import Reset from './Reset.svelte';
-
-		let currentCount;
-
-		count.subscribe(value => {
-			currentCount = value;
-		});
-
-	<\/script>
-
-	<Incrementer />
-	<Reset />
-
-		<p>The count is: {currentCount}</p>
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.COUNTER} code={WRITABLESTORES.COUNTER} />
 
 <p>
 	Now, when you click the increment button, the count will increase by 1. When you click the reset
@@ -122,31 +65,7 @@
 	is destroyed:
 </p>
 
-<CodeBlock>
-	{`
-	Counter.svelte
-
-	<script>
-		import { count } from './stores.js';
-		import { onDestroy } from 'svelte';
-		import Incrementer from './Incrementer.svelte';
-		import Reset from './Reset.svelte';
-
-		let currentCount;
-		let unsubscribe = count.subscribe(value => {
-			currentCount = value;
-		});
-
-		// Unsubscribe when the component is destroyed
-		onDestroy(unsubscribe);
-	<\/script>
-
-	<Incrementer />
-	<Reset />
-
-	<p>The count is: {currentCount}</p>
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.COUNTER} code={AUTOSUBSCRIPTION.COUNTER} />
 
 <p>
 	Now the store will be unsubscribed from when the component is destroyed, preventing memory leaks
@@ -159,22 +78,7 @@
 	that automatically subscribes and unsubscribes from the store when the component is mounted and destroyed:
 </p>
 
-<CodeBlock>
-	{`
-	Counter.svelte
-
-	<script>
-		import { count } from './stores.js';
-		import Incrementer from './Incrementer.svelte';
-		import Reset from './Reset.svelte';
-	<\/script>
-
-	<Incrementer />
-	<Reset />
-
-	<p>The count is: {$count}</p>
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.COUNTER} code={AUTOSUBSCRIPTION.COUNTER_REACTIVE} />
 
 <p>
 	By using the <code>$</code> prefix, Svelte will automatically subscribe and unsubscribe from the store
@@ -192,27 +96,11 @@
 	create a readable store that will have a <code>time</code> variable:
 </p>
 
-<CodeBlock>
-	{`
-	stores.js
+<CodeWrapper headerText={HEADERS.STORES} code={READABLESTORE.STORES} />
 
-	import { readable } from 'svelte/store';
-
-	export const time = readable(new Date(), function start(set) {
-		const interval = setInterval(() => {
-			set(new Date());
-		}, 1000);
-
-		return function stop() {
-			clearInterval(interval);
-		};
-	});
-	`}
-</CodeBlock>
-
-<p>Let's break the previous code step by step:</p>
 <ul>
-	{#each readableStoreSteps as step}
+	<p>Let's break the previous code step by step:</p>
+	{#each READABLESTORE.STEPS as step}
 		<li>- {step}</li>
 	{/each}
 </ul>
@@ -226,16 +114,7 @@
 	file, let's create a <code>derived</code> store that will have a <code>doubleTime</code> variable:
 </p>
 
-<CodeBlock>
-	{`
-	secondStore.js
-
-	import { derived } from 'svelte/store';
-	import { time } from './stores.js';
-
-	export const doubleTime = derived(time, $time => $time * 2);
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.DERIVEDSTORE} code={READABLESTORE.DERIVEDSTORE} />
 
 <h2>Custom stores</h2>
 
@@ -248,42 +127,11 @@
 	<code>update</code> methods:
 </p>
 
-<CodeBlock>
-	{`
-	stores.js
-
-	import { writable } from 'svelte/store';
-
-	function createCount() {
-	const { subscribe, set, update } = writable(0);
-
-	return {
-		subscribe,
-		increment: () => update((n) => n + 1),
-		reset: () => set(0)
-	};
-}
-
-	export const count = createCount();
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.STORES} code={CUSTOMSTORE.STORES} />
 
 <p>And in our <span class="font-bold">Counter.svelte</span> component:</p>
 
-<CodeBlock>
-	{`
-	Counter.svelte
-
-	<script>
-		import { count } from './stores.js';
-	<\/script>
-
-	<button on:click={count.increment}>Increment</button>
-	<button on:click={count.reset}>Reset</button>
-
-	<p>The count is: {$count}</p>
-	`}
-</CodeBlock>
+<CodeWrapper headerText={HEADERS.COUNTER} code={CUSTOMSTORE.COUNTER} />
 
 <p>
 	Now the <code>count</code> store only exposes the <code>increment</code> and <code>reset</code>

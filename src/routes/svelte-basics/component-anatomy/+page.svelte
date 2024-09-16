@@ -1,33 +1,9 @@
 <script lang="ts">
 	import sanitizeHtml from 'sanitize-html';
+	import { CODE_EXAMPLE, COMPONENT_CODE, HEADER, href } from './constants';
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
-
-	const sampleCode1 = `
-        <script>
-        let name = 'Diogo';
-        let src = '/party-parrot.gif';
-        <\/script>
-
-        <h1>Hello {name}</h1>
-        <p>This is a paragraph.</p>
-        <img src={src} alt="Party parrot" />
-        <style>
-
-            p {
-        color: goldenrod;
-        font-family: 'Comic Sans MS', cursive;
-            font-size: 2em;
-            }
-<\/${''}style>
-        `;
-
-	const htmlCodeExample =
-		'<div class="bg-[lightgray] flex flex-col items-center p-3"><h4 class="text-[red]">This is an H4 tag</h4><p class="text-[1rem] text-[#fff]">This is a p tag</p></div>';
-	const sanitizedHTML = sanitizeHtml(
-		'<strong>hello world</strong><p>I was sanitized before rendering!</p>'
-	);
-	const href = 'https://www.npmjs.com/package/sanitize-html';
+	const sanitizedHTML = sanitizeHtml(CODE_EXAMPLE.SAMPLE_2);
 </script>
 
 <div>
@@ -37,9 +13,10 @@
 		file.
 	</p>
 	<p>Here is an example of a simple component:</p>
-	<CodeBlock>
-		{sampleCode1}
-	</CodeBlock>
+
+	<CodeWrapper headerText={HEADER.SAMPLE} code={COMPONENT_CODE.SAMPLE} />
+
+	<br />
 	<p>As you can see, the component is composed of three parts:</p>
 	<ul>
 		<li>
@@ -81,7 +58,7 @@
 	<br />
 	<p>
 		For example, if we have a string with HTML code, we can render it like this:
-		{@html htmlCodeExample}
+		{@html CODE_EXAMPLE.SAMPLE_1}
 	</p>
 	<br />
 	<p>

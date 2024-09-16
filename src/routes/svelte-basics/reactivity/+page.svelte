@@ -1,15 +1,6 @@
 <script>
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
-
-	const sampleCode1 = `<script>
-    let count = 0;
-
-    function increment() {
-        count += 1;
-    }
-<\/script>
-
-<button on:click={increment}>This was clicked {count} times </button>`;
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import { HEADER, REACTIVE_CODE } from './constants';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -34,9 +25,9 @@
 	can use the <code>on:click</code> directive to do something when a button is clicked.
 </p>
 <h4>Example</h4>
-<CodeBlock>
-	{sampleCode1}
-</CodeBlock>
+
+<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.EXAMPLE} />
+
 <button on:click={increment}>This was clicked {count} times </button>
 <h5>Notes</h5>
 <p>
@@ -50,13 +41,7 @@
 	changes in the original state, we can use reactive declarations, which look like this:
 </p>
 
-<CodeBlock>
-	{`
-	<script>
-	let count = 0;
-	$: doubled = count * 2;
-<\/script>`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.DECLARATIONS} />
 
 <h4>Example</h4>
 <button on:click={increment}>Increment count </button>
@@ -68,15 +53,7 @@
 	some code when a value changes. They look like this:
 </p>
 
-<CodeBlock>
-	{`
-	<script>
-	let count = 0;
-	$: {
-		console.log('Count is now', count);
-	}
-<\/script>`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.STATEMENTS} />
 
 <p>
 	The example above has been implemented on this page, so open the console and click the button to
@@ -96,28 +73,11 @@
 </p>
 <p>Instead, we should use the spread operator to create a new array or object, like so:</p>
 
-<CodeBlock>
-	{`
-	<script>
-	let items = ['a', 'b', 'c'];
-	function addItem() {
-		items = [...items, 'd'];
-	}
-<\/script>`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.UPDATING_ARRAYS} />
 
 <p>Or we could simply do a redundant assignment, like so:</p>
 
-<CodeBlock>
-	{`
-	<script>
-	let items = ['a', 'b', 'c'];
-	function addItem() {
-		items.push('d');
-		items = items;
-	}
-<\/script>`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.UPDATING_ARRAYS_1} />
 
 <style>
 	button {
