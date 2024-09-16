@@ -4,6 +4,10 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { CodeBlock } from 'svhighlight';
 	import { actionExampleCode, actionExampleCode2, actionExampleCode3 } from './example-code.js';
+	import { Accordion } from '$lib/components/ui/accordion/index.js';
+	import AccordionItem from '$lib/components/ui/accordion/accordion-item.svelte';
+	import AccordionTrigger from '$lib/components/ui/accordion/accordion-trigger.svelte';
+	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
 
 	export let form;
 	$: console.log(form);
@@ -16,125 +20,169 @@
 	the server. In this section, we'll cover how to work with forms to submit data in SvelteKit.
 </p>
 
-<h2>Example form</h2>
+<h3>Basic forms</h3>
+<Accordion>
+	<AccordionItem value="example">
+		<AccordionTrigger>Example</AccordionTrigger>
+		<AccordionContent>
+			<form method="POST" action="?/search">
+				<label> Search for a movie: </label>
+				<input name="movieTitle" type="text" placeholder="Enter a movie title" />
+				<Button type="submit">Search</Button>
+			</form>
 
-<form method="POST" action="?/search">
-	<label> Search for a movie: </label>
-	<input name="movieTitle" type="text" placeholder="Enter a movie title" />
-	<Button type="submit">Search</Button>
-</form>
+			{#if form?.searchResults}
+				<h2>Search results</h2>
+				<div class="results">
+					{#each form.searchResults as result}
+						<div class="search-result">
+							<p class="movie-title">{result.title}</p>
+							<p><b>Year:</b> {result.year}</p>
+							<p><b>Rating:</b> {result.rating}</p>
+							<p><b>Plot:</b> {result.plot}</p>
+						</div>
+					{/each}
+				</div>
+			{/if}
+		</AccordionContent>
+	</AccordionItem>
+	<AccordionItem value="explanation">
+		<AccordionTrigger>Explanation</AccordionTrigger>
+		<AccordionContent>
+			<p>
+				A Svelte form is just like a regular HTML form. When we define its method as POST, it'll
+				make a post request to the current page. We can then create a server-side <code>action</code
+				> to handle the form submission. Here's the code in +page.server.ts for the form above:
+			</p>
 
-{#if form?.searchResults}
-	<h2>Search results</h2>
-	<div class="results">
-		{#each form.searchResults as result}
-			<div class="search-result">
-				<p class="movie-title">{result.title}</p>
-				<p><b>Year:</b> {result.year}</p>
-				<p><b>Rating:</b> {result.rating}</p>
-				<p><b>Plot:</b> {result.plot}</p>
-			</div>
-		{/each}
-	</div>
-{/if}
+			<CodeBlock language="svelte" headerText="+page.server.ts" code={actionExampleCode} />
 
-<h2>How it works</h2>
+			<p class="mt-5">
+				The request here is a standard <a
+					href="https://developer.mozilla.org/en-US/docs/Web/API/Request">Request</a
+				>
+				object, and
+				<code>await request.formData()</code> returns a
+				<a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> instance.
+			</p>
+		</AccordionContent>
+	</AccordionItem>
+</Accordion>
 
-<p>
-	A Svelte form is just like a regular HTML form. When we define its method as POST, it'll make a
-	post request to the current page. We can then create a server-side <code>action</code> to handle the
-	form submission. Here's the code in +page.server.ts for the form above:
-</p>
-
-<CodeBlock language="svelte" headerText="+page.server.ts" code={actionExampleCode} />
-
-<p>
-	The request here is a standard <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request"
-		>Request</a
-	>
-	object, and
-	<code>await request.formData()</code> returns a
-	<a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</a> instance
-</p>
-
+<h3>Multiple actions</h3>
 <p>
 	We can also handle multiple actions by naming them. Let's add a "Get all" button to the form
 	above:
 </p>
 
-<form method="POST" action="?/search">
-	<label> Search for a movie: </label>
-	<input name="movieTitle" type="text" placeholder="Enter a movie title" />
-	<Button type="submit">Search</Button>
-</form>
+<Accordion>
+	<AccordionItem value="example">
+		<AccordionTrigger>Example</AccordionTrigger>
+		<AccordionContent>
+			<form method="POST" action="?/search">
+				<label> Search for a movie: </label>
+				<input name="movieTitle" type="text" placeholder="Enter a movie title" />
+				<Button type="submit">Search</Button>
+			</form>
 
-<form method="POST" action="?/getAll">
-	<Button type="submit" name="getAll">Get all</Button>
-</form>
+			<form method="POST" action="?/getAll">
+				<Button type="submit" name="getAll">Get all</Button>
+			</form>
 
-{#if form?.searchResults}
-	<h2>Search results</h2>
-	<div class="results">
-		{#each form.searchResults as result}
-			<div class="search-result">
-				<p class="movie-title">{result.title}</p>
-				<p><b>Year:</b> {result.year}</p>
-				<p><b>Rating:</b> {result.rating}</p>
-				<p><b>Plot:</b> {result.plot}</p>
-			</div>
-		{/each}
-	</div>
-{/if}
+			{#if form?.searchResults}
+				<h2>Search results</h2>
+				<div class="results">
+					{#each form.searchResults as result}
+						<div class="search-result">
+							<p class="movie-title">{result.title}</p>
+							<p><b>Year:</b> {result.year}</p>
+							<p><b>Rating:</b> {result.rating}</p>
+							<p><b>Plot:</b> {result.plot}</p>
+						</div>
+					{/each}
+				</div>
+			{/if}
 
-{#if form?.movies}
-	<h2>All movies</h2>
-	<div class="results">
-		{#each form.movies.splice(-12) as movie}
-			<div class="search-result">
-				<p class="movie-title">{movie.title}</p>
-				<p><b>Year:</b> {movie.year}</p>
-				<p><b>Rating:</b> {movie.rating}</p>
-				<p><b>Plot:</b> {movie.plot}</p>
-			</div>
-		{/each}
-	</div>
-{/if}
+			{#if form?.movies}
+				<h2>All movies</h2>
+				<div class="results">
+					{#each form.movies.splice(-12) as movie}
+						<div class="search-result">
+							<p class="movie-title">{movie.title}</p>
+							<p><b>Year:</b> {movie.year}</p>
+							<p><b>Rating:</b> {movie.rating}</p>
+							<p><b>Plot:</b> {movie.plot}</p>
+						</div>
+					{/each}
+				</div>
+			{/if}
+		</AccordionContent>
+	</AccordionItem>
+	<AccordionItem value="explanation">
+		<AccordionTrigger>Explanation</AccordionTrigger>
+		<AccordionContent>
+			<p>
+				In the form itself, in the +page.svelte file, we just need to specify the action. For
+				example: <code>{'<form method="POST" action="?/search"></form>'}</code>
+			</p>
+			<p>Then, in the server file, we add a new action as such:</p>
 
-<p>
-	In the form itself, in the +page.svelte file, we just need to specify the action. For example: <code
-		>{'<form method="POST" action="?/search"></form>'}</code
-	>
-</p>
-<p>Then, in the server file, we add a new action as such:</p>
+			<CodeBlock language="svelte" headerText="+page.server.ts" code={actionExampleCode2} />
+		</AccordionContent>
+	</AccordionItem>
+</Accordion>
 
-<CodeBlock language="svelte" headerText="+page.server.ts" code={actionExampleCode2} />
-
-<h2>Form validation</h2>
+<h3>Form validation</h3>
 
 <p>
 	In SvelteKit, we can use the built-in form validation functionality to validate form data. Here's
 	an example of how to validate a form in SvelteKit:
 </p>
 
-<form method="POST" action="?/validate">
-	<label> Enter a number between 1 and 9: </label>
-	<input name="number" type="number" />
-	<Button type="submit">Submit</Button>
-</form>
-{#if form?.error}
-	<p style="color: red;">{form.error}</p>
-{/if}
+<Accordion>
+	<AccordionItem value="example">
+		<AccordionTrigger>Example</AccordionTrigger>
+		<AccordionContent>
+			<form method="POST" action="?/validate">
+				<label> Enter a number between 1 and 9: </label>
+				<input name="number" type="number" />
+				<Button type="submit">Submit</Button>
+			</form>
+			{#if form?.error}
+				<p style="color: red;">{form.error}</p>
+			{/if}
 
-{#if form?.number}
-	<p>Number entered: {form.number}</p>
-{/if}
+			{#if form?.number}
+				<p>Number entered: {form.number}</p>
+			{/if}
+		</AccordionContent>
+	</AccordionItem>
+	<AccordionItem value="explanation">
+		<AccordionTrigger>Explanation</AccordionTrigger>
+		<AccordionContent>
+			<p>
+				To validate the form, we can use the <code>validate</code> function from the
+				<code>kit</code> module. Here's the code in +page.server.ts that handles the validation for the
+				form above:
+			</p>
+
+			<CodeBlock language="svelte" headerText="+page.server.ts" code={actionExampleCode3} />
+		</AccordionContent>
+	</AccordionItem>
+</Accordion>
+
+<h3>Progressive enhancement</h3>
 
 <p>
-	To validate the form, we can use the <code>validate</code> function from the <code>kit</code> module.
-	Here's the code in +page.server.ts that handles the validation for the form above:
+	Since Sveltekit uses the native html form component to build these actions, in many cases they
+	work without client-side javascript. This can be very convenient at times, and Sveltekit also
+	makes it possible to progressively enhance the form interactions. In other words, to not use JS at
+	first, but to enable certain behaviours when it does become available. You can read more about
+	that <a href="https://kit.svelte.dev/docs/form-actions#progressive-enhancement">
+		in the Sveltekit documentation</a
+	>, but very quickly, you can enable this by adding the <code>use:enhance</code> directive to the form
+	element.
 </p>
-
-<CodeBlock language="svelte" headerText="+page.server.ts" code={actionExampleCode3} />
 
 <style>
 	form {
