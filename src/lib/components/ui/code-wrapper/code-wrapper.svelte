@@ -6,4 +6,6 @@
 	export let code: string;
 </script>
 
-<CodeBlock language="svelte" {headerText} {code} />
+<div class="code_wrapper">
+	<CodeBlock language="svelte" {headerText} {code} />
+</div>

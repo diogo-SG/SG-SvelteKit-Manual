@@ -1,7 +1,6 @@
 <script lang="ts">
-	import CodeBlock from '$lib/components/ui/code-block/code-block.svelte';
-	import { onDestroy } from 'svelte';
-	const href = '/svelte-basics/stores';
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import { CODE, HEADER, href } from './constants';
 </script>
 
 <h1>Component lifecycle</h1>
@@ -21,22 +20,7 @@
 	from the DOM.
 </p>
 
-<CodeBlock>
-	{`<script>
-				import { onMount } from 'svelte';
-
-				onMount(() => {
-					console.log('The component has been rendered to the DOM');
-
-					// Return a cleanup function
-					return () => {
-						console.log('The component has been removed from the DOM');
-						};
-					});
-			<\/script>
-
-`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.LIFECYCLE} code={CODE.ON_MOUNT} />
 
 <h2>beforeUpdate and afterUpdate</h2>
 
@@ -48,21 +32,7 @@
 	state-driven way.
 </p>
 
-<CodeBlock>
-	{`<script>
-				import { beforeUpdate, afterUpdate } from 'svelte';
-
-				beforeUpdate(() => {
-					console.log('The component is about to be updated');
-					});
-
-				afterUpdate(() => {
-					console.log('The component has been updated');
-					});
-			<\/script>
-
-`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.LIFECYCLE} code={CODE.BEFORE_AND_AFTER_UPDATE} />
 
 <p>
 	Bare in mind that <code>beforeUpdate</code> will first run before the component has mounted, so you'll
@@ -76,16 +46,7 @@
 	to clean up any resources that the component is using, such as event listeners, timers or store subsctiptions.
 </p>
 
-<CodeBlock>
-	{`<script>
-				import { onDestroy } from 'svelte';
-
-				onDestroy(() => {
-					console.log('The component has been removed from the DOM');
-					});
-			<\/script>
-`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.LIFECYCLE} code={CODE.ON_DESTROY} />
 
 <h2>tick</h2>
 
@@ -98,21 +59,7 @@
 	more effectively.
 </p>
 
-<CodeBlock>
-	{`<script>
-				import { tick } from 'svelte';
-
-				let count = 0;
-
-				const handleClick = async () => {
-					count ++;
-					await tick();
-					console.log('The DOM has been updated');
-					};
-			<\/script>
-
-`}
-</CodeBlock>
+<CodeWrapper headerText={HEADER.LIFECYCLE} code={CODE.TICK} />
 
 <p>
 	<code>tick</code> is useful when you need to interact with the DOM after updating component state,

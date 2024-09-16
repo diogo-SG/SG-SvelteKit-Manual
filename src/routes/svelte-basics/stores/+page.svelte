@@ -137,12 +137,3 @@
 	Now the <code>count</code> store only exposes the <code>increment</code> and <code>reset</code>
 	methods, making it easier to work with the store in other components.
 </p>
-
-<style>
-	code {
-		background-color: #f4f4f4;
-		padding: 0.5rem;
-		margin: 0.125rem;
-		border-radius: 5px;
-	}
-</style>

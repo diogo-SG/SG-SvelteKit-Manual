@@ -112,3 +112,10 @@ button {
 input {
 	@apply text-base;
 }
+
+div:not(.code_wrapper) code:not(.language-svelte) {
+    background-color: #f4f4f4;
+    padding: 0.5rem;
+    margin: 0.125rem;
+    border-radius: 5px;
+}
