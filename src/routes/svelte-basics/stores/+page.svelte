@@ -1,11 +1,13 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import {
+		href,
 		HEADERS,
 		WRITABLESTORES,
 		AUTOSUBSCRIPTION,
 		READABLESTORE,
-		CUSTOMSTORE
+		CUSTOMSTORE,
+		STORE_BINDINGS
 	} from './constants';
 </script>
 
@@ -136,4 +138,31 @@
 <p>
 	Now the <code>count</code> store only exposes the <code>increment</code> and <code>reset</code>
 	methods, making it easier to work with the store in other components.
+</p>
+
+<h2>Store bindings</h2>
+
+<p>
+	In case the store has a <code>set</code> method, it's possible to bind its value, as you would
+	normally do to bind values to component state. Let's imagine that you're exporting a writable
+	store <code>name</code> and a derived store <code>greeting</code> from <code>stores.js</code>. In
+	<code>App.svelte</code>, let's update the <code>input</code> element:
+</p>
+
+<CodeWrapper headerText={HEADERS.APP} code={STORE_BINDINGS.INPUT} />
+
+<p>
+	If the <code>input</code> value changes, it will now update <code>name</code>
+	. We can also assign directly to store values inside a component. Notice that we added a<code
+		>on:click</code
+	>
+	event handler that adds "!" to the <code>name</code>. The <code>$name += "!"</code> assignment is
+	equivalent to <code>name.set($name + "!")</code>.
+</p>
+
+<p>
+	Hope you liked the content so far and that you had time to practice the basics of Svelte. Now it's
+	time to turn it up a notch, let's move on to <a class="text-[blue] underline" {href}
+		>Advanced Svelte</a
+	>.
 </p>
