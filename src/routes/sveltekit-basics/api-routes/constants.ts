@@ -23,6 +23,13 @@ export const CODE = {
 			{:then response}
 				<pre>{response}</pre>
 			{/await}
-            
+
+`,
+	postExample: `
+export async function POST({ request }) {
+	const { number } = await request.json();
+
+	return json({ number: number * 2 }, { status: 200 });
+}
 `
 };

@@ -11,3 +11,9 @@ export function GET() {
 	// 	}
 	// });
 }
+
+export async function POST({ request }) {
+	const { number } = await request.json();
+
+	return json({ number: number * 2 }, { status: 200 });
+}

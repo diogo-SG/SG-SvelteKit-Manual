@@ -25,7 +25,7 @@ export const actions = {
 	validate: async ({ request }) => {
 		const formData = await request.formData();
 		const number = Number(formData.get('number'));
-		console.log('number', number);
+
 		if (!number) {
 			return fail(418, { error: 'Number is required' });
 		}

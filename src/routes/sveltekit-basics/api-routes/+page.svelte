@@ -5,6 +5,7 @@
 	import AccordionTrigger from '$lib/components/ui/accordion/accordion-trigger.svelte';
 	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
 	import { CODE } from './constants';
+	import Link from '$lib/components/ui/link/link.svelte';
 
 	function fetchResponse() {
 		return fetch('./api-routes/example').then((res) => res.json());
@@ -15,8 +16,9 @@
 
 <p>
 	API routes are a way to create serverless functions in SvelteKit. They are similar to
-	<a href="https://nextjs.org/docs/api-routes/introduction">Next.js API routes</a> and
-	<a href="https://vercel.com/docs/serverless-functions/introduction">Vercel serverless functions</a
+	<Link href="https://nextjs.org/docs/api-routes/introduction">Next.js API routes</Link> and
+	<Link href="https://vercel.com/docs/serverless-functions/introduction"
+		>Vercel serverless functions</Link
 	>.
 </p>
 
@@ -53,16 +55,26 @@
 		</AccordionContent>
 	</AccordionItem>
 	<AccordionItem value="POST">
-		<AccordionTrigger>POST</AccordionTrigger>
+		<AccordionTrigger>POST & other handlers</AccordionTrigger>
 		<AccordionContent>
 			<p>
 				We can also add handlers that mutate data, like POST, though the Sveltekit team recommends
 				using form actions instead in most cases, since they require less code to be written and can
-				work without Javascript, which makes them more resilient.
+				work without Javascript, which makes them more resilient. Here's an example of a simple POST
+				route which receives a number and returns it doubled (yes, incredibly useful):
 			</p>
+			<CodeWrapper headerText="example/+server.js" code={CODE.postExample} />
+
+			<p>The same logic also works for other HTTP handlers, such as DELETE, PUT or PATCH.</p>
 		</AccordionContent>
 	</AccordionItem>
 </Accordion>
+
+<p>
+	You can read the full Sveltekit documentation for <code>+server</code> files and API routes <Link
+		href="https://kit.svelte.dev/docs/routing#server">here</Link
+	>
+</p>
 
 <style>
 	p {

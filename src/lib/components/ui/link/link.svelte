@@ -9,7 +9,7 @@
 
 <style>
 	.link {
-		color: var(--color-primary);
+		color: gray;
 		text-decoration: none;
 	}
 
