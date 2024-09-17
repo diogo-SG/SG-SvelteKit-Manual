@@ -1,9 +1,12 @@
+export const href = '/advanced-svelte/motion';
+
 export const HEADERS = {
 	STORES: 'stores.js',
 	DERIVEDSTORE: 'derivedStore.js',
 	INCREMENTER: 'Incrementer.svelte',
 	RESET: 'Reset.svelte',
-	COUNTER: 'Counter.svelte'
+	COUNTER: 'Counter.svelte',
+	APP: 'App.svelte'
 };
 
 export const WRITABLESTORES = {
@@ -152,5 +155,20 @@ export const CUSTOMSTORE = {
 	<button on:click={count.reset}>Reset</button>
 
 	<p>The count is: {$count}</p>
+	`
+};
+
+export const STORE_BINDINGS = {
+	INPUT: `
+	<script>
+		import { name, greeting } from './stores.js';
+	</script>
+
+	<h1>{$greeting}</h1>
+	<input bind:value={$name} />
+
+	<button on:click={() => $name += '!'}>
+		Add exclamation mark!
+	</button>
 	`
 };
