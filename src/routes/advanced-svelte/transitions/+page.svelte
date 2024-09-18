@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { CODE } from './constants';
+	import { Code } from 'lucide-svelte';
+	import { CODE, TRANSITION_FUNCTION_LIST } from './constants';
 
 	const href = 'https://svelte.dev/docs/svelte-transition';
 	const fileTitle = 'App.svelte';
@@ -107,6 +108,105 @@
 <p>
 	By making use of the <code>svelte/transition</code>
 	module we already saw that it's very easy to create transitions, but we can also create our
-	own custom transitions. Let's create a custom transition that will make the element grow
-	in size:
+	own custom transitions. For that purpose, we will create a function that accepts two arguments
+	- the node to which the transition is applied and the options object - and returns a transition
+	object which can have the following properties:
+</p>
+<ul>
+	{#each TRANSITION_FUNCTION_LIST as { property, description }}
+		<li>
+			<strong>{property}</strong>
+			- {description}
+		</li>
+	{/each}
+</ul>
+
+<p>
+	Most of the time you should return the <code>css</code>
+	instead of the
+	<code>tick</code>
+	, as CSS animations run off the main thread to prevent jank where possible.
+	<br />
+	Here's an example of how you can create a custom transition using the
+	<code>css</code>
+	property. Let's update our
+	<code>script</code>
+	:
+</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.TRANSITION_CUSTOM_CSS_SCRIPT} />
+
+<p>And now let's update our HTML code:</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.TRANSITION_CUSTOM_CSS_HTML} />
+
+<p>
+	It's also possible to create custom transitions using plain JavaScript instead of CSS.
+	Let's create a typewriter effect using the
+	<code>tick</code>
+	property. Update the
+	<code>script</code>
+	:
+</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.TRANSITION_CUSTOM_TICK_SCRIPT} />
+
+<p>Finally, let's update the HTML:</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.TRANSITION_CUSTOM_TICK_HTML} />
+
+<p>
+	Really cool right? You'll probably use some cool packages to create these effects, but
+	if you need to achieve something more unique, you already know how to do it!
+</p>
+
+<h2>Transition events</h2>
+
+<p>
+	Sometimes it can be useful to know when a transition has started or ended. Svelte
+	provides a set of events that you can listen to like any other DOM event:
+</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.TRANSITION_EVENTS} />
+
+<h2>Global transitions</h2>
+
+<p>
+	You can also define global transitions that will be applied to all elements inside a
+	block that use the
+	<code>transition</code>
+	directive. Here's a simple example:
+</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.GLOBAL_TRANISITONS} />
+
+<h2>Key blocks</h2>
+
+<p>
+	Key blocks destroy and recreate their contents when the value of an expression changes.
+	This is useful if you want an element to play its transition whenever a value changes
+	instead of only when the element enters or leaves the DOM.
+</p>
+
+<CodeWrapper
+	headerText={fileTitle}
+	code={CODE.KEY_BLOCKS} />
+
+<p>
+	In the previous example, the <code>fade</code>
+	transition will always run whenever the
+	<code>i</code>
+	variable changes.
 </p>
