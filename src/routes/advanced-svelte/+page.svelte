@@ -12,41 +12,36 @@
 		},
 		{
 			id: 3,
-			title: 'Animations',
-			href: '/advanced-svelte/animations'
-		},
-		{
-			id: 4,
 			title: 'Actions',
 			href: '/advanced-svelte/actions'
 		},
 		{
-			id: 5,
+			id: 4,
 			title: 'Advanced Bindings',
 			href: '/advanced-svelte/advanced-bindings'
 		},
 
 		{
-			id: 6,
+			id: 5,
 			title: 'Classes and Styles',
 			href: '/advanced-svelte/classes-and-styles'
 		},
 		{
-			id: 7,
+			id: 6,
 			title: 'Component Composition',
 			href: '/advanced-svelte/component-composition'
 		},
 		{
-			id: 8,
+			id: 7,
 			title: 'Context API',
 			href: '/advanced-svelte/context-api'
 		},
 		{
-			id: 9,
+			id: 8,
 			title: 'Special Elements',
 			href: '/advanced-svelte/special-elements'
 		},
-		{ id: 10, title: 'Module Context', href: '/advanced-svelte/module-context' }
+		{ id: 9, title: 'Module Context', href: '/advanced-svelte/module-context' }
 	];
 </script>
 
