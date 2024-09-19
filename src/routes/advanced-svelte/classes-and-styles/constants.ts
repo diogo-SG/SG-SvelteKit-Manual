@@ -24,5 +24,17 @@ export const CODE = {
     style:fontSize={"1.5rem"}
     style:background={isActive ? 'white' : 'black'}
     on:click={() => isActive = !isActive}>
+`,
+	COMPONENT_STYLE_PARENT: `
+  <Button --color="red" />
+  `,
+	COMPONENT_STYLE_CHILD: `
+  <button class="button">Click me</button>
+
+  <style>
+    .button {
+      background-color: var(--color, #ddd);
+    }
+  </style>
 `
 };

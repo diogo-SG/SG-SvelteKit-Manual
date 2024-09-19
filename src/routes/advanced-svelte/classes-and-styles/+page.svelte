@@ -64,3 +64,28 @@
 <CodeWrapper
 	{headerText}
 	code={CODE.STYLE_SHORTHAND} />
+
+<h2>Component styles</h2>
+
+<p>
+	Sometimes you may want to apply styles to a component from the outside. This can be done
+	by passing a CSS variable directly to the component, as a prop. Here's an example on how
+	you can achieve this:
+</p>
+
+<CodeWrapper
+	headerText="Button.svelte"
+	code={CODE.COMPONENT_STYLE_CHILD} />
+
+<CodeWrapper
+	{headerText}
+	code={CODE.COMPONENT_STYLE_PARENT} />
+
+<p>
+	By passing the CSS variable <code>--color</code>
+	with a value of
+	<code>red</code>
+	to the
+	<code>Button.svelte</code>
+	component, the background color is going to change accordingly.
+</p>
