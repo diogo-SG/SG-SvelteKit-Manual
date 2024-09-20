@@ -1,4 +1,65 @@
 <script lang="ts">
+	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import { CODE } from './constants';
+
+	const headerText = 'App.svelte';
+	const childHeaderText = 'Button.svelte';
 </script>
 
 <h1>Component Composition</h1>
+
+<h2>Slots</h2>
+
+<p>
+	Such as elements can have children, components can have slots. Before a component can
+	accept children, it needs to know where to put them. For this, you'll need to use the <code>
+		slot
+	</code>
+	element.
+</p>
+
+<CodeWrapper
+	headerText={childHeaderText}
+	code={CODE.SLOTS_CHILD} />
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SLOTS_PARENT} />
+
+<h2>Named slots</h2>
+
+<p>
+	In the last example you learned how to use a default <code>slot</code>
+	element, but most of the times you'll need more control over the placement. For that you
+	can use
+	<em>named slots.</em>
+</p>
+
+<CodeWrapper
+	headerText={childHeaderText}
+	code={CODE.NAMED_SLOTS_CHILD} />
+
+<CodeWrapper
+	{headerText}
+	code={CODE.NAMED_SLOTS_PARENT} />
+
+<h2>Slot fallbacks</h2>
+
+<p>
+	You can also provide a fallback for a slot, in case it's not filled or for slots that
+	are left empty. For that purpose, you just need to add content inside the <code>
+		slot
+	</code>
+	element.
+</p>
+
+<CodeWrapper
+	headerText={childHeaderText}
+	code={CODE.SLOTS_FALLBACK} />
+
+<h2>Slot props</h2>
+
+<p>
+	<code>slot</code>
+	elements can also receive props. Here's an example of how you can pass props to a slot.
+</p>
