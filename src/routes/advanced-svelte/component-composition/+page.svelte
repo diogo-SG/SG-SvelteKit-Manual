@@ -1,9 +1,10 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { CODE } from './constants';
+	import { CODE, SLOT_PROPS_LIST } from './constants';
 
 	const headerText = 'App.svelte';
-	const childHeaderText = 'Button.svelte';
+	const buttonHeaderText = 'Button.svelte';
+	const cardHeaderText = 'Card.svelte';
 </script>
 
 <h1>Component Composition</h1>
@@ -19,7 +20,7 @@
 </p>
 
 <CodeWrapper
-	headerText={childHeaderText}
+	headerText={buttonHeaderText}
 	code={CODE.SLOTS_CHILD} />
 
 <CodeWrapper
@@ -36,7 +37,7 @@
 </p>
 
 <CodeWrapper
-	headerText={childHeaderText}
+	headerText={buttonHeaderText}
 	code={CODE.NAMED_SLOTS_CHILD} />
 
 <CodeWrapper
@@ -54,7 +55,7 @@
 </p>
 
 <CodeWrapper
-	headerText={childHeaderText}
+	headerText={buttonHeaderText}
 	code={CODE.SLOTS_FALLBACK} />
 
 <h2>Slot props</h2>
@@ -62,4 +63,44 @@
 <p>
 	<code>slot</code>
 	elements can also receive props. Here's an example of how you can pass props to a slot.
+</p>
+
+<CodeWrapper
+	headerText={cardHeaderText}
+	code={CODE.SLOTS_PROPS_CHILD} />
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SLOTS_PROPS_PARENT} />
+
+<ul>
+	<p class="font-bold">Let's review the code above:</p>
+	{#each SLOT_PROPS_LIST as { page, description }}
+		<li>
+			<p>
+				<span class="font-bold">{page}</span>
+				- {description}
+			</p>
+		</li>
+	{/each}
+</ul>
+
+<h2>Checking for slot content</h2>
+
+<p>
+	You can also check if a slot has content or not. For that, you can use the <code>
+		$$slots
+	</code>
+	object.
+</p>
+
+<CodeWrapper
+	headerText={cardHeaderText}
+	code={CODE.SLOTS_CHECK} />
+
+<p>
+	In the example above, if a <code>lastName</code>
+	slot is not provided by the parent component, the code inside the
+	<code>if</code>
+	block won’t run, giving us greater control over the UI.
 </p>
