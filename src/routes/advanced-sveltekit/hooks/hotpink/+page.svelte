@@ -33,7 +33,7 @@
 </div>
 
 <style>
-	p {
+	p:first-of-type {
 		margin-top: 1rem;
 		margin-bottom: 2rem;
 	}
