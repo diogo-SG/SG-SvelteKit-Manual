@@ -1,11 +1,11 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { Code } from 'lucide-svelte';
-	import { CODE } from './constants';
+	import { CODE, SVELTE_OPTIONS_LIST } from './constants';
 
 	const headerText = 'App.svelte';
 	const redSquareHeaderText = 'RedSquare.svelte';
 	const blueSquareHeaderText = 'BlueSquare.svelte';
+	const cardHeaderText = 'Card.svelte';
 </script>
 
 <h1>Special Elements</h1>
@@ -99,3 +99,97 @@
 <CodeWrapper
 	{headerText}
 	code={CODE.SVELTE_WINDOW} />
+
+<h2>svelte:body</h2>
+
+<p>
+	This element allows you to listen for events that fire on <code>document.body</code>
+	. This is useful when you want to listen to events that are not available on the window object,
+	such as
+	<code>mouseenter</code>
+	and
+	<code>mouseleave</code>
+	events. Let's create an example where we listen to the
+	<code>mouseenter</code>
+	and
+	<code>mouseleave</code>
+	events.
+</p>
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SVELTE_BODY} />
+
+<h2>svelte:document</h2>
+
+<p>
+	This element allows you to listen for events that fire on <code>document</code>
+	. This is useful when you want to listen to events that are not available on the window object,
+	such as
+	<code>selectionchange</code>
+	. Here's a simple example.
+</p>
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SVELTE_DOCUMENT} />
+
+<h2>svelte:head</h2>
+
+<p>
+	The <code>svelte:head</code>
+	element allows you to insert elements inside the
+	<code>&lt;head&gt;</code>
+	. You can use this special element when you want to add meta tags, title tags, link tags
+	or script tags to the
+	<code>&lt;head&gt;</code>
+	of the document . We'll create an example where we add a title tag to the document.
+</p>
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SVELTE_HEAD} />
+
+<p>
+	In server-side rendering (SSR), contents of <code>svelte:head</code>
+	are returned separately from the rest of your HTML.
+</p>
+
+<h2>svelte:options</h2>
+
+<p>
+	The <code>svelte:options</code>
+	element allows users to specify compiler options. This element must be the first element
+	in the component.
+</p>
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SVELTE_OPTIONS} />
+
+<ul>
+	<strong>Here's a list of some options you can use:</strong>
+
+	{#each SVELTE_OPTIONS_LIST as { name, description }}
+		<li>
+			<code>{name}</code>
+			- {description}
+		</li>
+	{/each}
+</ul>
+
+<h2>svelte:fragment</h2>
+
+<p>
+	The <code>svelte:fragment</code>
+	element allows you to place content in a named slot without wrapping it in a container DOM
+	element.
+</p>
+
+<CodeWrapper
+	{headerText}
+	code={CODE.SVELTE_FRAGMENT_PARENT} />
+
+<CodeWrapper
+	headerText={cardHeaderText}
+	code={CODE.SVELTE_FRAGMENT_CHILD} />

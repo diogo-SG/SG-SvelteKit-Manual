@@ -69,5 +69,87 @@ export const CODE = {
     <div style="height: 200%; display: flex; align-items: center; justify-content: center;">
         <p>ScrollY value: {scrollY}px</p>
     </div>
+`,
+	SVELTE_BODY: `
+    <script>
+        let showText = false;
+    </script>
+
+    <svelte:body 
+        on:mouseenter={() => showText = true} 
+        on:mouseleave={() => showText = false} 
+    />
+
+    {#if showText}
+        <p>
+            Hover over the page to see the text!
+        </p>
+    {/if}
+`,
+	SVELTE_DOCUMENT: `
+    <script>
+        let textSelected = '';
+        const handleSelection = (e) => textSelected = document.getSelection();
+    </script>
+
+    <svelte:document 
+        on:selectionchange={handleSelection} 
+    />
+
+    <h1>Select part of this text</h1>
+    <p>{textSelected}</p>
+`,
+	SVELTE_HEAD: `
+    <script>
+        let title = 'Special elements - advanced Svelte';
+    </script>
+
+    <svelte:head>
+        <title>{title}</title>
+    </svelte:head>
+`,
+	SVELTE_OPTIONS: `
+    <svelte:options immutable>
+
+    <script>
+        // Your code here
+    </script>
+`,
+	SVELTE_FRAGMENT_PARENT: `
+    <Card>
+        <h1 slot="header">Hello</h1>
+	    <svelte:fragment slot="footer">
+		    <p>All rights reserved.</p>
+		    <p>Copyright(c) 2024 learn Svelte</p>
+	    </svelte:fragment>
+    </Card>
+`,
+	SVELTE_FRAGMENT_CHILD: `
+    <div>
+	    <slot name="header" />
+	    <slot name="footer" />
+    </div>
 `
 };
+
+export const SVELTE_OPTIONS_LIST = [
+	{ name: 'immutable', description: 'Prevent reactivity on variables;' },
+	{
+		name: 'accessors',
+		description:
+			'Accessors are used to automatically update the DOM when a variable changes;'
+	},
+	{
+		name: 'namespace',
+		description: 'This option is used to specify the namespace of the component;'
+	},
+	{
+		name: 'tag',
+		description: 'You can use it to specify the tag of the component;'
+	},
+	{
+		name: 'debug',
+		description: 'Enables debugging for the component;'
+	},
+	{ name: 'hydratable', description: 'Enables hydration for the component.' }
+];
