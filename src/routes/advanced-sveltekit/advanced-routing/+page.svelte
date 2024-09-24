@@ -40,3 +40,87 @@
 	Additionally, rest parameters do not need to go at the end — a route like
 	/items/[...path]/edit or /items/[...path].json is totally valid.
 </p>
+
+<h2>Param matchers</h2>
+<p>
+	To prevent the router from matching on invalid inputs, we can specify a matcher. To do
+	so, create a route following the pattern <code>[param=matcher]</code>
+	, then create a file under
+	<code>src/params</code>
+	named
+	<code>matcher.ts</code>
+	. For example:
+</p>
+
+<CodeWrapper
+	headerText="src/params/[color=hex].ts"
+	code={CODE_EXAMPLES.paramMatchers} />
+
+<p>
+	Now whenever someone navigates to these routes, SvelteKit will first check if the color
+	is a valid <code>hex</code>
+	value. If it isn't, it'll try to match other hardcoded routes, and if none can be found it'll
+	return a 404. Also useful to keep in mind is that matchers run on both the server and in
+	the browser.
+</p>
+
+<Link href="./advanced-routing/colors/ff0000">Go to /color/ff0000</Link>
+<Link href="./advanced-routing/colors/123456">Go to /color/123456</Link>
+<Link href="./advanced-routing/colors/abcdef">Go to /color/abcdef</Link>
+<Link href="./advanced-routing/colors/ghijkl">Go to /color/ghijkl (will 404)</Link>
+
+<h2>Route groups</h2>
+<p>
+	Route groups allow us to use layouts without affecting the route. For example, we might
+	want some routes in the same hierarchical level to be protected by authentication, while
+	others are completely open. Route groups are defined by a directory in parentheses.
+</p>
+
+<p>
+	For example, we can set up a <code>(restricted)/account-settings</code>
+	page that will only be accessible when the user is logged in. Then we can control access
+	to those restricted pages by using a layout.
+</p>
+
+<CodeWrapper
+	headerText="src/routes/(restricted)/account-settings/+page.svelte"
+	code={CODE_EXAMPLES.routeGroupsLayout} />
+
+<Link href="./advanced-routing/account-settings">Go to /restricted/account-settings</Link>
+
+<h2>Breaking out of layouts</h2>
+<p>
+	Usually, a page inherits all the layouts above it in the hierarchy, so a <code>
+		src/routes/a/b/+page.svelte
+	</code>
+	page would inherit three layouts: the root one, plus the ones for
+	<code>/a/</code>
+	and
+	<code>/b/</code>
+	.
+</p>
+
+<p>
+	If we want to break out of the current layout hierarchy, we can do that by adding the <code>
+		@
+	</code>
+	sign in the page's file name, followed by the name of the parent route segment to reset to.
+	For example:
+</p>
+
+<ul>
+	<li>
+		<code>+page@a.svelte</code>
+		- this makes the route use the layouts in the root and in
+		<code>/a/</code>
+	</li>
+	<li>
+		<code>+page@.svelte</code>
+		- this makes the route use only the root layout
+	</li>
+</ul>
+
+<p>
+	Keep in mind, however, that the root layout applies to every page in our app and it
+	cannot be broken out of.
+</p>
