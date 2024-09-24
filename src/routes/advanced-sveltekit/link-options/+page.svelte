@@ -1,5 +1,6 @@
 <script>
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Link from '$lib/components/ui/link/link.svelte';
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
