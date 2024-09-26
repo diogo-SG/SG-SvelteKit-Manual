@@ -74,7 +74,7 @@
 				it'll make a post request to the current page. We can then create a server-side <code>
 					action
 				</code>
-				 to handle the form submission. Here's the code in +page.server.ts for the form above:
+				to handle the form submission. Here's the code in +page.server.ts for the form above:
 			</p>
 
 			<CodeBlock
@@ -229,7 +229,7 @@
 				To validate the form, we can use the <code>validate</code>
 				function from the
 				<code>kit</code>
-				 module. Here's the code in +page.server.ts that handles the validation for the form
+				module. Here's the code in +page.server.ts that handles the validation for the form
 				above:
 			</p>
 
@@ -254,8 +254,8 @@
 	</a>
 	, but very quickly, you can enable this by adding the
 	<code>use:enhance</code>
-	directive to the form element. You can also read the full documentation about Form
-	Actions in Sveltekit <Link href="https://kit.svelte.dev/docs/form-actions">here</Link>.
+	directive to the form element. You can also read the full documentation about Form Actions
+	in Sveltekit <Link href="https://kit.svelte.dev/docs/form-actions">here</Link>.
 </p>
 
 <style>
