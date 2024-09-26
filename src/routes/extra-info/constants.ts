@@ -57,3 +57,26 @@ export const SVELTE_PROS_CONS_LIST = [
 			"Some tools may not fully support Svelte's unique syntax, leading to less robust editor features."
 	}
 ];
+
+export const SVELTE_RESOURCES_LIST = [
+	{ href: 'https://svelte.dev/', title: 'Official Svelte Website' },
+	{ href: 'https://kit.svelte.dev/', title: 'SvelteKit Documentation' },
+	{ href: 'https://www.sveltesociety.dev/', title: 'Svelte Society' }
+];
+
+export const SVELTE_LIBRARIES_LIST = [
+	{ href: 'https://flowbite-svelte.com/', title: 'Flowbite' },
+	{ href: 'https://www.shadcn-svelte.com/', title: 'Shadcn Svelte' },
+	{ href: 'https://sveltestrap.js.org/', title: 'Sveltestrap' },
+	{ href: 'https://c0bra.github.io/svelma/', title: 'Svelma' },
+	{ href: 'https://sveltematerialui.com/', title: 'Svelte Material UI' },
+	{ href: 'https://svelte-materialify.vercel.app/', title: 'Svelte Materialify' },
+	{ href: 'https://svar.dev/svelte/core/', title: 'Svar' },
+	{ href: 'https://daisyui.com/docs/install/', title: 'DaisyUI' },
+	{ href: 'https://tailwindcss.com/', title: 'Tailwind' },
+	{ href: 'https://smeltejs.com/', title: 'Smelte' },
+	{ href: 'https://svelte.carbondesignsystem.com/', title: 'Carbon Design System' },
+	{ href: 'https://melt-ui.com/', title: 'Melt UI' },
+	{ href: 'https://illright.github.io/attractions/docs', title: 'Attractions' },
+	{ href: 'https://www.skeleton.dev/', title: 'Skeleton' }
+];
