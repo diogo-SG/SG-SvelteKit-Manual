@@ -1,5 +1,9 @@
 <script>
-	import { SVELTE_PROS_CONS_LIST } from './constants';
+	import {
+		SVELTE_LIBRARIES_LIST,
+		SVELTE_PROS_CONS_LIST,
+		SVELTE_RESOURCES_LIST
+	} from './constants';
 </script>
 
 <h1>Extra info and resources</h1>
@@ -35,15 +39,32 @@
 	{/each}
 </ul>
 
-<h2>Official resources</h2>
 <ul>
-	<li><a href="https://svelte.dev/">Svelte</a></li>
-	<li><a href="https://kit.svelte.dev/">SvelteKit</a></li>
+	<h3>Official resources:</h3>
+	{#each SVELTE_RESOURCES_LIST as { href, title }}
+		<li>
+			<a
+				{href}
+				class="text-[blue] underline"
+				target="_blank"
+				rel="noopener noreferrer">
+				{title}
+			</a>
+		</li>
+	{/each}
 </ul>
 
-<h2>Component libraries</h2>
-<!-- todo improve -->
 <ul>
-	<li>Flowbite Svelte</li>
-	<li>Shadcn Svelte</li>
+	<h3>Component libraries</h3>
+	{#each SVELTE_LIBRARIES_LIST as { href, title }}
+		<li>
+			<a
+				{href}
+				class="text-[blue] underline"
+				target="_blank"
+				rel="noopener noreferrer">
+				{title}
+			</a>
+		</li>
+	{/each}
 </ul>
