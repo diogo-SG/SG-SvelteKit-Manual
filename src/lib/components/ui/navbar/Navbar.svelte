@@ -19,8 +19,8 @@
 	class="sticky top-0 !z-[100] border-b bg-background px-4 md:px-10">
 	<NavBrand href="/">
 		<img
-			src="/favicon.png"
-			class="me-3 h-6 sm:h-9"
+			src="/img/sg_black_logo.png"
+			class="h-6 sm:h-9"
 			alt="Svelte logo" />
 	</NavBrand>
 	<NavHamburger />
