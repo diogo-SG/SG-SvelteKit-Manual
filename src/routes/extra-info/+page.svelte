@@ -11,8 +11,8 @@
 <h2>Advantages and disadvantages of Svelte / Sveltekit</h2>
 
 <p>
-	Svelte is a great choice for building web applications, but it's not perfect. Here are
-	some of the pros and cons of using Svelte:
+	Svelte is a great choice for building web applications, but it's not perfect. Let's go
+	through some of the pros and cons of using Svelte.
 </p>
 
 <ul>

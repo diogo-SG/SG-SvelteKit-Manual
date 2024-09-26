@@ -73,5 +73,10 @@ export const SVELTE_LIBRARIES_LIST = [
 	{ href: 'https://svelte-materialify.vercel.app/', title: 'Svelte Materialify' },
 	{ href: 'https://svar.dev/svelte/core/', title: 'Svar' },
 	{ href: 'https://daisyui.com/docs/install/', title: 'DaisyUI' },
-	{ href: 'https://tailwindcss.com/', title: 'Tailwind' }
+	{ href: 'https://tailwindcss.com/', title: 'Tailwind' },
+	{ href: 'https://smeltejs.com/', title: 'Smelte' },
+	{ href: 'https://svelte.carbondesignsystem.com/', title: 'Carbon Design System' },
+	{ href: 'https://melt-ui.com/', title: 'Melt UI' },
+	{ href: 'https://illright.github.io/attractions/docs', title: 'Attractions' },
+	{ href: 'https://www.skeleton.dev/', title: 'Skeleton' }
 ];
