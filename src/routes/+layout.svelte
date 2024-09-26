@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'highlight.js/styles/base16/dracula.css';
 	import '../app.css';
 	import Navbar from '$lib/components/ui/navbar/Navbar.svelte';
 </script>
