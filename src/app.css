@@ -115,7 +115,7 @@ input {
 
 div:not(.code_wrapper) code:not(.language-svelte) {
     background-color: #f4f4f4;
-    padding: 0.5rem;
+    padding: 0.25rem 0.5rem;
     margin: 0.125rem;
     border-radius: 5px;
 }

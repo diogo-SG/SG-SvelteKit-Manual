@@ -2,7 +2,8 @@ export const CODE_EXAMPLES = {
 	handleHook1: `
     export async function handle({ event, resolve }) {
         return await resolve(event);
-    }`,
+    }
+		`,
 
 	handleHook2: `
     export async function handle({ event, resolve }) {
@@ -15,7 +16,8 @@ export const CODE_EXAMPLES = {
                 }
                 : {}
         );
-    }`,
+    }
+		`,
 
 	handleHook3: `
     export async function handle({ event, resolve }) {
@@ -26,25 +28,29 @@ export const CODE_EXAMPLES = {
         }
 
         return await resolve(event);
-    }`,
+    }
+		`,
 
 	handleEventLocals1: `
     export async function handle({ event, resolve }) {
         event.locals.greatPlaceToWork = "Studio Graphene";
         return await resolve(event);
-    }`,
+    }
+		`,
 
 	handleEventLocals2: `
     export function load(event) {
         return {
             message: \`\${event.locals.greatPlaceToWork} is a great place to work!\`
         };
-    }`,
+    }
+		`,
 
 	handleFetch1: `
     export async function handleFetch({ event, request, fetch }) {
         return await fetch(request);
-    }`,
+    }
+		`,
 
 	handleFetch2: `
     export async function handleFetch({ event, request, fetch }) {
@@ -54,11 +60,13 @@ export const CODE_EXAMPLES = {
         }
 
         return await fetch(request);
-    }`,
+    }
+		`,
 	handleError1: `
     export function handleError({ event, error }) {
-	console.error(error.stack);
-}`
+		console.error(error.stack);
+	}
+	`
 };
 
 export const REQUEST_EVENT_ITEMS = [
