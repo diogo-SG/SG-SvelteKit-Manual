@@ -25,7 +25,7 @@
 <h2>Page store</h2>
 
 <p>
-	The page store is probably the most often use, and provides (you've guessed it)
+	The page store is likely the most frequently used and, as you might expect, provides
 	information about the current page:
 </p>
 <ul>
