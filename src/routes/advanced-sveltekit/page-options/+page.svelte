@@ -54,7 +54,7 @@
 
 <h2>CSR</h2>
 <p>
-	CSR or client-side rendering is what makes our page interactive, and allows Sveltekit to
+	CSR or client-side rendering is what makes our page interactive, and allows SvelteKit to
 	update the page on navigation without a full page reload. We can also disable this
 	altogether by adding <code>export const csr = false;</code>
 	to a

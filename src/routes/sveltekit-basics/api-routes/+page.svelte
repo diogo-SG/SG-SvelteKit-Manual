@@ -62,7 +62,7 @@
 	<AccordionItem>
 		<span slot="header">POST & other handlers</span>
 		<p>
-			We can also add handlers that mutate data, like POST, though the Sveltekit team
+			We can also add handlers that mutate data, like POST, though the SvelteKit team
 			recommends using form actions instead in most cases, since they require less code to
 			be written and can work without Javascript, which makes them more resilient. Here's
 			an example of a simple POST route which receives a number and returns it doubled
@@ -79,7 +79,7 @@
 </Accordion>
 
 <p>
-	You can read the full Sveltekit documentation for <code>+server</code>
+	You can read the full SvelteKit documentation for <code>+server</code>
 	files and API routes <Link href="https://kit.svelte.dev/docs/routing#server">here</Link>
 </p>
 

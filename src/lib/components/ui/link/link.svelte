@@ -3,7 +3,12 @@
 	export let href: string = '';
 </script>
 
-<a class="link" class:extraClasses {href}>
+<a
+	class="link"
+	target="_blank"
+	rel="noopener noreferrer"
+	class:extraClasses
+	{href}>
 	<slot></slot>
 </a>
 

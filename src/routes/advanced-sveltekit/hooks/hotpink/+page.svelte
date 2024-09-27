@@ -27,7 +27,7 @@
 	</p>
 	<p>
 		In fact, if you reached this page via an internal link from another page, the
-		background would be normal, because Sveltekit would be using client-side rendering and
+		background would be normal, because SvelteKit would be using client-side rendering and
 		acting as a Single Page Application.
 	</p>
 </div>

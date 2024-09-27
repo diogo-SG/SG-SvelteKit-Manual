@@ -8,7 +8,7 @@
 
 <h1>Extra info and resources</h1>
 
-<h2>Advantages and disadvantages of Svelte / Sveltekit</h2>
+<h2>Advantages and disadvantages of Svelte / SvelteKit</h2>
 
 <p>
 	Svelte is a great choice for building web applications, but it's not perfect. Let's go
