@@ -1,12 +1,8 @@
 <script lang="ts">
 	import Link from '$lib/components/ui/link/link.svelte';
 	import { LIST_ITEMS, CODE_EXAMPLES } from './constants';
-
 	import { page } from '$app/stores';
-	import { Accordion } from '$lib/components/ui/accordion';
-	import AccordionItem from '$lib/components/ui/accordion/accordion-item.svelte';
-	import AccordionTrigger from '$lib/components/ui/accordion/accordion-trigger.svelte';
-	import AccordionContent from '$lib/components/ui/accordion/accordion-content.svelte';
+	import { AccordionItem, Accordion } from 'flowbite-svelte';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 </script>
 
@@ -52,17 +48,15 @@
 	with <code>$</code>
 	.
 </p>
-<Accordion>
-	<AccordionItem value="example">
-		<AccordionTrigger>Example</AccordionTrigger>
-		<AccordionContent>
-			<p>This is the current url!</p>
-			<code>{$page.url.pathname}</code>
+<Accordion flush>
+	<AccordionItem>
+		<span slot="header">Example</span>
+		<p>This is the current url!</p>
+		<code>{$page.url.pathname}</code>
 
-			<CodeWrapper
-				headerText="+page.svelte"
-				code={CODE_EXAMPLES.REFERENCING_PAGE} />
-		</AccordionContent>
+		<CodeWrapper
+			headerText="+page.svelte"
+			code={CODE_EXAMPLES.REFERENCING_PAGE} />
 	</AccordionItem>
 </Accordion>
 
