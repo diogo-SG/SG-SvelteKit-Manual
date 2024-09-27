@@ -115,30 +115,29 @@ To try this out, paste in this link into your browser:
 
 <h2>handleFetch</h2>
 
-<p>
-	The <code>event</code>
-	object has a
-	<code>fetch</code>
-	method which behaves like the standard
-	<Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">fetch api</Link>
-	but with some additional features.
-</p>
 <ul>
+	<p>
+		The <code>event</code>
+		object includes a
+		<code>fetch</code>
+		method that works like the standard
+		<Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">
+			fetch API
+		</Link>, but with added functionality:
+	</p>
 	<li>
-		It can be used to make credentialed requests on the server, since it inherits the <code>
-			cookie
-		</code>
+		- It can make credentialed requests on the server, inheriting <code>cookie</code>
 		and
 		<code>authorization</code>
 		headers from the incoming request.
 	</li>
 	<li>
-		It can make relative requests on the server (usually, fetch requires a URL with an
-		origin when used in a server context).
+		- Allows relative requests on the server, without needing a full URL with an origin.
 	</li>
 	<li>
-		Internal requests (like for +server.ts routes) go directly to the handler function
-		when running on the server, skipping having to do a HTTP call.
+		- Internal requests (such as for <code>+server.ts</code>
+		routes) directly call the handler function on the server, bypassing the need for an HTTP
+		request.
 	</li>
 </ul>
 
@@ -163,11 +162,12 @@ To try this out, paste in this link into your browser:
 	code={CODE_EXAMPLES.handleFetch2} />
 
 <p>
-	<code>event.fetch</code>
-	can also be called in the browser (which will be covered later), and in that scenario you
-	could also use
+	The <code>event.fetch</code>
+	can also be called in the browser (which will be covered later). In that scenario you could
+	also use
 	<code>handleFetch</code>
-	to redirect requests to a public URL to an internal one when running on the server.
+	if you have requests to a public URL that should be redirected to an internal URL when running
+	on the server.
 </p>
 
 <h2>handleError</h2>
