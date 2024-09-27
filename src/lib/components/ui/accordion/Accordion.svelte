@@ -5,8 +5,8 @@
 </script>
 
 <Accordion flush>
-	{#each data as { header, content, code, headerText }}
-		<AccordionItem>
+	{#each data as { open, header, content, code, headerText }}
+		<AccordionItem {open}>
 			<span slot="header">{header}</span>
 			<p>{content}</p>
 			<CodeWrapper
