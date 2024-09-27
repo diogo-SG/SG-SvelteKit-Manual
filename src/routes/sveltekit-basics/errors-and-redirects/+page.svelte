@@ -8,7 +8,7 @@
 <h1>Errors and redirects</h1>
 
 <p>
-	Sveltekit defines two types of errors: <i>expected errors</i>
+	SvelteKit defines two types of errors: <i>expected errors</i>
 	and
 	<i>unexpected errors</i>
 	.
@@ -24,8 +24,9 @@
 	<code>error</code>
 	property of the
 	<code>load</code>
-	function in your +page.server.ts file. This will display the error message to the user in
-	the page.
+	function in your
+	<code>+page.server.ts</code>
+	file. This will display the error message to the user in the page.
 </p>
 
 <h3>Example</h3>
@@ -53,8 +54,7 @@
 <h2>Customizing error pages</h2>
 We can customize error pages by creating a +error.svelte component. If placed in the root routes
 directory, it will be used for all errors. If placed in a specific route directory, it will
-be used for errors in that route. for all errors. If placed in a specific route directory,
-it will be used for errors in that route.
+be used for all errors in that route.
 
 <CodeWrapper
 	headerText="/custom-error-page/+error.svelte"
@@ -64,21 +64,23 @@ it will be used for errors in that route.
 
 <h2>Fallback errors</h2>
 <p>
-	If things to really wrong, like errors occurring when loading the root layout data or
-	when rendering the error page, Sveltekit will fall back to a static error page. We can
+	If things go really wrong, like errors occurring when loading the root layout data or
+	when rendering the error page, SvelteKit will fall back to a static error page. We can
 	customize this page by creating a <code>error.html</code>
-	file in the src directory.
+	file in the
+	<code>src</code>
+	directory.
 </p>
 
-<b>This file can include the following tags:</b>
 <ul>
+	<p class="font-bold">This file can include the following tags:</p>
 	<li>
 		<code>%sveltekit.status%</code>
-		- the HTTP status code
+		- the HTTP status code;
 	</li>
 	<li>
 		<code>%sveltekit.error.message%</code>
-		- the error message
+		- the error message.
 	</li>
 </ul>
 
@@ -88,9 +90,11 @@ it will be used for errors in that route.
 
 <h2>Redirects</h2>
 <p>
-	Sveltekit also allows us to use the throw mechanism to redirect one page to another. You
-	can throw redirect(...) in the load function, form actions, API routes and the handle
-	hook (which will be discussed later).
+	SvelteKit also allows us to use the <em>throw</em>
+	mechanism to redirect one page to another. You can throw
+	<em>redirect(...)</em>
+	in the load function, form actions, API routes and the handle hook (which will be discussed
+	later).
 </p>
 
 <CodeWrapper

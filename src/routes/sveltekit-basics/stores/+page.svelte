@@ -6,11 +6,11 @@
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 </script>
 
-<h1>Sveltekit stores</h1>
+<h1>SvelteKit stores</h1>
 
 <p>
-	Like in Svelte, you can use stores in SvelteKit to share state between components.
-	SvelteKit provides three readonly stores via the <code>$app/stores</code>
+	Like in Svelte, you can use stores to share state between components. SvelteKit provides
+	three readonly stores via the <code>$app/stores</code>
 	module:
 </p>
 <ul>
@@ -22,9 +22,7 @@
 	{/each}
 </ul>
 
-<h2>
-	<code>The page store</code>
-</h2>
+<h2>Page store</h2>
 
 <p>
 	The page store is probably the most often use, and provides (you've guessed it)
@@ -60,7 +58,7 @@
 	</AccordionItem>
 </Accordion>
 
-<h2>The navigating store</h2>
+<h2>Navigating store</h2>
 <p>
 	The navigating store represents the current navigation. When a navigation starts, due to
 	a link click, a back/forward navigation, or a programatting goto, the value of <code>
@@ -93,7 +91,7 @@
 	</li>
 </ul>
 
-<h2>The updated store</h2>
+<h2>Updated store</h2>
 <p>
 	The updated store contains true or false depending on whether a new version of the app
 	has been deployed since the page was first opened. For this to work, your

@@ -5,7 +5,7 @@ export const LIST_ITEMS = {
 			desc: 'contains information about the current page.'
 		},
 		{
-			title: 'navigation',
+			title: 'navigating',
 			desc: 'contains information about the current navigation.'
 		},
 		{

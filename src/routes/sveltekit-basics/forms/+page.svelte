@@ -224,18 +224,18 @@
 <h3>Progressive enhancement</h3>
 
 <p>
-	Since Sveltekit uses the native html form component to build these actions, in many
+	Since SvelteKit uses the native html form component to build these actions, in many
 	cases they work without client-side javascript. This can be very convenient at times,
-	and Sveltekit also makes it possible to progressively enhance the form interactions. In
+	and SvelteKit also makes it possible to progressively enhance the form interactions. In
 	other words, to not use JS at first, but to enable certain behaviours when it does
 	become available. You can read more about that <a
 		href="https://kit.svelte.dev/docs/form-actions#progressive-enhancement">
-		in the Sveltekit documentation
+		in the SvelteKit documentation
 	</a>
 	, but very quickly, you can enable this by adding the
 	<code>use:enhance</code>
 	directive to the form element. You can also read the full documentation about Form Actions
-	in Sveltekit <Link href="https://kit.svelte.dev/docs/form-actions">here</Link>.
+	in SvelteKit <Link href="https://kit.svelte.dev/docs/form-actions">here</Link>.
 </p>
 
 <style>

@@ -7,10 +7,10 @@
 	import { CODE_EXAMPLES, REQUEST_EVENT_ITEMS } from './constants';
 </script>
 
-<h1>Sveltekit hooks</h1>
+<h1>SvelteKit hooks</h1>
 
 <p>
-	Sveltekit provides several hooks, which are ways to intercept and modify the default
+	SvelteKit provides several hooks, which are ways to intercept and modify the default
 	behaviour of the framework. You can use hooks to add custom behaviour to your
 	application, by writing them in the <code>src/hook.server.ts</code>
 	file.
