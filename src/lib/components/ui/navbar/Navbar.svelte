@@ -28,12 +28,12 @@
 		{#each NAVBAR as { href, label, modules }}
 			{#if modules}
 				<NavLi
-					class={`${activeUrl.includes(label.toLowerCase().replaceAll(' ', '-')) ? 'text-primary-700' : ''} cursor-pointer`}>
+					class={`${activeUrl.includes(label.toLowerCase().replaceAll(' ', '-')) ? 'text-primary-700' : ''} relative cursor-pointer`}>
 					{label}
 					<ChevronDownOutline
 						class={`ms-2 inline h-6 w-6 text-primary-800 dark:text-white`} />
 				</NavLi>
-				<Dropdown class="z-20 w-44">
+				<Dropdown class="absolute z-20 w-44 rounded-lg bg-background">
 					{#each modules as { path, label }}
 						<DropdownItem
 							class={`${activeUrl.includes(label.toLowerCase().replaceAll(' ', '-')) ? 'bg-gray-50 text-primary-700' : ''}`}
