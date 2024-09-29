@@ -7,17 +7,17 @@
 </script>
 
 <div class="flex w-full justify-between border-b px-3 pb-1">
-	{#if prevPage && prevPage.title}
-		<div>
+	<div class="mw-1/4 text-left">
+		{#if prevPage && prevPage.title}
 			<Link href={prevPage.link}>
 				« Previous: {prevPage?.title}
 			</Link>
-		</div>
-	{/if}
-	<div class="font-bold">{currentRouteTitle}</div>
-	{#if nextPage && nextPage.title}
-		<div>
+		{/if}
+	</div>
+	<div class="w-2/4 text-center font-bold">{currentRouteTitle}</div>
+	<div class="w-1/4 text-right">
+		{#if nextPage && nextPage.title}
 			<Link href={nextPage.link}>Next: {nextPage.title} »</Link>
-		</div>
-	{/if}
+		{/if}
+	</div>
 </div>
