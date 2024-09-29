@@ -1,16 +1,6 @@
 <script lang="ts">
-	import { AccordionItem, Accordion } from 'flowbite-svelte';
-	import Link from '$lib/components/ui/link/link.svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import {
-		actionExampleCode,
-		actionExampleCode2,
-		actionExampleCode3
-	} from './example-code.js';
-	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-
-	export let form;
-	$: console.log(form);
+	import Link from '$lib/components/ui/link/link.svelte';
 </script>
 
 <h1>Forms</h1>
@@ -21,270 +11,100 @@
 	data in SvelteKit.
 </p>
 
-<h3>Basic forms</h3>
+<h2>Basic forms</h2>
 
-<Accordion flush>
-	<AccordionItem open>
-		<span slot="header">Example</span>
-		<form
-			method="POST"
-			action="?/search">
-			<label>Search for a movie:</label>
-			<input
-				name="movieTitle"
-				type="text"
-				placeholder="Enter a movie title" />
-			<Button type="submit">Search</Button>
-		</form>
-
-		{#if form?.searchResults}
-			<h2>Search results</h2>
-			<div class="results">
-				{#each form.searchResults as result}
-					<div class="search-result">
-						<p class="movie-title">{result.title}</p>
-						<p>
-							<b>Year:</b>
-							{result.year}
-						</p>
-						<p>
-							<b>Rating:</b>
-							{result.rating}
-						</p>
-						<p>
-							<b>Plot:</b>
-							{result.plot}
-						</p>
-					</div>
-				{/each}
-			</div>
-		{/if}
-	</AccordionItem>
-	<AccordionItem>
-		<span slot="header">Explanation</span>
-		<div>
-			<p>
-				A Svelte form is just like a regular HTML form. When we define its method as POST,
-				it'll make a post request to the current page. We can then create a server-side <code>
-					action
-				</code>
-				to handle the form submission. Here's the code in +page.server.ts for the form above:
-			</p>
-
-			<CodeWrapper
-				headerText="+page.server.ts"
-				code={actionExampleCode} />
-
-			<p class="mt-5">
-				The request here is a standard <Link
-					href="https://developer.mozilla.org/en-US/docs/Web/API/Request">
-					Request
-				</Link>
-				object, and
-				<code>await request.formData()</code>
-				returns a
-				<Link href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">
-					FormData
-				</Link> instance.
-			</p>
-		</div>
-	</AccordionItem>
-</Accordion>
-
-<h3>Multiple actions</h3>
 <p>
-	We can also handle multiple actions by naming them. Let's add a "Get all" button to the
-	form above:
+	A Svelte form is just like a regular HTML form. When we define its method as POST, it'll
+	make a post request to the current page. We can then create a server-side <code>
+		action
+	</code>
+	to handle the form submission. Here's an example of a basic form in SvelteKit:
+</p>
+<Link href="./forms/basic">Movie search example</Link>
+<p class="mt-5">
+	The request here is a standard <Link
+		href="https://developer.mozilla.org/en-US/docs/Web/API/Request">
+		Request
+	</Link>
+	object, and
+	<code>await request.formData()</code>
+	returns a
+	<Link href="https://developer.mozilla.org/en-US/docs/Web/API/FormData">FormData</Link> instance.
 </p>
 
-<Accordion flush>
-	<AccordionItem open>
-		<span slot="header">Example</span>
-		<form
-			method="POST"
-			action="?/search">
-			<label>Search for a movie:</label>
-			<input
-				name="movieTitle"
-				type="text"
-				placeholder="Enter a movie title" />
-			<Button type="submit">Search</Button>
-		</form>
+<h2>Multiple actions</h2>
+<p>
+	We can also handle multiple actions by naming them. For example, if we want to add a
+	"Get all" button to the previous example, we can do it by specifying another action in
+	the actions exported in <code>+page.server.ts</code>
+	file, and specifying which action to use in the form itself by using
+	<code>{'<form method="POST" action="?/search"></form>'}</code>
+	. Have a look at the example below to see the code and the results:
+</p>
 
-		<form
-			method="POST"
-			action="?/getAll">
-			<Button
-				type="submit"
-				name="getAll">
-				Get all
-			</Button>
-		</form>
+<Link href="./forms/multiple">Get all movies example</Link>
 
-		{#if form?.searchResults}
-			<h2>Search results</h2>
-			<div class="results">
-				{#each form.searchResults as result}
-					<div class="search-result">
-						<p class="movie-title">{result.title}</p>
-						<p>
-							<b>Year:</b>
-							{result.year}
-						</p>
-						<p>
-							<b>Rating:</b>
-							{result.rating}
-						</p>
-						<p>
-							<b>Plot:</b>
-							{result.plot}
-						</p>
-					</div>
-				{/each}
-			</div>
-		{/if}
+<h3>Progressive enhancement</h3>
 
-		{#if form?.movies}
-			<h2>All movies</h2>
-			<div class="results">
-				{#each form.movies.splice(-12) as movie}
-					<div class="search-result">
-						<p class="movie-title">{movie.title}</p>
-						<p>
-							<b>Year:</b>
-							{movie.year}
-						</p>
-						<p>
-							<b>Rating:</b>
-							{movie.rating}
-						</p>
-						<p>
-							<b>Plot:</b>
-							{movie.plot}
-						</p>
-					</div>
-				{/each}
-			</div>
-		{/if}
-	</AccordionItem>
-	<AccordionItem>
-		<span slot="header">Explanation</span>
-		<p>
-			In the form itself, in the +page.svelte file, we just need to specify the action.
-			For example: <code>{'<form method="POST" action="?/search"></form>'}</code>
-		</p>
-		<p>Then, in the server file, we add a new action as such:</p>
-		<CodeWrapper
-			headerText="+page.server.ts"
-			code={actionExampleCode2} />
-	</AccordionItem>
-</Accordion>
+<p>
+	Since SvelteKit uses the native html form component to build these actions, in most
+	cases they work without client-side javascript, which <Link
+		href="https://www.kryogenix.org/code/browser/everyonehasjs.html">
+		can be much more useful than you'd think.
+	</Link>.
+</p>
+<p>
+	You might have noticed that while running the first example, it triggered a page refresh
+	on form submission. This is because this is the default behaviour of the form html
+	element, and why we often have to prevent that refresh with <Link
+		href="https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault">
+		the preventDefault method
+	</Link> on the click event.
+</p>
+<p>
+	In the second example however, there was no refresh on submit. This is because SvelteKit
+	also makes it possible to progressively enhance the form interactions. In other words,
+	to not use JS at first, but to enable certain behaviours when it does become available.
+	This is done by adding the <code>use:enhance</code>
+	directive to the form html element. This will emulate the browser-native behaviour (with
+	the exception of the full-page reload) and it will:
+</p>
+<ul>
+	<li>
+		update the <code>form prop</code>
+	</li>
+	<li>
+		invalidate all data on a successful response, calling <code>load</code>
+		functions to re-run
+	</li>
+	<li>navigate to a new page on a redirect response</li>
+	<li>render the nearest error page if one occurs</li>
+</ul>
+<p>
+	It's an interesting and powerful feature, and one you can customize further to improve
+	the general form submission experience for users, including things like controlling when
+	the form is reset, handling redirects, etc. You can read more about progressive
+	enhancement by clicking <Link
+		href="https://kit.svelte.dev/docs/form-actions#progressive-enhancement">
+		here
+	</Link>. You can also read the full documentation about Form Actions in SvelteKit <Link
+		href="https://kit.svelte.dev/docs/form-actions">
+		here
+	</Link>.
+</p>
 
-<h3>Form validation</h3>
+<h2>Form validation</h2>
 
 <p>
 	In SvelteKit, we can use the built-in form validation functionality to validate form
 	data. Here's an example of how to validate a form in SvelteKit:
 </p>
 
-<Accordion flush>
-	<AccordionItem open>
-		<span slot="header">Example</span>
-		<form
-			method="POST"
-			action="?/validate">
-			<label>Enter a number between 1 and 9:</label>
-			<input
-				name="number"
-				type="number" />
-			<Button type="submit">Submit</Button>
-		</form>
-		{#if form?.error}
-			<p style="color: red;">{form.error}</p>
-		{/if}
-
-		{#if form?.number}
-			<p>Number entered: {form.number}</p>
-		{/if}
-	</AccordionItem>
-	<AccordionItem>
-		<span slot="header">Explanation</span>
-		<p>
-			To validate the form, we can use the <code>validate</code>
-			function from the
-			<code>kit</code>
-			module. Here's the code in +page.server.ts that handles the validation for the form above:
-		</p>
-		<CodeWrapper
-			headerText="+page.server.ts"
-			code={actionExampleCode3} />
-	</AccordionItem>
-</Accordion>
-
-<h3>Progressive enhancement</h3>
-
 <p>
-	Since SvelteKit uses the native html form component to build these actions, in many
-	cases they work without client-side javascript. This can be very convenient at times,
-	and SvelteKit also makes it possible to progressively enhance the form interactions. In
-	other words, to not use JS at first, but to enable certain behaviours when it does
-	become available. You can read more about that <a
-		href="https://kit.svelte.dev/docs/form-actions#progressive-enhancement">
-		in the SvelteKit documentation
-	</a>
-	, but very quickly, you can enable this by adding the
-	<code>use:enhance</code>
-	directive to the form element. You can also read the full documentation about Form Actions
-	in SvelteKit <Link href="https://kit.svelte.dev/docs/form-actions">here</Link>.
+	To validate the form, we can use the <code>validate</code>
+	function from the
+	<code>kit</code>
+	module. You can check out and example and the code behind it below:
 </p>
 
-<style>
-	form {
-		display: flex;
-		border: 1px solid #ccc;
-		padding: 1rem;
-		flex-direction: column;
-	}
-
-	label {
-		margin-bottom: 0.5rem;
-		font-weight: bold;
-	}
-
-	input {
-		padding: 0.5rem;
-		margin-bottom: 1rem;
-	}
-
-	.results {
-		margin-top: 1rem;
-		display: flex;
-		justify-content: left;
-		flex-wrap: wrap;
-	}
-
-	.movie-title {
-		font-size: 1.5rem;
-		font-weight: bold;
-	}
-
-	.search-result {
-		margin-top: 1rem;
-		border: 1px solid #ccc;
-		padding: 1rem;
-		max-width: 24%;
-		margin-right: 1%;
-	}
-
-	.search-result p {
-		margin-bottom: 0.5rem;
-	}
-
-	.search-result p b {
-		font-weight: bold;
-	}
-
-	.search-result p:last-child {
-		margin-bottom: 0;
-	}
-</style>
+<Link href="./forms/validation">Form validation example</Link>

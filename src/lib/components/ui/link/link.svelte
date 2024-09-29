@@ -5,7 +5,7 @@
 
 <a
 	class="link"
-	target="_blank"
+	target="_self"
 	rel="noopener noreferrer"
 	class:extraClasses
 	{href}>
@@ -20,9 +20,5 @@
 
 	.link:hover {
 		text-decoration: underline;
-	}
-
-	.link.active {
-		color: var(--color-secondary);
 	}
 </style>
