@@ -12,14 +12,19 @@ export const LOAD_FUNCTIONS_PARAMS = [
 	{
 		param: 'fetch',
 		description:
-			'A function which behaves identically to the native fetch API, but with a few additional features. See: https://kit.svelte.dev/docs/load#making-fetch-requests'
+			'A function which behaves identically to the native fetch API, but with a few additional features.',
+		link: '/kit.svelte.dev/docs/load#making-fetch-requestss'
 	},
 	{ param: 'cookies', description: 'Provides getters and setters for cookies' },
 	{
 		param: 'setHeaders',
-		description: 'Sets headers for the response (available when running on the server only)'
+		description:
+			'Sets headers for the response (available when running on the server only)'
 	},
-	{ param: 'parents', description: 'Allows for accessing data from a parent load function' }
+	{
+		param: 'parents',
+		description: 'Allows for accessing data from a parent load function'
+	}
 ];
 
 export const HEADER = {
