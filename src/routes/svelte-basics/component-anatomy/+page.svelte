@@ -69,12 +69,10 @@
 	<code>&#123;@html ...&#125;</code>
 	. This is useful when we want to render HTML code that is dynamically generated.
 </p>
-<br />
 <p>
 	For example, if we have a string with HTML code, we can render it like this:
 	{@html CODE_EXAMPLE.SAMPLE_1}
 </p>
-<br />
 <p>
 	<span class="underline">
 		Svelte doesn't perform any sanitization of the expression before it gets inserted into
@@ -92,7 +90,6 @@
 	</a>
 	package. Click the link to learn more about it.
 </p>
-<br />
 <p>Here's an example of sanitized code using the package mentioned before:</p>
 <div class="flex flex-col items-center bg-[lightgray] p-3">
 	{@html sanitizedHTML}
