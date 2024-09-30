@@ -61,7 +61,8 @@ export const SVELTE_PROS_CONS_LIST = [
 export const SVELTE_RESOURCES_LIST = [
 	{ href: 'https://svelte.dev/', title: 'Official Svelte Website' },
 	{ href: 'https://kit.svelte.dev/', title: 'SvelteKit Documentation' },
-	{ href: 'https://www.sveltesociety.dev/', title: 'Svelte Society' }
+	{ href: 'https://www.sveltesociety.dev/', title: 'Svelte Society' },
+	{ href: 'https://discord.com/invite/svelte', title: 'Svelte Discord channel' }
 ];
 
 export const SVELTE_LIBRARIES_LIST = [

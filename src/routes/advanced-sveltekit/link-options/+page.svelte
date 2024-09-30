@@ -15,16 +15,19 @@
 </p>
 
 <p>
-	For instance, try hovering over the first link for two seconds before clicking it, and
-	contrast with clicking the second one:
+	Try hovering the first link for two seconds before clicking it, and contrast by clicking
+	immediately on the second one:
 </p>
-
-<a
-	href="./link-options/slow-route1"
-	data-sveltekit-preload-data>
-	Slow route with preloading
-</a>
-<a href="./link-options/slow-route2">Slow route without preloading</a>
+<div class="flex justify-center gap-5">
+	<a
+		class="link"
+		href="./link-options/slow-route1"
+		data-sveltekit-preload-data>
+		Slow route with preloading
+	</a>
+	|
+	<Link href="./link-options/slow-route2">Slow route without preloading</Link>
+</div>
 
 <CodeWrapper
 	headerText="+page.svelte"
@@ -119,3 +122,14 @@
 		here
 	</Link>.
 </p>
+
+<style>
+	.link {
+		color: gray;
+		text-decoration: none;
+	}
+
+	.link:hover {
+		text-decoration: underline;
+	}
+</style>
