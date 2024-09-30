@@ -36,6 +36,7 @@
 				<Dropdown class="absolute z-20 w-44 rounded-lg bg-background">
 					{#each modules as { path, label }}
 						<DropdownItem
+							data-sveltekit-reload
 							class={`${activeUrl.includes(path) ? 'bg-gray-50 text-primary-700' : ''}`}
 							href={path}>
 							{label}

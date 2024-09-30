@@ -7,7 +7,7 @@
 </script>
 
 <div class="flex w-full justify-between border-b px-3 pb-1">
-	<div class="mw-1/4 text-left">
+	<div class="w-1/4 text-left">
 		{#if prevPage && prevPage.title}
 			<Link href={prevPage.link}>
 				« Previous: {prevPage?.title}
