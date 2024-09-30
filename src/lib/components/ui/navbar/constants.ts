@@ -51,5 +51,5 @@ export const NAVBAR = [
 			}
 		]
 	},
-	{ href: '/extra-info', label: 'Extra Info' }
+	{ path: '/extra-info', label: 'Extra Info' }
 ];
