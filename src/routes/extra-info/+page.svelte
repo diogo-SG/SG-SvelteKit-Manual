@@ -8,19 +8,17 @@
 
 <h1>Extra info and resources</h1>
 
-<h2>Advantages and disadvantages of Svelte / SvelteKit</h2>
-
 <p>
 	Svelte is a great choice for building web applications, but it's not perfect. Let's go
 	through some of the pros and cons of using Svelte.
 </p>
 
 <ul>
-	<h3>Advantages:</h3>
+	<p class="font-bold">Advantages:</p>
 	{#each SVELTE_PROS_CONS_LIST as { title, isPro, description }}
 		<li>
 			{#if isPro}
-				<strong>{title}</strong>
+				<em>{title}</em>
 				- {description}
 			{/if}
 		</li>
@@ -28,11 +26,11 @@
 </ul>
 
 <ul>
-	<h3>Disadvantages:</h3>
+	<p class="font-bold">Disadvantages:</p>
 	{#each SVELTE_PROS_CONS_LIST as { title, isPro, description }}
 		<li>
 			{#if !isPro}
-				<strong>{title}</strong>
+				<em>{title}</em>
 				- {description}
 			{/if}
 		</li>

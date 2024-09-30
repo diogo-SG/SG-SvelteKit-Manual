@@ -14,18 +14,16 @@
 	<code>+layout.server.ts</code>
 	files, which is very convenient for getting data directly from a database or reading cookies.
 	But sometimes it doesn't make sense to load data from the server when doing a client-side
-	navigation. For example:
+	navigation.
 </p>
 
 <ul>
-	<li>When loading data from an external API;</li>
-	<li>If we want to use in-memory data if it's available;</li>
+	<p class="font-bold">Here's a small list of the most common use cases:</p>
+	<li>- When loading data from an external API;</li>
+	<li>- If we want to use in-memory data if it's available;</li>
+	<li>- Delay navigation until an image has been preloaded, to avoid pop-in;</li>
 	<li>
-		If we want to delay navigation until an image has been preloaded, to avoid pop-in;
-	</li>
-	<li>
-		If we need to return something from load that can't be serialized, like a component or
-		a store.
+		- Return something from load that can't be serialized, like a component or a store.
 	</li>
 </ul>
 
@@ -40,8 +38,8 @@
 	<code>+layout.server.ts</code>
 	to
 	<code>+layout.ts</code>
-	. For example, here's how we can use a universal load function to fetch the very first example
-	component we've made and return it to this page:
+	. Here's how we can use a universal load function to fetch the very first example component
+	we've made and return it to this page:
 </p>
 
 <CodeWrapper
@@ -79,11 +77,12 @@
 	<code>+layout.svelte</code>
 	files can access everything that's returned from their parent
 	<code>load</code>
-	functions. And sometimes, we want the
+	functions. Sometimes we want the
 	<code>load</code>
-	functions themselves to be able to access the data from their parents, which we can do with
+	functions to be able to access the data from their parents themselves, which it's possible
+	to do with
 	<code>await parent()</code>
-	. For example:
+	. Here's an example:
 </p>
 
 <CodeWrapper
@@ -97,10 +96,14 @@
 <Link href="./advanced-loading/joke">Go to the joke page</Link>
 
 <p>
-	Keep in mind though that while a universal load function can get data from a parent
-	server <code>load</code>
-	function, the reverse is not true - a server load function can only get data from their parent
-	server load functions.
+	While a universal <code>load</code>
+	function can access data from a parent server
+	<code>load</code>
+	function, the reverse is not possible. A server
+	<code>load</code>
+	function can only retrieve data from its parent server
+	<code>load</code>
+	functions.
 </p>
 
 <h2>Invalidation</h2>
@@ -109,9 +112,9 @@
 	functions, but only if it thinks something has changed. If we need to force a reload, we
 	can use the
 	<code>invalidate(...)</code>
-	function, which takes a URL and re-runs any
+	method, which takes an URL and re-runs any
 	<code>load</code>
-	functions that depend on it. Here's an example that invalidates an API endpoint every second:
+	functions that depend on it. Here's an example that invalidates an API endpoint every 5 seconds:
 </p>
 
 <CodeWrapper
@@ -119,11 +122,14 @@
 	code={CODE_EXAMPLES.invalidate} />
 
 <p>
-	You can also pass a function to invalidate if you want to do it based on a pattern, and
-	not specific URLs, and even specify custom dependencies for the invalidation (see an
-	example <Link href="https://learn.svelte.dev/tutorial/custom-dependencies">here</Link>).
-	You can also tell SvelteKit to indiscriminately invalidate all load functions for the
-	current page, regardless of dependencies, with
+	You can even pass a function to the <code>invalidate</code>
+	, in case you want to do it based on a pattern instead of specific URLs. It's also possible
+	to specify custom dependencies for the invalidation (see an example <Link
+		href="https://learn.svelte.dev/tutorial/custom-dependencies">
+		here
+	</Link>). SvelteKit also has a built-in
 	<code>invalidateAll()</code>
-	.
+	method that invalidates all the
+	<code>load</code>
+	functions on the current page.
 </p>
