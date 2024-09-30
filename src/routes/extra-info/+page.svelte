@@ -1,4 +1,5 @@
 <script>
+	import Link from '$lib/components/ui/link/link.svelte';
 	import {
 		SVELTE_LIBRARIES_LIST,
 		SVELTE_PROS_CONS_LIST,
@@ -41,13 +42,7 @@
 	<h3>Official resources:</h3>
 	{#each SVELTE_RESOURCES_LIST as { href, title }}
 		<li>
-			<a
-				{href}
-				class="text-[blue] underline"
-				target="_blank"
-				rel="noopener noreferrer">
-				{title}
-			</a>
+			<Link {href}>{title}</Link>
 		</li>
 	{/each}
 </ul>
@@ -56,13 +51,7 @@
 	<h3>Component libraries</h3>
 	{#each SVELTE_LIBRARIES_LIST as { href, title }}
 		<li>
-			<a
-				{href}
-				class="text-[blue] underline"
-				target="_blank"
-				rel="noopener noreferrer">
-				{title}
-			</a>
+			<Link {href}>{title}</Link>
 		</li>
 	{/each}
 </ul>

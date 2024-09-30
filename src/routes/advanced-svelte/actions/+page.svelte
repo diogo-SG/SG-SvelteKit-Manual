@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Link from '$lib/components/ui/link/link.svelte';
 	import { CODE, COMMON_CASES_LIST } from './constants';
 	const headerText = 'App.svelte';
 	const href = 'https://github.com/swyxio/svelte-actions?tab=readme-ov-file#readme';
@@ -37,12 +38,6 @@ Here's a simple example that fades-in an element when it is created:
 <p>
 	Svelte actions are a very powerful feature that allows you to interact with the DOM in a
 	very simple way. If you want to check some examples and how you can apply them in your
-	future Svelte project, click <a
-		class="text-[blue] underline"
-		{href}
-		target="_blank"
-		rel="noopener noreferrer">
-		here
-	</a>
+	future Svelte project, click <Link {href}>here</Link>
 	.
 </p>

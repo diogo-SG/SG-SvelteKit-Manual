@@ -2,6 +2,7 @@
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import { Code } from 'lucide-svelte';
 	import { CODE, TRANSITION_FUNCTION_LIST } from './constants';
+	import Link from '$lib/components/ui/link/link.svelte';
 
 	const href = 'https://svelte.dev/docs/svelte-transition';
 	const fileTitle = 'App.svelte';
@@ -96,11 +97,7 @@
 	The
 	<code>svelte/transition</code>
 	module has a handful of built-in transitions. We recommend that you check all of them
-	<a
-		{href}
-		class="text-[blue] underline">
-		here.
-	</a>
+	<Link {href}>here</Link>.
 </p>
 
 <h2>Custom transitions</h2>
