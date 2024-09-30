@@ -47,11 +47,11 @@
 	</li>
 	<li>
 		<code>tap</code>
-		- only begin preloading on tap
+		- only begin preloading on tap.
 	</li>
 	<li>
 		<code>off</code>
-		- disable preloading
+		- disable preloading.
 	</li>
 </ul>
 
@@ -70,11 +70,11 @@
 	</li>
 	<li>
 		<code>viewport</code>
-		- preload everything as it appears in the viewport
+		- preload everything as it appears in the viewport.
 	</li>
 	<li>
 		<code>hover</code>
-		- default, same as with the first preload attribute above
+		- default, same as with the first preload attribute above.
 	</li>
 	<li>
 		<code>tap</code>

@@ -64,7 +64,7 @@
 		<p>
 			We can also add handlers that mutate data, like POST, though the SvelteKit team
 			recommends using form actions instead in most cases, since they require less code to
-			be written and can work without Javascript, which makes them more resilient. Here's
+			be written and can work without JavaScript, which makes them more resilient. Here's
 			an example of a simple POST route which receives a number and returns it doubled
 			(yes, incredibly useful):
 		</p>

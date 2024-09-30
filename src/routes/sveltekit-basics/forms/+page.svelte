@@ -48,7 +48,7 @@
 
 <p>
 	Since SvelteKit uses the native html form component to build these actions, in most
-	cases they work without client-side javascript, which <Link
+	cases they work without client-side JavaScript, which <Link
 		href="https://www.kryogenix.org/code/browser/everyonehasjs.html">
 		can be much more useful than you'd think.
 	</Link>.
