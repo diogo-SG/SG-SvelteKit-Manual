@@ -106,6 +106,15 @@
 	functions.
 </p>
 
+<p>
+	For a slightly more intricate example, have a look at the code for the breadcrumbs on
+	every section of this guide!
+</p>
+<ul>
+	<li><code>src/routes/+layout.server.ts</code></li>
+	<li><code>src/routes/advanced-sveltekit/+layout.ts</code></li>
+</ul>
+
 <h2>Invalidation</h2>
 <p>
 	When users navigate from one page to another, SvelteKit calls our <code>load</code>

@@ -38,7 +38,7 @@ export const CODE = {
 	`,
 	MULTI_SELECT: `
 	<script>
-		let selectedOptions = [];
+		let selectedOptions: number[] = [];
 	</script>
 
 		<select multiple bind:value={selectedOptions}>
