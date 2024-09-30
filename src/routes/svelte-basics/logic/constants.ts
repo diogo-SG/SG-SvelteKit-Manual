@@ -24,6 +24,10 @@ export const CODE = {
 	<p>{item}</p>
 {/each}
 `,
+	EACH_DESTRUCTURING: `
+{#each array as { id, name }}
+	<p>{id}: {name}</p>
+{/each}`,
 	KEYED_EACH: `
 {#each array as item, i}
 	<p>{i}: {item}</p>
