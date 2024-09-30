@@ -59,8 +59,8 @@
 	altogether by adding <code>export const csr = false;</code>
 	to a
 	<code>+page/layout.server.ts</code>
-	file. This will result in no client-side JavaScript being sent to the browser, which can
-	be useful to test if our application is useful for people who for whatever reason cannot
+	file. This ensures that no client-side JavaScript is sent to the browser, which can be helpful
+	for testing whether the application remains functional for users who, for any reason, cannot
 	use JavaScript.
 </p>
 
@@ -72,16 +72,17 @@
 	</code>
 	to a
 	<code>+page/layout.server.ts</code>
-	file. This is useful for SEO, performance, and accessibility, as it allows us to serve our
-	pages faster and to users who have JavaScript disabled. However, as a tradeoff, it means
-	the build process will take longer, and prerendered pages can only be updated by building
-	a deploying a new version of our app.
+	file. This improves SEO, performance and accessibility by allowing us to serve pages faster
+	and support users with JavaScript disabled. However, the tradeoff is a longer build process
+	and prerendered pages can only be updated by building and deploying a new version of the
+	app.
 </p>
 
 <p>
-	Keep in mind that for pages to be prerenderable, any two users visiting them directly
-	must get the same content from the server, and the page must not contain any form
-	actions.
+	Keep in mind that for pages to be prerenderable, <span class="underline">
+		any two users visiting them directly must get the same content from the server and the
+		page must not contain any form actions.
+	</span>
 </p>
 
 <p>

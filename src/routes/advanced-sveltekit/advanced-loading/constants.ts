@@ -43,11 +43,12 @@ export const CODE_EXAMPLES = {
         onMount(() => {
             const interval = setInterval(() => {
                 invalidate('/api/now');
-            }, 1000);
+            }, 5000);
 
             return () => {
                 clearInterval(interval);
             };
         });
-    </script>`
+    </script>
+    `
 };
