@@ -16,14 +16,19 @@
 	will match any locale, like a route parameter normally would.
 </p>
 
-<CodeWrapper
-	headerText="advanced-routing/optional-params/[[lang]]/+page.server.ts"
-	code={CODE_EXAMPLES.optionalRouteParams} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="advanced-routing/optional-params/[[lang]]/+page.server.ts"
+		code={CODE_EXAMPLES.optionalRouteParams} />
+</div>
 
-<Link href="./advanced-routing/optional-params/">Go to /[[lang]] page</Link>
-<Link href="./advanced-routing/optional-params/en/">Go to /en page</Link>
-<Link href="./advanced-routing/optional-params/pt/">Go to /pt page</Link>
-<Link href="./advanced-routing/optional-params/hi/">Go to /hi page</Link>
+<div class="flex justify-center gap-3">
+	<Link href="./advanced-routing/optional-params/">Go to /[[lang]] page</Link> |
+	<Link href="./advanced-routing/optional-params/en/">Go to /en page</Link> |
+	<Link href="./advanced-routing/optional-params/pt/">Go to /pt page</Link> |
+	<Link href="./advanced-routing/optional-params/hi/">Go to /hi page</Link>
+</div>
 
 <h2>Rest parameters</h2>
 <p>
@@ -52,39 +57,34 @@
 	<code>matcher.ts</code>
 	in the
 	<code>src/params</code>
-	directory. For example:
+	directory.
 </p>
 
-<CodeWrapper
-	headerText="src/params/[color=hex].ts"
-	code={CODE_EXAMPLES.paramMatchers} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/params/[color=hex].ts"
+		code={CODE_EXAMPLES.paramMatchers} />
+</div>
 
 <p>
 	Now whenever someone navigates to these routes, SvelteKit will first check if the color
 	is a valid <code>hex</code>
 	value. If it isn't, it'll try to match other hardcoded routes, and if none can be found it'll
 	return a 404. Also useful to keep in mind is that matchers run on both the server and in
-	the browser. Click on the links below to see the different results:
+	the browser. Click on the links below to see the different results.
 </p>
 
-<ul>
-	<li>
-		- <Link href="./advanced-routing/colors/ff0000">
-			<code>/color/ff0000</code>
-		</Link>
-	</li>
-	<li>
-		- <Link href="./advanced-routing/colors/123456"><code>/color/123456</code></Link>
-	</li>
-	<li>
-		- <Link href="./advanced-routing/colors/abcdef"><code>/color/abcdef</code></Link>
-	</li>
-	<li>
-		- <Link href="./advanced-routing/colors/ghijkl">
-			<code>/color/ghijkl</code>
-		</Link>(404 page)
-	</li>
-</ul>
+<div class="flex items-center justify-center gap-3">
+	<Link href="./advanced-routing/colors/ff0000">
+		<code>/color/ff0000</code>
+	</Link> |
+	<Link href="./advanced-routing/colors/123456"><code>/color/123456</code></Link> |
+	<Link href="./advanced-routing/colors/abcdef"><code>/color/abcdef</code></Link> |
+	<Link href="./advanced-routing/colors/ghijkl">
+		<code>/color/ghijkl</code>
+	</Link>
+</div>
 
 <h2>Route groups</h2>
 <p>
@@ -99,9 +99,12 @@
 	to those restricted pages by using a layout.
 </p>
 
-<CodeWrapper
-	headerText="src/routes/(restricted)/account-settings/+page.svelte"
-	code={CODE_EXAMPLES.routeGroupsLayout} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/routes/(restricted)/account-settings/+page.svelte"
+		code={CODE_EXAMPLES.routeGroupsLayout} />
+</div>
 
 <p>
 	Go to <Link href="./advanced-routing/account-settings">
@@ -118,23 +121,18 @@
 	<code>/a/</code>
 	and
 	<code>/b/</code>
-	.
-</p>
-
-<p>
-	If we want to break out of the current layout hierarchy, we can do that by adding the <code>
-		@
-	</code>
+	. If we want to break out of the current layout hierarchy, we can do that by adding the
+	<code>@</code>
 	sign in the page's file name, followed by the name of the parent route segment to reset to.
-	For example:
 </p>
 
 <ul>
+	<p>For example:</p>
 	<li>
 		<code>+page@a.svelte</code>
 		- this makes the route use the layouts in the root and in
 		<code>/a/</code>
-		directory.
+		directory;
 	</li>
 	<li>
 		<code>+page@.svelte</code>
@@ -142,9 +140,13 @@
 	</li>
 </ul>
 
-<p>
-	Keep in mind
-	<span class="underline">
-		that the root layout applies to every page in our app and it cannot be broken out of.
-	</span>
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		Keep in mind
+		<span class="underline">
+			that the root layout applies to every page in our app and it cannot be broken out
+			of.
+		</span>
+	</p>
+</div>

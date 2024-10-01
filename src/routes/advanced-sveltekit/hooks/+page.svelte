@@ -1,9 +1,6 @@
 <script>
-	import Card from '$lib/components/ui/card/card.svelte';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
-	import { Code } from 'lucide-svelte';
-	import { href } from '../../svelte-basics/component-anatomy/constants';
 	import { CODE_EXAMPLES, REQUEST_EVENT_ITEMS } from './constants';
 </script>
 
@@ -28,38 +25,44 @@
 	function, and returns a <Link
 		href="https://developer.mozilla.org/en-US/docs/Web/API/Response">
 		response
-	</Link> object.
+	</Link> object. In the resolve function, SvelteKit matches the incoming request URL to a
+	route in our app, imports all the relevant code (+page.server.ts files, +page.svelte files,
+	etc), loads the data needed by the route and generates the response.
 </p>
 
-<p>
-	In the resolve function, SvelteKit matches the incoming request URL to a route in our
-	app, imports all the relevant code (+page.server.ts files, +page.svelte files, etc),
-	loads the data needed by the route, and generates the response. The default handle hook
-	is as follows:
-</p>
-
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleHook1} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleHook1} />
+</div>
 
 <p>
 	From there, we can start modifying the response in different ways. For example, we could
 	modify the resolved HTML with the <code>transformPageChunk</code>
-	method:
+	method.
 </p>
 
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleHook2} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleHook2} />
+</div>
 
-To try this out, paste in this link into your browser:
-<code>/advanced-sveltekit/hooks/hotpink</code>
+<p>
+	To try this out, copy and paste the following link into your browser -
+	<code>/advanced-sveltekit/hooks/hotpink</code>
+</p>
 
-<p>Or you could also create new routes by modifying the response:</p>
+<p>Or you could also create new routes by modifying the response.</p>
 
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleHook3} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleHook3} />
+</div>
 
 <Link href={'./hooks/hijacked'}>Go to the hijacked page</Link>
 
@@ -85,9 +88,8 @@ To try this out, paste in this link into your browser:
 	files.
 </p>
 
-<p>Here's a list of the properties and methods the RequestEvent contains:</p>
-
 <ul>
+	<p>Here's a list of the properties and methods the RequestEvent contains:</p>
 	{#each REQUEST_EVENT_ITEMS as { title, description, link }}
 		<li>
 			<code>{title}</code>
@@ -105,13 +107,16 @@ To try this out, paste in this link into your browser:
 	functions.
 </p>
 
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleEventLocals1} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleEventLocals1} />
 
-<CodeWrapper
-	headerText="src/routes/+page.server.ts"
-	code={CODE_EXAMPLES.handleEventLocals2} />
+	<CodeWrapper
+		headerText="src/routes/+page.server.ts"
+		code={CODE_EXAMPLES.handleEventLocals2} />
+</div>
 
 <h2>handleFetch</h2>
 
@@ -126,16 +131,16 @@ To try this out, paste in this link into your browser:
 		</Link>, but with added functionality:
 	</p>
 	<li>
-		- It can make credentialed requests on the server, inheriting <code>cookie</code>
+		It can make credentialed requests on the server, inheriting <code>cookie</code>
 		and
 		<code>authorization</code>
-		headers from the incoming request.
+		headers from the incoming request;
 	</li>
 	<li>
-		- Allows relative requests on the server, without needing a full URL with an origin.
+		Allows relative requests on the server, without needing a full URL with an origin;
 	</li>
 	<li>
-		- Internal requests (such as for <code>+server.ts</code>
+		Internal requests (such as for <code>+server.ts</code>
 		routes) directly call the handler function on the server, bypassing the need for an HTTP
 		request.
 	</li>
@@ -145,21 +150,25 @@ To try this out, paste in this link into your browser:
 	You can modify the behaviour of the <code>fetch</code>
 	method with the
 	<code>handleFetch</code>
-	hook. By default, it looks like this:
+	hook.
 </p>
 
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleFetch1} />
-
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleFetch1} />
+</div>
 <p>
-	You could use it to respond to requests for one route with responses from another one,
-	for example:
+	You could use it to respond to requests for one route with responses from another one.
 </p>
 
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleFetch2} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleFetch2} />
+</div>
 
 <p>
 	The <code>event.fetch</code>
@@ -175,10 +184,12 @@ To try this out, paste in this link into your browser:
 <p>
 	The <code>handleError</code>
 	is useful for intercepting unexpected errors and triggering some behaviour, like pinging
-	a Slack channel or sending data to an error logging service. Here's the default code for
-	that hook:
+	a Slack channel or sending data to an error logging service.
 </p>
 
-<CodeWrapper
-	headerText="src/hooks.server.ts"
-	code={CODE_EXAMPLES.handleError1} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/hooks.server.ts"
+		code={CODE_EXAMPLES.handleError1} />
+</div>
