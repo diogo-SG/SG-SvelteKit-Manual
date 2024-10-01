@@ -33,7 +33,7 @@
 </div>
 
 <ul>
-	<p class="font-bold">Most common use cases for actions are:</p>
+	<p>Most common use cases for actions are:</p>
 	{#each COMMON_CASES_LIST as item}
 		<li>{item}</li>
 	{/each}
