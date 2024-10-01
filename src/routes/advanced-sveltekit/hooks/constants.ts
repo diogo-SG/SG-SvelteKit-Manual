@@ -72,43 +72,43 @@ export const CODE_EXAMPLES = {
 export const REQUEST_EVENT_ITEMS = [
 	{
 		title: 'cookies',
-		description: 'The cookies API.',
+		description: 'The cookies API;',
 		link: 'https://learn.svelte.dev/tutorial/cookies'
 	},
 	{
 		title: 'fetch',
-		description: 'The standard Fetch API, with some extra goodies.',
+		description: 'The standard Fetch API, with some extra goodies;',
 		link: 'https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API'
 	},
 	{
 		title: 'getClientAddress()',
-		description: "A function to get the client's IP address."
+		description: "A function to get the client's IP address;"
 	},
 	{
 		title: 'isDataRequest',
 		description:
-			'Resolves to true if the browser is requesting data for a page during client-side navigation, or false if the page or route is being requested directly.'
+			'Resolves to true if the browser is requesting data for a page during client-side navigation, or false if the page or route is being requested directly;'
 	},
 	{
 		title: 'locals',
-		description: 'A place to put arbitrary data'
+		description: 'A place to put arbitrary data;'
 	},
 	{
 		title: 'params',
-		description: 'The route parameters.'
+		description: 'The route parameters;'
 	},
 	{
 		title: 'request',
-		description: 'The request object.',
+		description: 'The request object;',
 		link: 'https://developer.mozilla.org/en-US/docs/Web/API/Request'
 	},
 	{
 		title: 'route',
-		description: 'An object with an id property representing the route that was matched.'
+		description: 'An object with an id property representing the route that was matched;'
 	},
 	{
 		title: 'setHeaders(...)',
-		description: 'A function to set HTTP headers on the response.',
+		description: 'A function to set HTTP headers on the response;',
 		link: 'https://learn.svelte.dev/tutorial/headers'
 	},
 	{

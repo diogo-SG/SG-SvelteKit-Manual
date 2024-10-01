@@ -17,24 +17,24 @@
 <ul>
 	<p class="font-bold">Advantages:</p>
 	{#each SVELTE_PROS_CONS_LIST as { title, isPro, description }}
-		<li>
-			{#if isPro}
+		{#if isPro}
+			<li>
 				<em>{title}</em>
 				- {description}
-			{/if}
-		</li>
+			</li>
+		{/if}
 	{/each}
 </ul>
 
 <ul>
 	<p class="font-bold">Disadvantages:</p>
 	{#each SVELTE_PROS_CONS_LIST as { title, isPro, description }}
-		<li>
-			{#if !isPro}
+		{#if !isPro}
+			<li>
 				<em>{title}</em>
 				- {description}
-			{/if}
-		</li>
+			</li>
+		{/if}
 	{/each}
 </ul>
 

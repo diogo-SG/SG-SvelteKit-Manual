@@ -15,12 +15,11 @@
 	<code>+layout.ts</code>
 	and
 	<code>+layout.server.ts</code>
-	files, we can also export several
-	<b>page options</b>
-	:
+	files, we can also export several page options.
 </p>
 
 <ul>
+	<p>Here's a list of the page options:</p>
 	{#each PAGE_OPTION_ITEMS as { title, description }}
 		<li>
 			<code>{title}</code>
@@ -101,12 +100,8 @@
 	</code>
 	will be redirected to
 	<code>/hello</code>
-	.
-</p>
-<p>
-	But you can also ensure that a trailing slash is always present by specifying the <code>
-		trailingSlash
-	</code>
+	. But you can also ensure that a trailing slash is always present by specifying the
+	<code>trailingSlash</code>
 	option with
 	<code>export const trailingSlash = 'always';</code>
 </p>
@@ -114,9 +109,8 @@
 	Or you could tell Svelte to ignore trailing slashes by using: <code>
 		export const trailingSlash = 'ignore';
 	</code>
-</p>
-<p>
-	The choice will also affect prerendering. A url like <code>/hello/</code>
+	. The choice will also affect prerendering. A url like
+	<code>/hello/</code>
 	will be saved as
 	<code>hello/index.html</code>
 	, while
