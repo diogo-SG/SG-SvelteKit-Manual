@@ -27,37 +27,47 @@
 
 <p>
 	Here's an example of a <code>load</code>
-	function that fetches some jokes from an API:
+	function that fetches some jokes from an API.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LOADING}
-	code={CODE.FETCH_JOKES} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LOADING}
+		code={CODE.FETCH_JOKES} />
+</div>
 
 <p>
 	On the corresponding component file, you can then access the data returned by the <code>
 		load
 	</code>
-	function via the data prop, which you declare like any other prop:
+	function via the
+	<code>data</code>
+	prop, which you declare like any other prop.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.COMPONENT}
-	code={CODE.COMPONENT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.COMPONENT}
+		code={CODE.COMPONENT} />
+</div>
 
-<p>And here's a selection of (somewhat) funny jokes fetched from that load function.</p>
-{#if data?.props.jokes?.length === 0}
-	<p>Loading jokes...</p>
-{:else}
-	{#each data.props.jokes as joke}
-		<p>
-			<span class="font-bold">
-				{joke.setup}
-			</span>
-			<span class="italic">{joke.punchline}</span>
-		</p>
-	{/each}
-{/if}
+<div class="flex flex-col gap-2">
+	<p>And here's a selection of (somewhat) funny jokes fetched from that load function.</p>
+	{#if data?.props.jokes?.length === 0}
+		<p>Loading jokes...</p>
+	{:else}
+		{#each data.props.jokes as joke}
+			<p>
+				<span class="font-bold">
+					{joke.setup}
+				</span>
+				<span class="italic">{joke.punchline}</span>
+			</p>
+		{/each}
+	{/if}
+</div>
 
 <h3>Where can load functions be used?</h3>
 <p>
@@ -82,9 +92,8 @@
 
 <h2>Load function params</h2>
 
-<p>The load function makes several params available, including:</p>
-
 <ul>
+	<p>The load function makes several params available, including:</p>
 	{#each LOAD_FUNCTIONS_PARAMS as { param, description, link }}
 		<li>
 			<code>{param}</code>

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
 </script>
 
@@ -66,42 +65,45 @@
 	also makes it possible to progressively enhance the form interactions. In other words,
 	to not use JS at first, but to enable certain behaviours when it does become available.
 	This is done by adding the <code>use:enhance</code>
-	directive to the form html element. This will emulate the browser-native behaviour (with
-	the exception of the full-page reload) and it will:
+	directive to the form html element.
 </p>
 <ul>
+	<p>
+		This will emulate the browser-native behaviour (with the exception of the full-page
+		reload) and it will:
+	</p>
 	<li>
-		update the <code>form prop</code>
+		Update the <code>form prop</code>
+		;
 	</li>
 	<li>
-		invalidate all data on a successful response, calling <code>load</code>
-		functions to re-run
+		Invalidate all data on a successful response, calling <code>load</code>
+		functions to re-run;
 	</li>
-	<li>navigate to a new page on a redirect response</li>
-	<li>render the nearest error page if one occurs</li>
+	<li>Navigate to a new page on a redirect response;</li>
+	<li>Render the nearest error page if one occurs.</li>
 </ul>
-<p>
-	It's an interesting and powerful feature, and one you can customize further to improve
-	the general form submission experience for users, including things like controlling when
-	the form is reset, handling redirects, etc. You can read more about progressive
-	enhancement by clicking <Link
-		href="https://kit.svelte.dev/docs/form-actions#progressive-enhancement">
-		here
-	</Link>. You can also read the full documentation about Form Actions in SvelteKit <Link
-		href="https://kit.svelte.dev/docs/form-actions">
-		here
-	</Link>.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		It's an interesting and powerful feature, and one you can customize further to improve
+		the general form submission experience for users, including things like controlling
+		when the form is reset, handling redirects, etc. You can read more about progressive
+		enhancement by clicking <Link
+			href="https://kit.svelte.dev/docs/form-actions#progressive-enhancement">
+			here
+		</Link>. You can also read the full documentation about Form Actions in SvelteKit <Link
+			href="https://kit.svelte.dev/docs/form-actions">
+			here
+		</Link>.
+	</p>
+</div>
 
 <h2>Form validation</h2>
 
 <p>
 	In SvelteKit, we can use the built-in form validation functionality to validate form
-	data. Here's an example of how to validate a form in SvelteKit:
-</p>
-
-<p>
-	To validate the form, we can use the <code>validate</code>
+	data. To validate the form, we can use the <code>validate</code>
 	function from the
 	<code>kit</code>
 	module. You can check out and example and the code behind it below:
