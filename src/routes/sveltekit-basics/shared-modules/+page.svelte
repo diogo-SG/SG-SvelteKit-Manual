@@ -16,8 +16,11 @@
 	the <code>src/lib</code>
 	directory. You can then import this code into any component or page using the
 	<code>$lib</code>
-	 alias. For example:
+	alias.
 </p>
-<CodeWrapper
-	headerText={HEADER.SHARED_MODULES}
-	code={CODE.SHARING_MODULES} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.SHARED_MODULES}
+		code={CODE.SHARING_MODULES} />
+</div>
