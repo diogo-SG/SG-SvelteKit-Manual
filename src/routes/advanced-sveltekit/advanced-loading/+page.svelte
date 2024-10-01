@@ -3,6 +3,7 @@
 	import Link from '$lib/components/ui/link/link.svelte';
 	import { CODE_EXAMPLES } from './constants';
 	import { page } from '$app/stores';
+	import { Accordion, AccordionItem } from 'flowbite-svelte';
 </script>
 
 <h1>Advanced Loading</h1>
@@ -107,13 +108,63 @@
 </p>
 
 <p>
-	For a slightly more intricate example, have a look at the code for the breadcrumbs on
-	every section of this guide!
+	For a somewhat more intricate example, here's something you could use to dynamically
+	generate breadcrumbs for the different sections of this manual:
 </p>
-<ul>
-	<li><code>src/routes/+layout.server.ts</code></li>
-	<li><code>src/routes/advanced-sveltekit/+layout.ts</code></li>
-</ul>
+
+<Accordion flush>
+	<AccordionItem>
+		<span slot="header">Root +layout.server.ts</span>
+
+		<p>
+			We start by importing a list of all svelte files, formatting them into an object
+			with title and link, and identifying the current route and its title:
+		</p>
+		<CodeWrapper
+			headerText="src/routes/+layout.server.ts"
+			code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_ROOT} />
+	</AccordionItem>
+	<AccordionItem>
+		<span slot="header">+layout.server.ts for each section</span>
+
+		<p>
+			Then each section has its own <code>+layout.server.ts</code>
+			file, which uses the data from the root layout to generate the breadcrumbs:
+		</p>
+
+		<CodeWrapper
+			headerText="src/routes/advanced-sveltekit/+layout.server.ts"
+			code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_SECTION} />
+
+		<CodeWrapper
+			headerText="$lib/helpers/helpers"
+			code={CODE_EXAMPLES.BREADCRUMBS_GET_BREADCRUMBS_PROPS} />
+	</AccordionItem>
+	<AccordionItem>
+		<span slot="header">+layout.svelte</span>
+
+		<p>
+			Finally, the svelte file for the layout receives the data from the server file, and
+			passes it on to the Breadcrumbs component.
+		</p>
+
+		<CodeWrapper
+			headerText="src/routes/advanced-sveltekit/+layout.svelte"
+			code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_SVELTE} />
+
+		<p>
+			As a final note, since this is all done on the server, it may lead to issues when
+			the app switches to CSR from SSR (after hydration), and breadcrumbs may go out of
+			sync with the actual page (this is partly why this approach was abandoned, but we
+			still felt it was a good example to explore). To fix this, we can add the <code>
+				data-sveltekit-reload
+			</code>
+			 attribute. to other navigation triggers on the Front End, for instance, the Navbar items.
+			This will force the page to reload the data from the server, and the breadcrumbs will
+			be updated accordingly.
+		</p>
+	</AccordionItem>
+</Accordion>
 
 <h2>Invalidation</h2>
 <p>
