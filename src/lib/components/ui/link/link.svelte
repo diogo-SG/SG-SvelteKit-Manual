@@ -16,8 +16,8 @@
 	.link {
 		color: gray;
 		text-decoration: none;
+		display: inline-flex;
 	}
-
 	.link:hover {
 		text-decoration: underline;
 	}

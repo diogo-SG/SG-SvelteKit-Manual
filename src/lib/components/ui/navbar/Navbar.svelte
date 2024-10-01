@@ -25,7 +25,7 @@
 	</NavBrand>
 	<NavHamburger />
 	<NavUl {activeUrl}>
-		{#each NAVBAR as { href, label, modules }}
+		{#each NAVBAR as { path, label, modules }}
 			{#if modules}
 				<NavLi
 					class={`${activeUrl.split('/')[1] === label.toLowerCase().replaceAll(' ', '-') ? 'text-primary-700' : ''} relative cursor-pointer`}>
@@ -45,7 +45,7 @@
 				</Dropdown>
 			{:else}
 				<NavLi
-					{href}
+					href={path}
 					class="cursor-pointer">
 					{label}
 				</NavLi>
