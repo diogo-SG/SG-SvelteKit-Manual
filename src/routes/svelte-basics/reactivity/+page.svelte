@@ -16,68 +16,93 @@
 <h1>Reactivity</h1>
 <h2>Assignments</h2>
 <p>
-	Reactivity in Svelte is achieved by using the <code>let</code> keyword to declare a variable that can
-	be updated. This is effectively the same as useState in React, and the DOM will be kept in sync with
-	updates to values declared with let.
+	Reactivity in Svelte is achieved by using the <code>let</code>
+	keyword to declare a variable that can be updated. This is effectively the same as useState
+	in React, and the DOM will be kept in sync with updates to values declared with let.
 </p>
 <p>
-	Svelte also provides event handler directives for html elements and components. For instance, we
-	can use the <code>on:click</code> directive to do something when a button is clicked.
+	Svelte also provides event handler directives for html elements and components. For
+	instance, we can use the <code>on:click</code>
+	directive to do something when a button is clicked.
 </p>
-<h4>Example</h4>
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.REACTIVE}
+		code={REACTIVE_CODE.EXAMPLE} />
 
-<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.EXAMPLE} />
+	<button on:click={increment}>This was clicked {count} times</button>
+</div>
 
-<button on:click={increment}>This was clicked {count} times </button>
-<h5>Notes</h5>
-<p>
-	As a follow up to the previous page - if you inspect this button's attributes, you'll notice that
-	Svelte has assigned a unique class to it, since it's styles are declared in this page.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Notes</h5>
+	<p>
+		As a follow up to the previous page - if you inspect this button's attributes, you'll
+		notice that Svelte has assigned a unique class to it, since it's styles are declared
+		in this page.
+	</p>
+</div>
 
 <h2>Declarations</h2>
+
 <p>
-	When we need some parts of a component's state to be derived from other parts, and react to
-	changes in the original state, we can use reactive declarations, which look like this:
+	When we need some parts of a component's state to be derived from other parts, and react
+	to changes in the original state, we can use reactive declarations.
 </p>
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.REACTIVE}
+		code={REACTIVE_CODE.DECLARATIONS} />
 
-<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.DECLARATIONS} />
-
-<h4>Example</h4>
-<button on:click={increment}>Increment count </button>
-<p>Doubled: {doubled}</p>
+	<button on:click={increment}>Increment count</button>
+	<p>Count is: {count}</p>
+	<p>Doubled: {doubled}</p>
+</div>
 
 <h2>Reactive Statements</h2>
 <p>
-	Reactive statements are similar to reactive declarations, but they are used when we need to run
-	some code when a value changes. They look like this:
+	Reactive statements are similar to reactive declarations, but they are used when we need
+	to run some code when a value changes.
 </p>
 
-<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.STATEMENTS} />
-
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.REACTIVE}
+		code={REACTIVE_CODE.STATEMENTS} />
+</div>
 <p>
-	The example above has been implemented on this page, so open the console and click the button to
-	see it in action.
+	The example above has been implemented on this page, so open the console and click the
+	button to see it in action.
 </p>
 
 <h2>Updating arrays and objects</h2>
 
 <p>
-	When updating arrays and objects, we need to be careful to ensure that the reference to the array
-	or object is updated, so that Svelte can detect the change and update the DOM. This is because
-	Svelte uses reference equality to determine if a value has changed.
+	When updating arrays and objects, we need to be careful to ensure that the reference to
+	the array or object is updated, so that Svelte can detect the change and update the DOM.
+	This is because Svelte uses reference equality to determine if a value has changed.
 </p>
 <p>
-	In other words, when working with array methods like push or splice, we need to be aware that they
-	won't update state.
+	In other words, when working with array methods like push or splice, we need to be aware
+	that they won't update state. Instead, we should use the spread operator to create a new
+	array or object.
 </p>
-<p>Instead, we should use the spread operator to create a new array or object, like so:</p>
 
-<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.UPDATING_ARRAYS} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.REACTIVE}
+		code={REACTIVE_CODE.UPDATING_ARRAYS} />
+</div>
 
-<p>Or we could simply do a redundant assignment, like so:</p>
-
-<CodeWrapper headerText={HEADER.REACTIVE} code={REACTIVE_CODE.UPDATING_ARRAYS_1} />
+<div class="flex flex-col gap-2">
+	<p>Or we could simply do a redundant assignment, like so:</p>
+	<CodeWrapper
+		headerText={HEADER.REACTIVE}
+		code={REACTIVE_CODE.UPDATING_ARRAYS_1} />
+</div>
 
 <style>
 	button {

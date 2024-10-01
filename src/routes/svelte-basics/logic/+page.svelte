@@ -15,29 +15,38 @@
 	to render different content based on a condition.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.IF_ELSE} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.IF_ELSE} />
+</div>
 
 <h2>Else if blocks</h2>
 
-<p>It's also possible to use else-if:</p>
+<p>It's also possible to use else-if.</p>
 
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.ELSE_IF} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.ELSE_IF} />
+</div>
 
 <h2>Block rules</h2>
-<p>An easy way to remember this syntax is as follows:</p>
 <ul>
+	<p>An easy way to remember this syntax is as follows:</p>
 	<li>
-		A hashtag indicates a block-opening tag. E.G: <code>#if</code>
+		<code>#if</code>
+		- A hashtag indicates a block-opening tag;
 	</li>
 	<li>
-		A slash indicates a block-closing tag. E.G: <code>/if</code>
+		<code>/if</code>
+		- A slash indicates a block-closing tag;
 	</li>
 	<li>
-		Colons indicate a block continuation tag. E.G: <code>:else</code>
+		<code>:else</code>
+		- Colons indicate a block continuation tag.
 	</li>
 </ul>
 
@@ -48,37 +57,43 @@
 	array, similar to how you'd map over an array in React.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.EACH} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.EACH} />
+</div>
 
-<p>
-	Also like mapping in react, you can get the iteration number as the second param like
-	so:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Also like mapping in react, you can get the iteration number as the second param like
+		so:
+	</p>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.KEYED_EACH} />
+</div>
 
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.KEYED_EACH} />
-
-<p>You could even immediately destructure the object in the each block like so:</p>
-
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.EACH_DESTRUCTURING} />
-
+<div class="flex flex-col gap-2">
+	<p>You could even immediately destructure the object in the each block:</p>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.EACH_DESTRUCTURING} />
+</div>
 <h2>Keyed each blocks</h2>
 
 <p>
 	By default, Svelte uses the index of the array as the key for each item. This can lead
 	to performance issues if the array is reordered. To avoid this, you can specify a key
-	for each item like so:
+	for each item.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.KEYED_EACH_2} />
-
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.KEYED_EACH_2} />
+</div>
 <h2>Await blocks</h2>
 
 <p>
@@ -86,11 +101,17 @@
 	is useful for fetching data from an API or performing other asynchronous operations.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LOGIC}
-	code={CODE.AWAIT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LOGIC}
+		code={CODE.AWAIT} />
+</div>
 
-<p>
-	The first block ("Loading...") is displayed while the promise is resolving, which is a
-	nice and convenient way to add placeholders directly in the HTML.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		The first block ("Loading...") is displayed while the promise is resolving, which is a
+		nice and convenient way to add placeholders directly in the HTML.
+	</p>
+</div>

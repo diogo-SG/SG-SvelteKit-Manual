@@ -19,22 +19,22 @@
 	code={COMPONENT_CODE.SAMPLE} />
 
 <ul>
-	<p class="font-bold">As you can see, the component is composed of three parts:</p>
+	<p>The component is composed of three parts:</p>
 	<li>
-		<em>JS:</em>
-		The logic of the component is defined in the
+		<em>JS</em>
+		- The logic of the component is defined in the
 		<code>&lt;script&gt;</code>
-		tag.
+		tag;
 	</li>
 	<li>
-		<em>HTML:</em>
-		The elements the component is composed of are defined after the
+		<em>HTML</em>
+		- The elements that compose the component are defined after the
 		<code>&lt;script&gt;</code>
-		tag.
+		tag;
 	</li>
 	<li>
-		<em>CSS:</em>
-		The styles are defined in the
+		<em>CSS</em>
+		- The styles are defined in the
 		<code>&lt;style&gt;</code>
 		tag.
 	</li>
@@ -45,9 +45,10 @@
 	For a component to be valid, we only really need the HTML section, everything else is
 	optional. Svelte also allows us to use a shorthand syntax when an element's dynamic
 	attribute has the same name and value. For example, instead of
-	<code>{`<img src={src} alt="Party parrot" />`}</code>
+	<code>{`<img src={src} />`}</code>
 	we could use simply
-	<code>{`<img {src} alt="Party parrot" />`}</code>
+	<code>{`<img {src} />`}</code>
+	.
 </p>
 
 <h2>Styling</h2>
@@ -58,19 +59,19 @@
 	<code>p</code>
 	elements in a component, they won't be applied to
 	<code>p</code>
-	elements in other components throughout the application
+	elements in other components throughout the application.
 </p>
 
-<h2>Render/Inject HTML from plain text</h2>
+<h2>Render/Inject HTML</h2>
 <p>
 	In order to render/inject HTML code directly in a component, we should use the special
 	<code>&#123;@html ...&#125;</code>
 	. This is useful when we want to render HTML code that is dynamically generated.
 </p>
-<p>
-	For example, if we have a string with HTML code, we can render it like this:
+<div class="flex flex-col gap-2">
+	<p>If we have a string with HTML code, we can render it like this:</p>
 	{@html CODE_EXAMPLE.SAMPLE_1}
-</p>
+</div>
 <p>
 	<span class="underline">
 		Svelte doesn't perform any sanitization of the expression before it gets inserted into
@@ -82,7 +83,9 @@
 	<Link {href}>sanitize-html</Link>
 	package. Click the link to learn more about it.
 </p>
-<p>Here's an example of sanitized code using the package mentioned before:</p>
-<div class="flex flex-col items-center bg-[lightgray] p-3">
-	{@html sanitizedHTML}
+<div class="flex flex-col gap-2">
+	<p>The HTML below was sanitized:</p>
+	<div class="flex w-fit flex-col rounded-lg bg-[lightgray] p-3">
+		{@html sanitizedHTML}
+	</div>
 </div>

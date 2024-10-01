@@ -33,7 +33,7 @@
 					<ChevronDownOutline
 						class={`ms-2 inline h-6 w-6 text-primary-800 dark:text-white`} />
 				</NavLi>
-				<Dropdown class="absolute z-20 w-44 rounded-lg bg-background">
+				<Dropdown class="absolute z-20 w-44 rounded-md bg-background">
 					{#each modules as { path, label }}
 						<DropdownItem
 							data-sveltekit-reload

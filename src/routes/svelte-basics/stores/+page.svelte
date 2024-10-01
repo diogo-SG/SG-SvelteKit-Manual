@@ -33,44 +33,52 @@
 	methods.
 </p>
 
-<p>
-	Let's create a <span class="font-bold">stores.js</span>
-	file to initiate our very own store that will have a
-	<code>count</code>
-	variable:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Let's create a <span class="font-bold">stores.js</span>
+		file to initiate our very own store that will have a
+		<code>count</code>
+		variable:
+	</p>
 
-<CodeWrapper
-	headerText={HEADERS.STORES}
-	code={WRITABLESTORES.STORES} />
+	<CodeWrapper
+		headerText={HEADERS.STORES}
+		code={WRITABLESTORES.STORES} />
+</div>
 
-<p>
-	Next, let's create a incrementer component that will add +1 to the count variable using
-	the <code>update</code>
-	method:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Next, let's create a incrementer component that will add +1 to the count variable
+		using the <code>update</code>
+		method:
+	</p>
 
-<CodeWrapper
-	headerText={HEADERS.INCREMENTER}
-	code={WRITABLESTORES.INCREMENTER} />
+	<CodeWrapper
+		headerText={HEADERS.INCREMENTER}
+		code={WRITABLESTORES.INCREMENTER} />
+</div>
 
-<p>
-	And now a component that will <code>set</code>
-	the count back to 0:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		And now a component that will <code>set</code>
+		the count back to 0:
+	</p>
 
-<CodeWrapper
-	headerText={HEADERS.RESET}
-	code={WRITABLESTORES.RESET} />
+	<CodeWrapper
+		headerText={HEADERS.RESET}
+		code={WRITABLESTORES.RESET} />
+</div>
 
-<p>
-	Finally, let's create a component that will <code>subscribe</code>
-	to the count store and display the current count:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Finally, let's create a component that will <code>subscribe</code>
+		to the count store and display the current count:
+	</p>
 
-<CodeWrapper
-	headerText={HEADERS.COUNTER}
-	code={WRITABLESTORES.COUNTER} />
+	<CodeWrapper
+		headerText={HEADERS.COUNTER}
+		code={WRITABLESTORES.COUNTER} />
+</div>
 
 <p>
 	Now, when you click the increment button, the count will increase by 1. When you click
@@ -84,13 +92,15 @@
 	The functionality on the previous example works just fine, but there's a subtle bug -
 	the store is subscribed to but never unsubscribed from. This can lead to memory leaks
 	and unexpected behaviour. To fix this, you'll need to declare <code>unsubscribe</code>
-	method and call it when the component is destroyed:
+	method and call it when the component is destroyed.
 </p>
 
-<CodeWrapper
-	headerText={HEADERS.COUNTER}
-	code={AUTOSUBSCRIPTION.COUNTER} />
-
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADERS.COUNTER}
+		code={AUTOSUBSCRIPTION.COUNTER} />
+</div>
 <p>
 	Now the store will be unsubscribed from when the component is destroyed, preventing
 	memory leaks and unexpected behaviour. This is a good practice to follow when working
@@ -100,12 +110,15 @@
 	of solving this issue. Svelte provides an
 	<span class="font-bold">auto-subscription</span>
 	feature that automatically subscribes and unsubscribes from the store when the component
-	is mounted and destroyed:
+	is mounted and destroyed.
 </p>
 
-<CodeWrapper
-	headerText={HEADERS.COUNTER}
-	code={AUTOSUBSCRIPTION.COUNTER_REACTIVE} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADERS.COUNTER}
+		code={AUTOSUBSCRIPTION.COUNTER_REACTIVE} />
+</div>
 
 <p>
 	By using the <code>$</code>
@@ -125,21 +138,27 @@
 	or
 	<code>update</code>
 	methods. It's useful when you want to expose a value to other components but don't want them
-	to change it. In our
-	<span class="font-bold">stores.js</span>
-	file, let's create a readable store that will have a
-	<code>time</code>
-	variable:
+	to change it.
 </p>
 
-<CodeWrapper
-	headerText={HEADERS.STORES}
-	code={READABLESTORE.STORES} />
+<div class="flex flex-col gap-2">
+	<p>
+		In our
+		<span class="font-bold">stores.js</span>
+		file, let's create a readable store that will have a
+		<code>time</code>
+		variable:
+	</p>
+
+	<CodeWrapper
+		headerText={HEADERS.STORES}
+		code={READABLESTORE.STORES} />
+</div>
 
 <ul>
 	<p>Let's break the previous code step by step:</p>
 	{#each READABLESTORE.STEPS as step}
-		<li>- {step}</li>
+		<li>{step}</li>
 	{/each}
 </ul>
 
@@ -148,49 +167,61 @@
 <p>
 	A <span class="font-bold">derived store</span>
 	is a store that is derived from one or more other stores. It's useful when you want to combine
-	multiple stores into a single store. In our
-	<span class="font-bold">secondStore.js</span>
-	file, let's create a
-	<code>derived</code>
-	store that will have a
-	<code>doubleTime</code>
-	variable:
+	multiple stores into a single store.
 </p>
 
-<CodeWrapper
-	headerText={HEADERS.DERIVEDSTORE}
-	code={READABLESTORE.DERIVEDSTORE} />
+<div class="flex flex-col gap-2">
+	<p>
+		In our
+		<span class="font-bold">derivedStore.js</span>
+		file, let's create a
+		<code>derived</code>
+		store that will have a
+		<code>doubleTime</code>
+		variable:
+	</p>
+	<CodeWrapper
+		headerText={HEADERS.DERIVEDSTORE}
+		code={READABLESTORE.DERIVEDSTORE} />
+</div>
 
 <h2>Custom stores</h2>
 
 <p>
 	As long as an object correctly implements the <code>subscribe</code>
 	method, it's a store. Beyond that, anything goes. It's very easy, therefore, to create custom
-	stores with domain-specific logic. Using the previous
-	<code>count</code>
-	example, let's create an
-	<span class="font-bold">increment</span>
-	and
-	<span class="font-bold">reset</span>
-	methods to avoid exposing the
-	<code>set</code>
-	and
-	<code>update</code>
-	methods:
+	stores with domain-specific logic.
 </p>
 
-<CodeWrapper
-	headerText={HEADERS.STORES}
-	code={CUSTOMSTORE.STORES} />
+<div class="flex flex-col gap-2">
+	<p>
+		Using the previous
+		<code>count</code>
+		example, let's create an
+		<span class="font-bold">increment</span>
+		and
+		<span class="font-bold">reset</span>
+		methods to avoid exposing the
+		<code>set</code>
+		and
+		<code>update</code>
+		methods:
+	</p>
+	<CodeWrapper
+		headerText={HEADERS.STORES}
+		code={CUSTOMSTORE.STORES} />
+</div>
 
-<p>
-	And in our <span class="font-bold">Counter.svelte</span>
-	component:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		And in our <span class="font-bold">Counter.svelte</span>
+		component:
+	</p>
 
-<CodeWrapper
-	headerText={HEADERS.COUNTER}
-	code={CUSTOMSTORE.COUNTER} />
+	<CodeWrapper
+		headerText={HEADERS.COUNTER}
+		code={CUSTOMSTORE.COUNTER} />
+</div>
 
 <p>
 	Now the <code>count</code>
@@ -211,17 +242,22 @@
 	and a derived store
 	<code>greeting</code>
 	from
-	<code>stores.js</code>
-	. In
-	<code>App.svelte</code>
-	, let's update the
-	<code>input</code>
-	element:
+	<b>stores.js</b>
+	.
 </p>
 
-<CodeWrapper
-	headerText={HEADERS.APP}
-	code={STORE_BINDINGS.INPUT} />
+<div class="flex flex-col gap-2">
+	<p>
+		In
+		<b>App.svelte</b>
+		, let's update the
+		<code>input</code>
+		element:
+	</p>
+	<CodeWrapper
+		headerText={HEADERS.APP}
+		code={STORE_BINDINGS.INPUT} />
+</div>
 
 <p>
 	If the <code>input</code>
@@ -229,7 +265,9 @@
 	<code>name</code>
 	. We can also assign directly to store values inside a component. Notice that we added a
 	<code>on:click</code>
-	event handler that adds "!" to the
+	event handler that adds
+	<b>!</b>
+	to the
 	<code>name</code>
 	. The
 	<code>$name += "!"</code>

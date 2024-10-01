@@ -119,3 +119,27 @@ div:not(.code_wrapper) code:not(.language-svelte) {
     margin: 0.125rem;
     border-radius: 5px;
 }
+
+ul {
+    list-style-type: disc;
+}
+
+ul > p {
+    font-weight: bold;
+}
+
+ul > li {
+    margin-left: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul > p {
+    font-weight: normal;
+}
+
+nav ul > li {
+    margin-left: 0;
+}
