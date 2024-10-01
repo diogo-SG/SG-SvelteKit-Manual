@@ -11,7 +11,7 @@
 	A <code>script</code>
 	tag with
 	<code>context="module"</code>
-	attribute runs once when the module is first evaluates, not for each component instance.
+	attribute runs once when the module is first evaluated, not for each component instance.
 	Values declared here are accessible to a regular
 	<code>script</code>
 	and the component markup, but not the other way around. You can export bindings, but not
@@ -22,23 +22,24 @@
 	.
 </p>
 
-<CodeWrapper
-	headerText={cardHeaderText}
-	code={CODE.MODULE_CONTEXT_CARD} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={cardHeaderText}
+		code={CODE.MODULE_CONTEXT_CARD} />
 
-<CodeWrapper
-	{headerText}
-	code={CODE.MODULE_CONTEXT_APP} />
+	<CodeWrapper
+		{headerText}
+		code={CODE.MODULE_CONTEXT_APP} />
+</div>
 
 <ul>
-	<strong>Let's break it into small steps:</strong>
+	<p>Let's break it into small steps:</p>
 	{#each MODULE_CONTEXT_STEPS as { page, step, description }}
 		<li>
-			<p>
-				{step} -
-				<code>{page}</code>
-				- {description}
-			</p>
+			<em>{page}</em>
+			-
+			{description}
 		</li>
 	{/each}
 </ul>
