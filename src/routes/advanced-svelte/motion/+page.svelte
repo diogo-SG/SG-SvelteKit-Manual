@@ -25,47 +25,55 @@
 
 <p>
 	Tween is a function that creates a tweened value. Tweened stores update their values
-	over a fixed duration. The following options can be used:
+	over a fixed duration.
 </p>
 <ul>
+	<p>The following options can be used:</p>
 	{#each OPTIONS.TWEENED as { option, description }}
 		<li>
-			<strong>{option}</strong>
+			<em>{option}</em>
 			- {description}
 		</li>
 	{/each}
 </ul>
 
-<p>
-	Let's create a simple example in our <code>App.svelte</code>
-	file:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Let's create a simple example in our <code>App.svelte</code>
+		file:
+	</p>
 
-<CodeWrapper
-	headerText={fileTitle}
-	code={CODE.TWEENED} />
+	<CodeWrapper
+		headerText={fileTitle}
+		code={CODE.TWEENED} />
+</div>
 
-<p>
-	Clicking the buttons causes the progress bar to animate to its new value. To really take
-	advantage of our <code>tweened</code>
-	function, we need to add an easing function:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Clicking the buttons causes the progress bar to animate to its new value. To really
+		take advantage of our <code>tweened</code>
+		function, we need to add an easing function:
+	</p>
 
-<CodeWrapper
-	headerText={fileTitle}
-	code={CODE.TWEENED_CUBIC} />
+	<CodeWrapper
+		headerText={fileTitle}
+		code={CODE.TWEENED_CUBIC} />
+</div>
 
-<p>
-	The <code>svelte/easing</code>
-	module contains some cool options that you can use out of the box. You can check them by
-	clicking <Link {href}>here</Link>. You can also create your own easing functions
-	<code>p =&gt t</code>
-	, where
-	<code>p</code>
-	and
-	<code>t</code>
-	are both values between 0 and 1.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		The <code>svelte/easing</code>
+		module contains some cool options that you can use out of the box. You can check them by
+		clicking <Link {href}>here</Link>. You can also create your own easing functions
+		<code>p =&gt t</code>
+		, where
+		<code>p</code>
+		and
+		<code>t</code>
+		are both values between 0 and 1.
+	</p>
+</div>
 
 <h2>Spring</h2>
 
@@ -73,41 +81,44 @@
 	<code>spring</code>
 	function is an alternative to
 	<code>tweened</code>
-	that often works better for values that are frequently changing. The following options are
-	available:
+	that often works better for values that are frequently changing.
 </p>
 <ul>
+	<p>The following options are available:</p>
 	{#each OPTIONS.SPRING as { option, description }}
 		<li>
-			<strong>{option}</strong>
+			<em>{option}</em>
 			- {description}
 		</li>
 	{/each}
 </ul>
 
-<p>
-	Let's create another example using <code>spring</code>
-	in our
-	<code>App.svelte</code>
-	file:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Let's create another example using <code>spring</code>
+		in our
+		<code>App.svelte</code>
+		file:
+	</p>
 
-<CodeWrapper
-	headerText={fileTitle}
-	code={CODE.SPRING} />
+	<CodeWrapper
+		headerText={fileTitle}
+		code={CODE.SPRING} />
+</div>
 
 <p>
 	In this example we have two stores, one representing the circle's coordinates and
 	another one representing its size. Both springs have default <code>stiffness</code>
 	and
 	<code>damping</code>
-	values, but we can specify our own initial values:
+	values, but we can specify our own initial values.
 </p>
-
-<CodeWrapper
-	headerText={fileTitle}
-	code={CODE.SPRING_CUSTOM} />
-
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={fileTitle}
+		code={CODE.SPRING_CUSTOM} />
+</div>
 <p>
 	Feel free to try the previous example in your local machine for a better understanding
 	of these Svelte techniques.
