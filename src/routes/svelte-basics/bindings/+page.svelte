@@ -21,10 +21,13 @@
 	directive. This will create a two-way binding between the input element and a variable in
 	your component.
 </p>
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.TEXT_INPUTS} />
 
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.TEXT_INPUTS} />
+</div>
 <p>
 	This means that not only will changes to the value of <code>name</code>
 	update the input value, but changes to the input value will update
@@ -40,11 +43,12 @@
 	Svelte takes care of the type conversion for you.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.NUMERIC_INPUTS} />
-
-<b>Example:</b>
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.NUMERIC_INPUTS} />
+</div>
 <input
 	type="number"
 	bind:value={age}
@@ -64,9 +68,12 @@
 	your component.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.CHECKBOXES} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.CHECKBOXES} />
+</div>
 
 <h2>Select bindings</h2>
 
@@ -77,9 +84,12 @@
 	elements.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.SELECT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.SELECT} />
+</div>
 
 <h2>Select multiple</h2>
 
@@ -90,28 +100,33 @@
 	attribute, the options selected will populate an array rather than selecting a single value.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.MULTI_SELECT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.MULTI_SELECT} />
+</div>
 
-<p>
-	Press and hold the <kbd>Ctrl</kbd>
-	key or the
-	<kbd>command</kbd>
-	key on MacOS to select multiple options.
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		Press and hold the <kbd>Ctrl</kbd>
+		key or the
+		<kbd>command</kbd>
+		key on MacOS to select multiple options.
+	</p>
 
-<select
-	multiple
-	bind:value={selectedOptions}>
-	<option value="1">Option 1</option>
-	<option value="2">Option 2</option>
-	<option value="3">Option 3</option>
-</select>
-<p>
-	<b>Selected options:</b>
-	{selectedOptions.length ? selectedOptions.join(', ') : 'None'}
-</p>
+	<select
+		multiple
+		bind:value={selectedOptions}>
+		<option value="1">Option 1</option>
+		<option value="2">Option 2</option>
+		<option value="3">Option 3</option>
+	</select>
+	<p>
+		<b>Selected options:</b>
+		{selectedOptions.length ? selectedOptions.join(', ') : 'None'}
+	</p>
+</div>
 
 <h2>Group inputs</h2>
 
@@ -125,9 +140,12 @@
 	form an array of selected values.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.GROUP} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.GROUP} />
+</div>
 
 <p>
 	Now, when you select a radio option, the value of <code>radioOption</code>
@@ -145,22 +163,29 @@
 	.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.TEXTAREA} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.TEXTAREA} />
+</div>
 
-<p>
-	A really cool feature of Svelte is that, since the name of the variable is equal to the
-	name of the input property (value), you can use the shorthand syntax:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		A really cool feature of Svelte is that, since the name of the variable is equal to
+		the name of the input property (value), you can use the shorthand syntax:
+	</p>
 
-<CodeWrapper
-	headerText={HEADER.BINDINGS}
-	code={CODE.SHORTHAND} />
+	<CodeWrapper
+		headerText={HEADER.BINDINGS}
+		code={CODE.SHORTHAND} />
+</div>
 
-<p>
-	<span class="underline">This trick applies to all bindings, not just textareas.</span>
-	<br />
-	And that's it! Now you know how to use bindings in Svelte. They are a powerful feature that
-	can help you create more interactive components with less code.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		<span class="underline">This trick applies to all bindings, not just textareas.</span>
+		And that's it! Now you know how to use bindings in Svelte. They are a powerful feature
+		that can help you create more interactive components with less code.
+	</p>
+</div>

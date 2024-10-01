@@ -1,5 +1,3 @@
-export const href = '/svelte-basics/stores';
-
 export const HEADER = {
 	LIFECYCLE: 'lifecycle.svelte'
 };

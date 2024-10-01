@@ -4,27 +4,43 @@ export const HEADER = {
 
 export const EVENTS_LIST = {
 	MOUSE: [
-		{ event: 'on:mouseover', description: 'Fires when the mouse pointer moves over an element.' },
-		{ event: 'on:mouseout', description: 'Fires when the mouse pointer moves out of an element.' },
-		{ event: 'on:mouseenter', description: 'Fires when the mouse pointer enters an element.' },
-		{ event: 'on:mouseleave', description: 'Fires when the mouse pointer leaves an element.' }
+		{
+			event: 'on:mouseover',
+			description: 'Fires when the mouse pointer moves over an element;'
+		},
+		{
+			event: 'on:mouseout',
+			description: 'Fires when the mouse pointer moves out of an element;'
+		},
+		{
+			event: 'on:mouseenter',
+			description: 'Fires when the mouse pointer enters an element;'
+		},
+		{
+			event: 'on:mouseleave',
+			description: 'Fires when the mouse pointer leaves an element.'
+		}
 	],
 	KEYBOARD: [
-		{ event: 'on:keydown', description: 'Fires when a key is pressed down.' },
-		{ event: 'on:keyup', description: 'Fires when a key is released.' },
+		{ event: 'on:keydown', description: 'Fires when a key is pressed down;' },
+		{ event: 'on:keyup', description: 'Fires when a key is released;' },
 		{ event: 'on:keypress', description: 'Fires when a key is pressed and released.' }
 	],
 	MODIFIERS: [
-		{ modifier: '|preventDefault', description: 'Prevents the default behavior of the event.' },
-		{ modifier: '|stopPropagation', description: 'Stops the event from propagating.' },
+		{
+			modifier: '|preventDefault',
+			description: 'Prevents the default behavior of the event;'
+		},
+		{ modifier: '|stopPropagation', description: 'Stops the event from propagating;' },
 		{
 			modifier: '|self',
-			description: 'Only triggers the event if the event was dispatched from the element itself.'
+			description:
+				'Only triggers the event if the event was dispatched from the element itself;'
 		},
-		{ modifier: '|once', description: 'Only triggers the event once.' },
-		{ modifier: '|capture', description: 'Use capture phase instead of bubbling phase.' },
-		{ modifier: '|passive', description: 'Use passive event listener.' },
-		{ modifier: '|nonpassive', description: 'Use non-passive event listener.' },
+		{ modifier: '|once', description: 'Only triggers the event once;' },
+		{ modifier: '|capture', description: 'Use capture phase instead of bubbling phase;' },
+		{ modifier: '|passive', description: 'Use passive event listener;' },
+		{ modifier: '|nonpassive', description: 'Use non-passive event listener;' },
 		{
 			modifier: '|trusted',
 			description: 'Only trigger the event if it was dispatched by a user action.'
