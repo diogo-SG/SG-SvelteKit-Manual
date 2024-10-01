@@ -18,26 +18,33 @@
 	method, which is triggered whenever the parameters passed to the action function change.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.USE_WITH_PARAMS} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.USE_WITH_PARAMS} />
+</div>
 
-Here's a simple example that fades-in an element when it is created:
-
-<CodeWrapper
-	{headerText}
-	code={CODE.USE} />
+<div class="flex flex-col gap-2">
+	Here's a simple example that fades-in an element when it is created:
+	<CodeWrapper
+		{headerText}
+		code={CODE.USE} />
+</div>
 
 <ul>
 	<p class="font-bold">Most common use cases for actions are:</p>
 	{#each COMMON_CASES_LIST as item}
-		<li>- {item}</li>
+		<li>{item}</li>
 	{/each}
 </ul>
 
-<p>
-	Svelte actions are a very powerful feature that allows you to interact with the DOM in a
-	very simple way. If you want to check some examples and how you can apply them in your
-	future Svelte project, click <Link {href}>here</Link>
-	.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		Svelte actions are a very powerful feature that allows you to interact with the DOM in
+		a very simple way. If you want to check some examples and how you can apply them in
+		your future Svelte project, click <Link {href}>here</Link>
+		.
+	</p>
+</div>

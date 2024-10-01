@@ -1,6 +1,5 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { Code } from 'lucide-svelte';
 	import { CODE, MEDIA_BINDS_LIST } from './constants';
 	const headerText = 'App.svelte';
 	const counterHeader = 'Counter.svelte';
@@ -16,12 +15,14 @@
 	<code>textContent</code>
 	and
 	<code>innerHTML</code>
-	bindings:
+	bindings.
 </p>
-
-<CodeWrapper
-	{headerText}
-	code={CODE.CONTENTEDITABLE} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.CONTENTEDITABLE} />
+</div>
 
 <h2>Each block bindings</h2>
 
@@ -30,9 +31,12 @@
 	block.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.EACH_BLOCK} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.EACH_BLOCK} />
+</div>
 
 <h2>Media elements</h2>
 
@@ -43,12 +47,15 @@
 	elements, which improves drastically the way we create a custom media player (audio or video).
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.MEDIA} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.MEDIA} />
+</div>
 
 <ul>
-	<p class="font-bold">
+	<p>
 		Here's the complete set of available bindings for <code class="font-normal">
 			video
 		</code>
@@ -58,7 +65,6 @@
 	</p>
 	{#each MEDIA_BINDS_LIST as { attribute, description, readOnly, videoOnly }}
 		<li>
-			-
 			<code>{attribute}</code>
 			{#if readOnly}
 				<em>(readonly)</em>
@@ -90,9 +96,12 @@
 	won't have any affect the element itself.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.DIMENSIONS} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.DIMENSIONS} />
+</div>
 
 <h2>This</h2>
 
@@ -102,22 +111,28 @@
 	to get a reference to a DOM node.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.THIS} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.THIS} />
+</div>
 
 <p>
 	It's also possible to <code>bind:this</code>
 	to component instances.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.THIS_COMPONENT_PARENT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.THIS_COMPONENT_PARENT} />
 
-<CodeWrapper
-	headerText={counterHeader}
-	code={CODE.THIS_COMPONENT_CHILD} />
+	<CodeWrapper
+		headerText={counterHeader}
+		code={CODE.THIS_COMPONENT_CHILD} />
+</div>
 
 <h2>Component bindings</h2>
 
@@ -127,23 +142,29 @@
 	<code>value</code>
 	to a component prop called
 	<code>count</code>
-	like so:
+	.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.COMPONENT_PARENT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.COMPONENT_PARENT} />
 
-<CodeWrapper
-	headerText={counterHeader}
-	code={CODE.COMPONENT_CHILD} />
+	<CodeWrapper
+		headerText={counterHeader}
+		code={CODE.COMPONENT_CHILD} />
+</div>
 
-<p>
-	While Svelte props are reactive without binding, that reactivity only flows downward
-	into the component by default. Using <code>bind:property</code>
-	allows changes to the property from within the component to flow back up out of the component.
-	Because it can be challenging to track where a property is being modified, it's advisable
-	to use
-	<code>bind:property</code>
-	with caution.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		While Svelte props are reactive without binding, that reactivity only flows downward
+		into the component by default. Using <code>bind:property</code>
+		allows changes to the property from within the component to flow back up out of the component.
+		Because it can be challenging to track where a property is being modified, it's advisable
+		to use
+		<code>bind:property</code>
+		with caution.
+	</p>
+</div>
