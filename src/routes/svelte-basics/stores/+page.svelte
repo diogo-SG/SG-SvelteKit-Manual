@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import { Accordion, AccordionItem } from 'flowbite-svelte';
 	import {
 		href,
 		HEADERS,
@@ -8,16 +9,18 @@
 		AUTOSUBSCRIPTION,
 		READABLESTORE,
 		CUSTOMSTORE,
-		STORE_BINDINGS
+		STORE_BINDINGS,
+		EXAMPLE_PAGE
 	} from './constants';
 </script>
 
 <h1>Stores</h1>
 
 <p>
-	Stores are a way to store and manage the state of your application. They are reactive,
-	meaning that they automatically update when their value changes. Svelte provides a few
-	built-in stores, but you can also create your own custom stores.
+	Stores are a way to store and manage the state of your application, and make it
+	accessible to all components that need to be aware of changes to said state. They are
+	reactive, meaning that they automatically update when their value changes. Svelte
+	provides a few built-in stores, but you can also create your own custom stores.
 </p>
 
 <h2>Writable stores</h2>
@@ -30,7 +33,8 @@
 	<code>update</code>
 	and
 	<code>subscribe</code>
-	methods.
+	methods. This means that you can change the value of the store and subscribe to it from any
+	component accessing the store.
 </p>
 
 <div class="flex flex-col gap-2">
@@ -275,6 +279,38 @@
 	<code>name.set($name + "!")</code>
 	.
 </p>
+
+<h2>Stores example page</h2>
+<p>
+	Now that you've learned the basics of Svelte stores, let's see them in action. Click on
+	the link below to see a page that uses writable, readable, and derived stores.
+</p>
+
+<Link href="../examples/stores">Stores example page</Link>
+
+<Accordion flush>
+	<AccordionItem>
+		<span slot="header">Stores file</span>
+
+		<CodeWrapper
+			headerText="src/lib/stores/stores.ts"
+			code={EXAMPLE_PAGE.STORES_FILE} />
+	</AccordionItem>
+	<AccordionItem>
+		<span slot="header">+page.svelte</span>
+
+		<CodeWrapper
+			headerText="routes/examples/stores/+page.svelte"
+			code={EXAMPLE_PAGE.SVELTE_PAGE} />
+	</AccordionItem>
+	<AccordionItem>
+		<span slot="header">One of the hacker components</span>
+
+		<CodeWrapper
+			headerText="src/components/examples/gurgaon-hacker.svelte"
+			code={EXAMPLE_PAGE.GURGAON_HACKER} />
+	</AccordionItem>
+</Accordion>
 
 <p>
 	Hope you liked the content so far and that you had time to practice the basics of

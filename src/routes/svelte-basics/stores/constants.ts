@@ -1,8 +1,8 @@
 export const href = '/advanced-svelte/motion';
 
 export const HEADERS = {
-	STORES: 'stores.js',
-	DERIVEDSTORE: 'derivedStore.js',
+	STORES: 'stores.ts',
+	DERIVEDSTORE: 'derivedStore.ts',
 	INCREMENTER: 'Incrementer.svelte',
 	RESET: 'Reset.svelte',
 	COUNTER: 'Counter.svelte',
@@ -11,10 +11,9 @@ export const HEADERS = {
 
 export const WRITABLESTORES = {
 	STORES: `
-	<script>
 		import { writable } from 'svelte/store';
+
 		export const count = writable(0);
-	</script>
 	`,
 	INCREMENTER: `
 	<script>
@@ -96,7 +95,6 @@ export const AUTOSUBSCRIPTION = {
 
 export const READABLESTORE = {
 	STORES: `
-	<script>
 		import { readable } from 'svelte/store';
 
 		export const time = readable(new Date(), function start(set) {
@@ -108,15 +106,12 @@ export const READABLESTORE = {
 				clearInterval(interval);
 			};
 		});
-	</script>
 	`,
 	DERIVEDSTORE: `
-	<script>
 		import { derived } from 'svelte/store';
 		import { time } from './stores.js';
 
 		export const doubleTime = derived(time, $time => $time * 2);
-	</script>
 	`,
 	STEPS: [
 		`The first argument to readable is an initial value,
@@ -130,7 +125,6 @@ export const READABLESTORE = {
 
 export const CUSTOMSTORE = {
 	STORES: `
-	<script>
 		import { writable } from 'svelte/store';
 
 		function createCount() {
@@ -144,7 +138,6 @@ export const CUSTOMSTORE = {
 		}
 
 		export const count = createCount();
-	</script>
 	`,
 	COUNTER: `
 	<script>
@@ -170,5 +163,194 @@ export const STORE_BINDINGS = {
 	<button on:click={() => $name += '!'}>
 		Add exclamation mark!
 	</button>
+	`
+};
+
+export const EXAMPLE_PAGE = {
+	STORES_FILE: `
+	import { writable, readable, derived } from 'svelte/store';
+
+	// Readable store example
+	function readableCallback(set: (value: string) => void, timeZone: string) {
+		// this function will be called when the store is created
+		const interval = setInterval(() => {
+			set(new Date().toLocaleTimeString('en-US', { timeZone }));
+		}, 1000);
+
+		// this function will be called when the store is destroyed
+		return function stop() {
+			clearInterval(interval);
+		};
+	}
+
+	export const timeInPortugal = readable(
+		new Date().toLocaleTimeString('en-US', { timeZone: 'Europe/Lisbon' }),
+		(set) => readableCallback(set, 'Europe/Lisbon')
+	);
+
+	export const timeInIndia = readable(
+		new Date().toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata' }),
+		(set) => readableCallback(set, 'Asia/Kolkata')
+	);
+
+	export const timeInUK = readable(
+		new Date().toLocaleTimeString('en-US', { timeZone: 'Europe/London' }),
+		(set) => readableCallback(set, 'Europe/London')
+	);
+
+	// Custom store example
+	function decideBestOffice() {
+		const { subscribe, set } = writable('All of them are great!');
+
+		return {
+			subscribe,
+			reset: () => set('All of them are great!'),
+			portugal: () => set('Lisbon'),
+			india: () => set('Gurgaon'),
+			uk: () => set('London')
+		};
+	}
+
+	export const bestOffice = decideBestOffice();
+
+	// Derived store example
+	// Kind of a useless one to be honest
+	export const bestOfficeAllCaps = derived(bestOffice, ($bestOffice) =>
+		$bestOffice.toUpperCase()
+	);
+	`,
+
+	SVELTE_PAGE: `
+	<script lang="ts">
+		import GurgaonHacker from '$lib/components/examples/gurgaon-hacker.svelte/gurgaon-hacker.svelte';
+		import LisbonHacker from '$lib/components/examples/lisbon-hacker/lisbon-hacker.svelte';
+		import LondonHacker from '$lib/components/examples/london-hacker/london-hacker.svelte';
+		import {
+			bestOffice,
+			bestOfficeAllCaps,
+			timeInIndia,
+			timeInPortugal,
+			timeInUK
+		} from '$lib/stores/stores';
+	</script>
+
+	<div class="bg-white">
+		<img
+			src="/img/sg_logo_horizontal.jpg"
+			alt="Studio Graphene logo"
+			class="mx-auto w-1/4" />
+	</div>
+	<main
+		class="background flex flex-col items-center justify-center"
+		class:gurgaonIsBest={$bestOffice === 'Gurgaon'}
+		class:lisbonIsBest={$bestOffice === 'Lisbon'}
+		class:londonIsBest={$bestOffice === 'London'}>
+		<div class="bg-white bg-opacity-70 px-6 py-10">
+			<div class="p-6 text-center">
+				<h1>Welcome to the official Studio Graphene website!</h1>
+				<sub>(not really)</sub>
+			</div>
+			<div class="grid w-full grid-cols-3 gap-4 pb-6 text-center">
+				<div class="flex flex-col text-center">
+					<b>Current time in India:</b>
+					{$timeInIndia}
+				</div>
+				<div class="flex flex-col text-center">
+					<b>Current time in Portugal:</b>
+					{$timeInPortugal}
+				</div>
+				<div class="flex flex-col text-center">
+					<b>Current time in the UK:</b>
+					{$timeInUK}
+				</div>
+			</div>
+			<div class="flex flex-col text-center">
+				<b>Our best office is:</b>
+				<p class="text-3xl font-extrabold">{$bestOfficeAllCaps}</p>
+			</div>
+			{#if $bestOffice !== 'All of them are great!'}
+				<div class="flex justify-center py-5">
+					<button
+						class="mx-auto rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+						on:click={() => bestOffice.reset()}>
+						Stop this nonsense!
+					</button>
+				</div>
+			{/if}
+		</div>
+	</main>
+
+	<div class="flex w-full justify-between">
+		<LondonHacker />
+		<GurgaonHacker />
+		<LisbonHacker />
+	</div>
+
+	<style>
+		main {
+			height: 100vh;
+			background-image: url('/img/office-pic.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.gurgaonIsBest {
+			background-image: url('/img/Flag_of_India.gif');
+		}
+
+		.lisbonIsBest {
+			background-image: url('/img/Flag_of_Portugal.gif');
+		}
+
+		.londonIsBest {
+			background-image: url('/img/Flag_of_the_United_Kingdom.gif');
+		}
+	</style>
+	`,
+
+	GURGAON_HACKER: `
+	<script lang="ts">
+		import { Avatar } from 'flowbite-svelte';
+		import { bestOffice, timeInIndia } from '../../../stores/stores';
+	</script>
+
+	<div
+		class="align-center flex w-1/3 flex-col gap-5 bg-gradient-to-t from-green-300 via-transparent to-orange-300 py-10 text-center">
+		<div class="relative mx-auto">
+			{#if $bestOffice === 'Gurgaon'}
+				<div class="absolute right-[-15px] top-[-20px] w-[60px]">
+					<img src="/img/trophy.png" />
+				</div>
+			{/if}
+			<Avatar
+				size="xl"
+				src="/img/hacker3.avif"
+				alt="Gurgaon" />
+		</div>
+		<h3>Gurgaon Hacker</h3>
+		<div class="flex flex-col text-center">
+			<b>Right now it's:</b>
+			{$timeInIndia}
+		</div>
+		<p>Gurgaon is the best office...</p>
+		<button on:click={() => bestOffice.india()}>Make it so</button>
+	</div>
+
+	<style>
+		button {
+			background-color: #4caf50;
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			width: 50%;
+			margin: 10px auto 10px;
+		}
+	</style>
 	`
 };
