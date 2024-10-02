@@ -64,7 +64,13 @@
 		code={CODE_EXAMPLES.handleHook3} />
 </div>
 
-<Link href={'./hooks/hijacked'}>Go to the hijacked page</Link>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href={'./hooks/hijacked'}>
+		Hijacked page
+	</Link>
+</div>
 
 <h2>The RequestEvent object</h2>
 
@@ -120,16 +126,18 @@
 
 <h2>handleFetch</h2>
 
+<p>
+	The <code>event</code>
+	object includes a
+	<code>fetch</code>
+	method that works like the standard
+	<Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">
+		fetch API
+	</Link>, but with added functionality.
+</p>
+
 <ul>
-	<p>
-		The <code>event</code>
-		object includes a
-		<code>fetch</code>
-		method that works like the standard
-		<Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">
-			fetch API
-		</Link>, but with added functionality:
-	</p>
+	<p>Added functionalities:</p>
 	<li>
 		It can make credentialed requests on the server, inheriting <code>cookie</code>
 		and

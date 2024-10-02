@@ -49,16 +49,18 @@
 		headerText={HEADER.BINDINGS}
 		code={CODE.NUMERIC_INPUTS} />
 </div>
-<input
-	type="number"
-	bind:value={age}
-	min="0"
-	max="10" />
-<input
-	type="range"
-	bind:value={age}
-	min="0"
-	max="10" />
+<div class="flex flex-col items-center gap-2">
+	<input
+		type="number"
+		bind:value={age}
+		min="0"
+		max="10" />
+	<input
+		type="range"
+		bind:value={age}
+		min="0"
+		max="10" />
+</div>
 
 <h2>Checkbox inputs</h2>
 
@@ -80,7 +82,7 @@
 <p>
 	We can also use <code>bind:value</code>
 	with
-	<span class="font-bold">select</span>
+	<code>select</code>
 	elements.
 </p>
 
@@ -94,7 +96,7 @@
 <h2>Select multiple</h2>
 
 <p>
-	For <span class="font-bold">select</span>
+	For <code>select</code>
 	elements with the
 	<code>multiple</code>
 	attribute, the options selected will populate an array rather than selecting a single value.
@@ -107,24 +109,24 @@
 		code={CODE.MULTI_SELECT} />
 </div>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col items-center gap-2">
 	<p>
-		Press and hold the <kbd>Ctrl</kbd>
+		Press and hold the <code><kbd>Ctrl</kbd></code>
 		key or the
-		<kbd>command</kbd>
+		<code><kbd>command</kbd></code>
 		key on MacOS to select multiple options.
 	</p>
 
 	<select
 		multiple
 		bind:value={selectedOptions}>
-		<option value="1">Option 1</option>
-		<option value="2">Option 2</option>
-		<option value="3">Option 3</option>
+		<option value="HELP,">Option 1</option>
+		<option value="IM">Option 2</option>
+		<option value="STUCK!">Option 3</option>
 	</select>
 	<p>
-		<b>Selected options:</b>
-		{selectedOptions.length ? selectedOptions.join(', ') : 'None'}
+		Selected options:
+		<b>{selectedOptions.length ? selectedOptions.join(' ') : 'None'}</b>
 	</p>
 </div>
 

@@ -9,22 +9,15 @@
 	several block types that can be used for common operations.
 </p>
 
-<h2>If and else blocks</h2>
+<h2>Conditional blocks</h2>
 <p>
-	An if block is used to conditionally render content. It can be used with an else block
-	to render different content based on a condition.
+	An <code>if</code>
+	block is used to conditionally render content. It can be used with an
+	<code>else</code>
+	block to render different content based on a condition, or you can use
+	<code>else if</code>
+	blocks to provide additional conditions.
 </p>
-
-<div class="flex flex-col gap-2">
-	<h5>Example:</h5>
-	<CodeWrapper
-		headerText={HEADER.LOGIC}
-		code={CODE.IF_ELSE} />
-</div>
-
-<h2>Else if blocks</h2>
-
-<p>It's also possible to use else-if.</p>
 
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
@@ -111,7 +104,8 @@
 <div class="flex flex-col gap-2">
 	<h5>Note</h5>
 	<p>
-		The first block ("Loading...") is displayed while the promise is resolving, which is a
-		nice and convenient way to add placeholders directly in the HTML.
+		The first block, <em>"Loading..."</em>
+		, is displayed while the promise is resolving, which is a nice and convenient way to add
+		placeholders directly in the HTML.
 	</p>
 </div>

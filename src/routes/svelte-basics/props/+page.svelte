@@ -3,6 +3,13 @@
 	import PropsMultipleExample from '$lib/components/examples/props-multiple-example-component /props-multiple-example.svelte';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import { COMPONENT_CODE, HEADER } from './constants';
+
+	const props = {
+		name: 'Snickerdoodle',
+		age: 6,
+		country: 'Fluffy Land',
+		question: "Help me, I'm trapped in a component! 😵‍💫"
+	};
 </script>
 
 <h1>Props</h1>
@@ -20,16 +27,16 @@
 		code={COMPONENT_CODE.PROPS} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<p>And here's the component that renders:</p>
-	<PropsExample exampleName="Props Example" />
+<div class="flex flex-col items-center gap-2">
+	<p>And here's the component:</p>
+	<PropsExample exampleName="wait a minute...am i a prop? 🤔" />
 </div>
 
 <div class="flex flex-col gap-2">
 	<h5>Note</h5>
 	<p>
-		You can define a default value for a prop by assigning it in the script tag, like in
-		the example above, or leave it empty if no default is required.
+		You can define a default value for a prop by assigning it in the script tag or leave
+		it empty if no default is required.
 	</p>
 </div>
 
@@ -39,17 +46,14 @@
 		headerText={HEADER.PROPS}
 		code={COMPONENT_CODE.MULTIPLE_PROPS} />
 </div>
-<div class="flex flex-col gap-2">
-	<p>And here's the component that renders:</p>
-	<PropsMultipleExample
-		name="Diogo"
-		age="33"
-		country="Portugal"
-		city="Barreiro" />
+<div class="flex flex-col items-center gap-2">
+	<p>And here's the component:</p>
+	<PropsMultipleExample {...props} />
 </div>
 <div class="flex flex-col gap-2">
 	<p>
-		Since Svelte provides us with a shorthand syntax, we can also pass props like this:
+		Since Svelte provides us with a shorthand syntax if the variable name matches the prop
+		name, we can also pass props like this:
 	</p>
 	<CodeWrapper
 		headerText={HEADER.PROPS}

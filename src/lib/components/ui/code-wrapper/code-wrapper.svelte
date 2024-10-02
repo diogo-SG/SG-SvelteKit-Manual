@@ -7,5 +7,9 @@
 </script>
 
 <div class="code_wrapper">
-	<CodeBlock language="svelte" {headerText} {code} />
+	<CodeBlock
+		showLineNumbers={false}
+		language="svelte"
+		{headerText}
+		{code} />
 </div>

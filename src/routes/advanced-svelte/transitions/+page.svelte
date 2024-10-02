@@ -1,9 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { Code } from 'lucide-svelte';
 	import { CODE, TRANSITION_FUNCTION_LIST } from './constants';
 	import Link from '$lib/components/ui/link/link.svelte';
-
 	const href = 'https://svelte.dev/docs/svelte-transition';
 	const fileTitle = 'App.svelte';
 </script>

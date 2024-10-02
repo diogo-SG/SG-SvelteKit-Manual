@@ -1,8 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import Link from '$lib/components/ui/link/link.svelte';
+
 	import {
-		href,
 		HEADERS,
 		WRITABLESTORES,
 		AUTOSUBSCRIPTION,
@@ -278,7 +277,5 @@
 
 <p>
 	Hope you liked the content so far and that you had time to practice the basics of
-	Svelte. Now it's time to turn it up a notch, let's move on to <Link {href}>
-		Advanced Svelte.
-	</Link>
+	Svelte. Now it's time to turn it up a notch!
 </p>

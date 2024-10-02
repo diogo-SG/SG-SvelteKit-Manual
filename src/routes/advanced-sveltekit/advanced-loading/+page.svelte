@@ -103,7 +103,13 @@
 		code={CODE_EXAMPLES.parentLoad2} />
 </div>
 
-<Link href="./advanced-loading/joke">Go to the joke page.</Link>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href="./advanced-loading/joke">
+		Go to the joke page
+	</Link>
+</div>
 
 <div class="flex flex-col gap-2">
 	<h5>Note</h5>

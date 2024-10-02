@@ -5,35 +5,51 @@ export const HEADER = {
 export const COMPONENT_CODE = {
 	PROPS: `
     <script>
-        export let exampleName = 'Props Example';
+        export let exampleName;
     </script>
 
     <div>
-        This is an example of a component that accepts props. The prop passed to this component is: <strong>{exampleName}</strong>
+	    <h2>I'm a component.</h2>
+	    <p>
+		    The prop passed is:
+            <br />
+		    <strong>{exampleName}</strong>
+	    </p>
     </div>
 
     <style>
         div {
-        background-color: #1f4a65;
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        gap: 0.5rem;
+        border-radius: 0.5rem;
+        background-color: #5b859f;
         padding: 1rem;
-        border-radius: 5px;
+        color: #fff;
         }
     </style>
 `,
 	MULTIPLE_PROPS: `
-<PropsMultipleExample name="Diogo" age="33" country="Portugal" city="Barreiro" />
+    <PropsMultipleExample 
+        name="Snickerdoodle" 
+        age={6} 
+        country="Fluffy Land" 
+        question: "Help me, I'm trapped in a component! 😵‍💫" 
+    />
+    
     `,
 	MULTIPLE_PROPS_SHORTHAND: `
-    <PropsMultipleExample {name} {age} {country} {city} />
+    <PropsMultipleExample {name} {age} {country} {question} />
     `,
 	SPREAD_PROPS: `
     <script>
         let props = {
-        name: 'Diogo',
-        age: 33,
-        country: 'Portugal',
-        city: 'Barreiro'
-        }
+		name: 'Snickerdoodle',
+		age: 6,
+		country: 'Fluffy Land',
+		question: "Help me, I'm trapped in a component! 😵‍💫"
+	};
     </script>
 
     <PropsMultipleExample {...props} />
