@@ -15,9 +15,10 @@
 <h1>Stores</h1>
 
 <p>
-	Stores are a way to store and manage the state of your application. They are reactive,
-	meaning that they automatically update when their value changes. Svelte provides a few
-	built-in stores, but you can also create your own custom stores.
+	Stores are a way to store and manage the state of your application, and make it
+	accessible to all components that need to be aware of changes to said state. They are
+	reactive, meaning that they automatically update when their value changes. Svelte
+	provides a few built-in stores, but you can also create your own custom stores.
 </p>
 
 <h2>Writable stores</h2>
@@ -30,11 +31,12 @@
 	<code>update</code>
 	and
 	<code>subscribe</code>
-	methods.
+	methods. This means that you can change the value of the store and subscribe to it from any
+	component accessing the store.
 </p>
 
 <p>
-	Let's create a <span class="font-bold">stores.js</span>
+	Let's create a <span class="font-bold">stores.ts</span>
 	file to initiate our very own store that will have a
 	<code>count</code>
 	variable:

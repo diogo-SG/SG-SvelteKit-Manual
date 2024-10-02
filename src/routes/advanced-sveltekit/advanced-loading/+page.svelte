@@ -159,7 +159,7 @@
 			still felt it was a good example to explore). To fix this, we can add the <code>
 				data-sveltekit-reload
 			</code>
-			 attribute. to other navigation triggers on the Front End, for instance, the Navbar items.
+			attribute. to other navigation triggers on the Front End, for instance, the Navbar items.
 			This will force the page to reload the data from the server, and the breadcrumbs will
 			be updated accordingly.
 		</p>

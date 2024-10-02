@@ -1,8 +1,8 @@
 export const href = '/advanced-svelte/motion';
 
 export const HEADERS = {
-	STORES: 'stores.js',
-	DERIVEDSTORE: 'derivedStore.js',
+	STORES: 'stores.ts',
+	DERIVEDSTORE: 'derivedStore.ts',
 	INCREMENTER: 'Incrementer.svelte',
 	RESET: 'Reset.svelte',
 	COUNTER: 'Counter.svelte',
@@ -11,10 +11,9 @@ export const HEADERS = {
 
 export const WRITABLESTORES = {
 	STORES: `
-	<script>
 		import { writable } from 'svelte/store';
+
 		export const count = writable(0);
-	</script>
 	`,
 	INCREMENTER: `
 	<script>
@@ -96,7 +95,6 @@ export const AUTOSUBSCRIPTION = {
 
 export const READABLESTORE = {
 	STORES: `
-	<script>
 		import { readable } from 'svelte/store';
 
 		export const time = readable(new Date(), function start(set) {
@@ -108,15 +106,12 @@ export const READABLESTORE = {
 				clearInterval(interval);
 			};
 		});
-	</script>
 	`,
 	DERIVEDSTORE: `
-	<script>
 		import { derived } from 'svelte/store';
 		import { time } from './stores.js';
 
 		export const doubleTime = derived(time, $time => $time * 2);
-	</script>
 	`,
 	STEPS: [
 		`The first argument to readable is an initial value,
@@ -130,7 +125,6 @@ export const READABLESTORE = {
 
 export const CUSTOMSTORE = {
 	STORES: `
-	<script>
 		import { writable } from 'svelte/store';
 
 		function createCount() {
@@ -144,7 +138,6 @@ export const CUSTOMSTORE = {
 		}
 
 		export const count = createCount();
-	</script>
 	`,
 	COUNTER: `
 	<script>

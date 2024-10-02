@@ -71,3 +71,10 @@
 <CodeWrapper
 	headerText={cardHeaderText}
 	code={CODE.GET_CONTEXT_WITH_STORE} />
+
+<h2>How is the Context API different from stores?</h2>
+<p>
+	While the Context API handles data in a specific portion of the component tree, stores
+	are <i>global</i>
+	, i.e, they can be accessed from any component at any time.
+</p>
