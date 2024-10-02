@@ -102,9 +102,9 @@
 	<code>kit.version.pollInterval</code>
 	.
 </p>
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		You can also manually check for new versions by calling <code>updated.check()</code>
 		.
 	</p>

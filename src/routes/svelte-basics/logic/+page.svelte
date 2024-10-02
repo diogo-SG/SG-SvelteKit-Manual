@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { CODE, HEADER } from './constants';
+	import { CODE } from './constants';
 </script>
 
 <h1>Logic</h1>
@@ -22,7 +22,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LOGIC}
+		showHeader={false}
 		code={CODE.ELSE_IF} />
 </div>
 
@@ -53,7 +53,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LOGIC}
+		showHeader={false}
 		code={CODE.EACH} />
 </div>
 
@@ -63,14 +63,14 @@
 		so:
 	</p>
 	<CodeWrapper
-		headerText={HEADER.LOGIC}
+		showHeader={false}
 		code={CODE.KEYED_EACH} />
 </div>
 
 <div class="flex flex-col gap-2">
 	<p>You could even immediately destructure the object in the each block:</p>
 	<CodeWrapper
-		headerText={HEADER.LOGIC}
+		showHeader={false}
 		code={CODE.EACH_DESTRUCTURING} />
 </div>
 <h2>Keyed each blocks</h2>
@@ -84,7 +84,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LOGIC}
+		showHeader={false}
 		code={CODE.KEYED_EACH_2} />
 </div>
 <h2>Await blocks</h2>
@@ -97,15 +97,15 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LOGIC}
+		showHeader={false}
 		code={CODE.AWAIT} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
-		The first block, <em>"Loading..."</em>
-		, is displayed while the promise is resolving, which is a nice and convenient way to add
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
+		The first block - <em>"Loading..."</em>
+		- is displayed while the promise is resolving, which is a nice and convenient way to add
 		placeholders directly in the HTML.
 	</p>
 </div>

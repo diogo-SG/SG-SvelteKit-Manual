@@ -46,12 +46,12 @@ export const CODE = {
 `,
 	THIS_COMPONENT_PARENT: `
     <script>
-        import Child from './Child.svelte';
+        import Counter from './Counter.svelte';
         let value;
     </script>
 
     <button on:click={() => value.clear()}>Clear counter</button>
-    <Child bind:this={value} />
+    <Counter bind:this={value} />
     `,
 	THIS_COMPONENT_CHILD: `
     <script>
@@ -72,12 +72,12 @@ export const CODE = {
 `,
 	COMPONENT_PARENT: `
     <script>
-        import Child from './Child.svelte';
+        import Counter from './Counter.svelte';
         let value;
     </script>
 
     <button on:click={() => value -= 1}>Subtract</button>
-    <Child bind:count={value} />
+    <Counter bind:count={value} />
 `
 };
 

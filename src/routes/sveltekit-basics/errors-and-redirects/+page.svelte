@@ -35,7 +35,6 @@
 		headerText="/expected-error/+page.svelte.ts"
 		code={CODE_EXAMPLES.expectedError} />
 </div>
-<Link href={$page.route.id + '/expected-error'}>Go to the expected error page</Link>
 
 <h2>Unexpected errors</h2>
 <p>
@@ -53,7 +52,6 @@
 		headerText="/unexpected-error/+page.svelte.ts"
 		code={CODE_EXAMPLES.unexpectedError} />
 </div>
-<Link href={$page.route.id + '/unexpected-error'}>Go to the unexpected error page</Link>
 
 <h2>Customizing error pages</h2>
 We can customize error pages by creating a +error.svelte component. If placed in the root routes
@@ -67,7 +65,25 @@ be used for all errors in that route.
 		code={CODE_EXAMPLES.customErrorPage} />
 </div>
 
-<Link href={$page.route.id + '/custom-error-page'}>Go to the custom error page</Link>
+<div class="flex justify-center gap-3">
+	<Link
+		isInternal
+		href={$page.route.id + '/expected-error'}>
+		Expected error
+	</Link>
+
+	<Link
+		isInternal
+		href={$page.route.id + '/unexpected-error'}>
+		Unexpected error
+	</Link>
+
+	<Link
+		isInternal
+		href={$page.route.id + '/custom-error-page'}>
+		Custom error
+	</Link>
+</div>
 
 <h2>Fallback errors</h2>
 <p>
@@ -114,6 +130,11 @@ be used for all errors in that route.
 		code={CODE_EXAMPLES.redirects} />
 </div>
 
-<Link href={$page.route.id + '/redirects'}>
-	Go to the redirect page, which will bring you back to this one
-</Link>
+<p>Go to the redirect page, which will bring you back to this one.</p>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href={$page.route.id + '/redirects'}>
+		Redirect me
+	</Link>
+</div>

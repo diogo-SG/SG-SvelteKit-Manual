@@ -26,23 +26,30 @@
 			currentPage?.id < breadcrumbsList.length &&
 			breadcrumb.id === currentPage.id + 1
 	);
+
+	export let top = true;
 </script>
 
-<div class="flex w-full justify-between border-b px-3 pb-1 text-xs">
-	<div class="text-left">
-		{#if prevPage && prevPage?.label}
-			<Link href={prevPage?.path}>
-				<ChevronLeftOutline class="pb-[0.156rem]" />
-				{prevPage?.label}
-			</Link>
-		{/if}
+{#if currentPage}
+	<div
+		class="flex w-full justify-between {top
+			? 'border-b pb-1'
+			: 'h-[1rem] border-t pt-2'} px-3 text-xs">
+		<div class="text-left">
+			{#if prevPage && prevPage?.label}
+				<Link href={prevPage?.path}>
+					<ChevronLeftOutline class="pb-[0.156rem]" />
+					{prevPage?.label}
+				</Link>
+			{/if}
+		</div>
+		<div class="text-right">
+			{#if nextPage && nextPage?.label}
+				<Link href={nextPage?.path}>
+					{nextPage?.label}
+					<ChevronRightOutline class="pb-[0.156rem]" />
+				</Link>
+			{/if}
+		</div>
 	</div>
-	<div class="text-right">
-		{#if nextPage && nextPage?.label}
-			<Link href={nextPage?.path}>
-				{nextPage?.label}
-				<ChevronRightOutline class="pb-[0.156rem]" />
-			</Link>
-		{/if}
-	</div>
-</div>
+{/if}

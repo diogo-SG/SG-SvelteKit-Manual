@@ -13,7 +13,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.CLASS} />
 </div>
 <p>
@@ -27,13 +27,13 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.CLASS_SHORTHAND} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		This directive means "add the <code>isActive</code>
 		class if
 		<code>isActive</code>
@@ -59,7 +59,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.STYLE} />
 </div>
 
@@ -71,7 +71,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.STYLE_SHORTHAND} />
 </div>
 

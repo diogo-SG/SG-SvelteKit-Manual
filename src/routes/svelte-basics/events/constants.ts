@@ -1,8 +1,7 @@
 export const HEADER = {
-	EVENTS: 'events.svelte',
-	PARENT: 'parent.svelte',
-	CHILD: 'child.svelte',
-	GRANDCHILD: 'grandchild.svelte'
+	PARENT: 'Parent.svelte',
+	CHILD: 'Child.svelte',
+	GRANDCHILD: 'Grandchild.svelte'
 };
 
 export const EVENTS_LIST = {

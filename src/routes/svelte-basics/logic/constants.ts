@@ -1,7 +1,3 @@
-export const HEADER = {
-	LOGIC: 'logic.svelte'
-};
-
 export const CODE = {
 	ELSE_IF: `
 {#if condition1}

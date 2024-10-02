@@ -1,7 +1,3 @@
-export const HEADER = {
-	LIFECYCLE: 'lifecycle.svelte'
-};
-
 export const CODE = {
 	ON_MOUNT: `
 	<script>

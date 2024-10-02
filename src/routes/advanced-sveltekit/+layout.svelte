@@ -4,3 +4,4 @@
 
 <Breadcrumbs />
 <slot></slot>
+<Breadcrumbs top={false} />

@@ -19,7 +19,13 @@
 	</code>
 	to handle the form submission. Here's an example of a basic form in SvelteKit:
 </p>
-<Link href="./forms/basic">Movie search example</Link>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href="./forms/basic">
+		Movie search
+	</Link>
+</div>
 <p class="mt-5">
 	The request here is a standard <Link
 		href="https://developer.mozilla.org/en-US/docs/Web/API/Request">
@@ -41,7 +47,13 @@
 	. Have a look at the example below to see the code and the results:
 </p>
 
-<Link href="./forms/multiple">Get all movies example</Link>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href="./forms/multiple">
+		Get all movies
+	</Link>
+</div>
 
 <h3>Progressive enhancement</h3>
 
@@ -83,9 +95,9 @@
 	<li>Navigate to a new page on a redirect response;</li>
 	<li>Render the nearest error page if one occurs.</li>
 </ul>
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		It's an interesting and powerful feature, and one you can customize further to improve
 		the general form submission experience for users, including things like controlling
 		when the form is reset, handling redirects, etc. You can read more about progressive
@@ -109,4 +121,10 @@
 	module. You can check out and example and the code behind it below:
 </p>
 
-<Link href="./forms/validation">Form validation example</Link>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href="./forms/validation">
+		Form validation
+	</Link>
+</div>

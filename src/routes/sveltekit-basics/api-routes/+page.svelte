@@ -32,12 +32,9 @@
 <Accordion flush>
 	<AccordionItem>
 		<span slot="header">GET</span>
-
-		<p>Here's an example of a simple GET route:</p>
 		<CodeWrapper
 			headerText="example/+server.js"
 			code={CODE.getExample1} />
-
 		<p>
 			Since returning JSON is a pretty common use case, SvelteKit provides a helper
 			function called
@@ -54,7 +51,7 @@
 		{#await fetchResponse()}
 			<p>Loading...</p>
 		{:then response}
-			<pre>{response}</pre>
+			<b>{response}</b>
 		{/await}
 
 		<CodeWrapper
@@ -82,7 +79,9 @@
 
 <p>
 	You can read the full SvelteKit documentation for <code>+server</code>
-	files and API routes <Link href="https://kit.svelte.dev/docs/routing#server">here</Link>
+	files and API routes <Link href="https://kit.svelte.dev/docs/routing#server">
+		here.
+	</Link>
 </p>
 
 <style>

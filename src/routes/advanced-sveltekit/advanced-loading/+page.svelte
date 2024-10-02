@@ -54,16 +54,16 @@
 		code={CODE_EXAMPLES.universalLoad2} />
 </div>
 
-<div class="flex flex-col gap-2">
+<div class="flex flex-col items-center gap-2">
 	{#if $page.data.component}
-		<p>Here's the component we fetched from the server:</p>
+		<p>Component fetched from server:</p>
 		<svelte:component this={$page.data.component} />
 	{/if}
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		You can even use a server load function and a universal load function together - for
 		example, when returning data from the server, but also a value that can't be
 		serialized. The order of execution will be first on the server, then on the universal
@@ -107,13 +107,13 @@
 	<Link
 		isInternal
 		href="./advanced-loading/joke">
-		Go to the joke page
+		Jokes here
 	</Link>
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		While a universal <code>load</code>
 		function can access data from a parent server
 		<code>load</code>

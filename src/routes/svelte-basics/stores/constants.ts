@@ -15,7 +15,7 @@ export const WRITABLESTORES = {
 	`,
 	INCREMENTER: `
 	<script>
-		import { count } from './stores.js';
+		import { count } from './stores.ts';
 
 		function increment() {
 			count.update(n => n + 1);
@@ -26,7 +26,7 @@ export const WRITABLESTORES = {
 	`,
 	RESET: `
 	<script>
-		import { count } from './stores.js';
+		import { count } from './stores.ts';
 		function reset() {
 			count.set(0);
 		}
@@ -36,7 +36,7 @@ export const WRITABLESTORES = {
 	`,
 	COUNTER: `
 	<script>
-		import { count } from './stores.js';
+		import { count } from './stores.ts';
 		import Incrementer from './Incrementer.svelte';
 		import Reset from './Reset.svelte';
 
@@ -58,7 +58,7 @@ export const WRITABLESTORES = {
 export const AUTOSUBSCRIPTION = {
 	COUNTER: `
 	<script>
-		import { count } from './stores.js';
+		import { count } from './stores.ts';
 		import { onDestroy } from 'svelte';
 		import Incrementer from './Incrementer.svelte';
 		import Reset from './Reset.svelte';
@@ -79,7 +79,7 @@ export const AUTOSUBSCRIPTION = {
 	`,
 	COUNTER_REACTIVE: `
 	<script>
-		import { count } from './stores.js';
+		import { count } from './stores.ts';
 		import Incrementer from './Incrementer.svelte';
 		import Reset from './Reset.svelte';
 	</script>
@@ -107,7 +107,7 @@ export const READABLESTORE = {
 	`,
 	DERIVEDSTORE: `
 		import { derived } from 'svelte/store';
-		import { time } from './stores.js';
+		import { time } from './stores.ts';
 
 		export const doubleTime = derived(time, $time => $time * 2);
 	`,
@@ -139,7 +139,7 @@ export const CUSTOMSTORE = {
 	`,
 	COUNTER: `
 	<script>
-		import { count } from './stores.js';
+		import { count } from './stores.ts';
 	</script>
 
 	<button on:click={count.increment}>Increment</button>
@@ -152,7 +152,7 @@ export const CUSTOMSTORE = {
 export const STORE_BINDINGS = {
 	INPUT: `
 	<script>
-		import { name, greeting } from './stores.js';
+		import { name, greeting } from './stores.ts';
 	</script>
 
 	<h1>{$greeting}</h1>

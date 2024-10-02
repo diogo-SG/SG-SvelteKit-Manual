@@ -1,5 +1,6 @@
 export const HEADER = {
-	PROPS: 'props.svelte'
+	PROPS: 'Component.svelte',
+	APP: 'App.svelte'
 };
 
 export const COMPONENT_CODE = {
@@ -16,26 +17,13 @@ export const COMPONENT_CODE = {
 		    <strong>{exampleName}</strong>
 	    </p>
     </div>
-
-    <style>
-        div {
-        display: flex;
-        width: fit-content;
-        flex-direction: column;
-        gap: 0.5rem;
-        border-radius: 0.5rem;
-        background-color: #5b859f;
-        padding: 1rem;
-        color: #fff;
-        }
-    </style>
 `,
 	MULTIPLE_PROPS: `
     <PropsMultipleExample 
         name="Snickerdoodle" 
         age={6} 
         country="Fluffy Land" 
-        question: "Help me, I'm trapped in a component! 😵‍💫" 
+        question="Help me, I'm trapped in a component! 😵‍💫" 
     />
     
     `,

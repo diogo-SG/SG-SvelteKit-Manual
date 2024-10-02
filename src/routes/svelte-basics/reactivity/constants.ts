@@ -1,7 +1,3 @@
-export const HEADER = {
-	REACTIVE: 'reactivity.svelte'
-};
-
 export const REACTIVE_CODE = {
 	EXAMPLE: `
     <script>
@@ -12,7 +8,9 @@ export const REACTIVE_CODE = {
         }
     </script>
 
-        <button on:click={increment}>This was clicked {count} times </button>
+        <button on:click={increment}>
+			Clicks: {count} {count === 1 ? 'time' : 'times'}
+		</button>
         `,
 	DECLARATIONS: `
     <script>
