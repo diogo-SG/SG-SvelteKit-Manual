@@ -12,11 +12,11 @@
 		class="mx-auto w-1/4" />
 </div>
 <main
-	class="flex flex-col items-center justify-center"
+	class="background flex flex-col items-center justify-center"
 	class:gurgaonIsBest={$bestOffice === 'Gurgaon'}
 	class:lisbonIsBest={$bestOffice === 'Lisbon'}
 	class:londonIsBest={$bestOffice === 'London'}>
-	<div class="bg-white bg-opacity-50 px-6 py-10">
+	<div class="bg-white bg-opacity-70 px-6 py-10">
 		<div class="p-6 text-center">
 			<h1>Welcome to the official Studio Graphene website!</h1>
 			<sub>(not really)</sub>
@@ -39,6 +39,15 @@
 			<b>Our best office is:</b>
 			<p class="text-3xl font-extrabold">{$bestOffice}</p>
 		</div>
+		{#if $bestOffice !== 'All of them are great!'}
+			<div class="flex justify-center py-5">
+				<button
+					class="mx-auto rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+					on:click={() => bestOffice.reset()}>
+					Stop this nonsense!
+				</button>
+			</div>
+		{/if}
 	</div>
 </main>
 
@@ -51,17 +60,20 @@
 <style>
 	main {
 		height: 100vh;
+		background-image: url('/img/office-pic.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 	.gurgaonIsBest {
-		background: url('/img/Flag_of_India.gif');
+		background-image: url('/img/Flag_of_India.gif');
 	}
 
 	.lisbonIsBest {
-		background: url('/img/Flag_of_Portugal.gif');
+		background-image: url('/img/Flag_of_Portugal.gif');
 	}
 
 	.londonIsBest {
-		background: url('/img/Flag_of_the_United_Kingdom.gif');
+		background-image: url('/img/Flag_of_the_United_Kingdom.gif');
 	}
 </style>

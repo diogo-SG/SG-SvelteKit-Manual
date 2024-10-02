@@ -35,6 +35,7 @@ function decideBestOffice() {
 
 	return {
 		subscribe,
+		reset: () => set('All of them are great!'),
 		portugal: () => set('Lisbon'),
 		india: () => set('Gurgaon'),
 		uk: () => set('London')
