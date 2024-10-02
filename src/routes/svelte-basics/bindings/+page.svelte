@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { CODE, HEADER } from './constants';
+	import { CODE } from './constants';
 	let age = 0;
 	let selectedOptions: number[] = [];
 </script>
@@ -25,7 +25,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.TEXT_INPUTS} />
 </div>
 <p>
@@ -46,7 +46,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.NUMERIC_INPUTS} />
 </div>
 <div class="flex flex-col items-center gap-2">
@@ -73,7 +73,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.CHECKBOXES} />
 </div>
 
@@ -89,7 +89,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.SELECT} />
 </div>
 
@@ -105,7 +105,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.MULTI_SELECT} />
 </div>
 
@@ -145,7 +145,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.GROUP} />
 </div>
 
@@ -168,7 +168,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.TEXTAREA} />
 </div>
 
@@ -179,13 +179,13 @@
 	</p>
 
 	<CodeWrapper
-		headerText={HEADER.BINDINGS}
+		showHeader={false}
 		code={CODE.SHORTHAND} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		<span class="underline">This trick applies to all bindings, not just textareas.</span>
 		And that's it! Now you know how to use bindings in Svelte. They are a powerful feature
 		that can help you create more interactive components with less code.

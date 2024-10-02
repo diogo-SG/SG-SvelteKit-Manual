@@ -60,9 +60,9 @@
 		code={CODE.TWEENED_CUBIC} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		The <code>svelte/easing</code>
 		module contains some cool options that you can use out of the box. You can check them by
 		clicking <Link {href}>here</Link>. You can also create your own easing functions

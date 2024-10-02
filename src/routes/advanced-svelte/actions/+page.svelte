@@ -2,7 +2,6 @@
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
 	import { CODE, COMMON_CASES_LIST } from './constants';
-	const headerText = 'App.svelte';
 	const href = 'https://github.com/swyxio/svelte-actions?tab=readme-ov-file#readme';
 </script>
 
@@ -21,14 +20,14 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.USE_WITH_PARAMS} />
 </div>
 
 <div class="flex flex-col gap-2">
 	Here's a simple example that fades-in an element when it is created:
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.USE} />
 </div>
 
@@ -39,9 +38,9 @@
 	{/each}
 </ul>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		Svelte actions are a very powerful feature that allows you to interact with the DOM in
 		a very simple way. If you want to check some examples and how you can apply them in
 		your future Svelte project, click <Link {href}>here</Link>

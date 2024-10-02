@@ -1,9 +1,7 @@
 <script lang="ts">
-	import sanitizeHtml from 'sanitize-html';
-	import { CODE_EXAMPLE, COMPONENT_CODE, HEADER, href } from './constants';
+	import { COMPONENT_CODE, HEADER, href } from './constants';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
-	const sanitizedHTML = sanitizeHtml(CODE_EXAMPLE.SAMPLE_2);
 </script>
 
 <h1>Component Anatomy</h1>
@@ -42,9 +40,9 @@
 	</li>
 </ul>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		For a component to be valid, we only really need the HTML section, everything else is
 		optional. Svelte also allows us to use a shorthand syntax when an element's dynamic
 		attribute has the same name and value. For example, instead of
@@ -72,12 +70,10 @@
 	<code>&#123;@html ...&#125;</code>
 	. This is useful when we want to render a string with HTML code that is dynamically generated.
 </p>
-<div class="flex flex-col items-center gap-2">
-	{@html CODE_EXAMPLE.SAMPLE_1}
-</div>
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		<span class="underline">
 			Svelte doesn't perform any sanitization of the expression before it gets inserted
 			into the DOM.
@@ -88,9 +84,4 @@
 		<Link {href}>sanitize-html</Link>
 		package. Click the link to learn more about it.
 	</p>
-</div>
-<div class="flex flex-col items-center gap-2">
-	<div class="w-fit rounded-lg bg-[lightgray] p-3">
-		{@html sanitizedHTML}
-	</div>
 </div>

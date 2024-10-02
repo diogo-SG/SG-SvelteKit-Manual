@@ -20,7 +20,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.CONTENTEDITABLE} />
 </div>
 
@@ -34,7 +34,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.EACH_BLOCK} />
 </div>
 
@@ -50,7 +50,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.MEDIA} />
 </div>
 
@@ -99,7 +99,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.DIMENSIONS} />
 </div>
 
@@ -114,7 +114,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		{headerText}
+		showHeader={false}
 		code={CODE.THIS} />
 </div>
 
@@ -142,7 +142,7 @@
 	<code>value</code>
 	to a component prop called
 	<code>count</code>
-	.
+	in case you want to create a counter component.
 </p>
 
 <div class="flex flex-col gap-2">
@@ -156,9 +156,9 @@
 		code={CODE.COMPONENT_CHILD} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		While Svelte props are reactive without binding, that reactivity only flows downward
 		into the component by default. Using <code>bind:property</code>
 		allows changes to the property from within the component to flow back up out of the component.

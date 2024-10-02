@@ -1,7 +1,3 @@
-export const HEADER = {
-	BINDINGS: 'bindings.svelte'
-};
-
 export const CODE = {
 	TEXT_INPUTS: `
 	<script>

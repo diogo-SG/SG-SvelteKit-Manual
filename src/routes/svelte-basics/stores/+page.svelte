@@ -38,7 +38,7 @@
 
 <div class="flex flex-col gap-2">
 	<p>
-		Let's create a <span class="font-bold">stores.js</span>
+		Let's create a <code>stores.ts</code>
 		file to initiate our very own store that will have a
 		<code>count</code>
 		variable:
@@ -147,7 +147,7 @@
 <div class="flex flex-col gap-2">
 	<p>
 		In our
-		<span class="font-bold">stores.js</span>
+		<code>stores.ts</code>
 		file, let's create a readable store that will have a
 		<code>time</code>
 		variable:
@@ -176,7 +176,7 @@
 <div class="flex flex-col gap-2">
 	<p>
 		In our
-		<span class="font-bold">derivedStore.js</span>
+		<code>derivedStore.ts</code>
 		file, let's create a
 		<code>derived</code>
 		store that will have a
@@ -217,7 +217,7 @@
 
 <div class="flex flex-col gap-2">
 	<p>
-		And in our <span class="font-bold">Counter.svelte</span>
+		And in our <code>Counter.svelte</code>
 		component:
 	</p>
 
@@ -245,14 +245,14 @@
 	and a derived store
 	<code>greeting</code>
 	from
-	<b>stores.js</b>
+	<code>stores.ts</code>
 	.
 </p>
 
 <div class="flex flex-col gap-2">
 	<p>
 		In
-		<b>App.svelte</b>
+		<code>App.svelte</code>
 		, let's update the
 		<code>input</code>
 		element:
@@ -285,7 +285,13 @@
 	the link below to see a page that uses writable, readable, and derived stores.
 </p>
 
-<Link href="../examples/stores">Stores example page</Link>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href="../examples/stores">
+		Example page
+	</Link>
+</div>
 
 <Accordion flush>
 	<AccordionItem>

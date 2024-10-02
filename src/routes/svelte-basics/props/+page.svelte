@@ -32,9 +32,9 @@
 	<PropsExample exampleName="wait a minute...am i a prop? 🤔" />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		You can define a default value for a prop by assigning it in the script tag or leave
 		it empty if no default is required.
 	</p>
@@ -43,7 +43,7 @@
 <div class="flex flex-col gap-2">
 	<p>If we have multiple props, we can pass them like so:</p>
 	<CodeWrapper
-		headerText={HEADER.PROPS}
+		headerText={HEADER.APP}
 		code={COMPONENT_CODE.MULTIPLE_PROPS} />
 </div>
 <div class="flex flex-col items-center gap-2">
@@ -56,20 +56,20 @@
 		name, we can also pass props like this:
 	</p>
 	<CodeWrapper
-		headerText={HEADER.PROPS}
+		headerText={HEADER.APP}
 		code={COMPONENT_CODE.MULTIPLE_PROPS_SHORTHAND} />
 </div>
 
 <div class="flex flex-col gap-2">
 	<p>Or we could even spread an object into the component as props:</p>
 	<CodeWrapper
-		headerText={HEADER.PROPS}
+		headerText={HEADER.APP}
 		code={COMPONENT_CODE.SPREAD_PROPS} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		Another nifty trick that Svelte allows is to access props that were not
 		exported/declared on the component. Imagine that the component is only exporting
 		<code>firstName</code>

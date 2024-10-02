@@ -27,22 +27,22 @@
 	<Link
 		isInternal
 		href="./advanced-routing/optional-params/">
-		Default page
+		Default 🏳️
 	</Link>
 	<Link
 		isInternal
 		href="./advanced-routing/optional-params/en/">
-		/en page 🇬🇧
+		English 🇬🇧
 	</Link>
 	<Link
 		isInternal
 		href="./advanced-routing/optional-params/pt/">
-		/pt page 🇵🇹
+		Portuguese 🇵🇹
 	</Link>
 	<Link
 		isInternal
 		href="./advanced-routing/optional-params/hi/">
-		/hi page 🇮🇳
+		Indian 🇮🇳
 	</Link>
 </div>
 
@@ -170,9 +170,9 @@
 	</li>
 </ul>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		Keep in mind
 		<span class="underline">
 			that the root layout applies to every page in our app and it cannot be broken out

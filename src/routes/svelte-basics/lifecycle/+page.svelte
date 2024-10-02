@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { CODE, HEADER } from './constants';
+	import { CODE } from './constants';
 </script>
 
 <h1>Component lifecycle</h1>
@@ -27,7 +27,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LIFECYCLE}
+		showHeader={false}
 		code={CODE.ON_MOUNT} />
 </div>
 
@@ -48,13 +48,13 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LIFECYCLE}
+		showHeader={false}
 		code={CODE.BEFORE_AND_AFTER_UPDATE} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		Bare in mind that <code>beforeUpdate</code>
 		will first run before the component has mounted, so you'll need to check if the component
 		is mounted before running any code that interacts with the DOM.
@@ -72,7 +72,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LIFECYCLE}
+		showHeader={false}
 		code={CODE.ON_DESTROY} />
 </div>
 
@@ -91,13 +91,13 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.LIFECYCLE}
+		showHeader={false}
 		code={CODE.TICK} />
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		<code>tick</code>
 		is useful when you need to interact with the DOM after updating component state, such as
 		manipulating the DOM directly or focusing an input element.

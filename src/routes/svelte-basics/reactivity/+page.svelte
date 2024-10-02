@@ -1,6 +1,6 @@
 <script>
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { HEADER, REACTIVE_CODE } from './constants';
+	import { REACTIVE_CODE } from './constants';
 
 	let count = 0;
 	$: doubled = count * 2;
@@ -28,7 +28,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.REACTIVE}
+		showHeader={false}
 		code={REACTIVE_CODE.EXAMPLE} />
 
 	<div class="flex justify-center">
@@ -41,9 +41,9 @@
 	</div>
 </div>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		As a follow up to the previous page - if you inspect this button's attributes, you'll
 		notice that Svelte has assigned a unique class to it, since it's styles are declared
 		in this page.
@@ -59,7 +59,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.REACTIVE}
+		showHeader={false}
 		code={REACTIVE_CODE.DECLARATIONS} />
 
 	<div class="flex items-center justify-center gap-3">
@@ -88,7 +88,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.REACTIVE}
+		showHeader={false}
 		code={REACTIVE_CODE.STATEMENTS} />
 </div>
 <p>
@@ -112,24 +112,13 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.REACTIVE}
+		showHeader={false}
 		code={REACTIVE_CODE.UPDATING_ARRAYS} />
 </div>
 
 <div class="flex flex-col gap-2">
 	<p>Or we could simply do a redundant assignment, like so:</p>
 	<CodeWrapper
-		headerText={HEADER.REACTIVE}
+		showHeader={false}
 		code={REACTIVE_CODE.UPDATING_ARRAYS_1} />
 </div>
-
-<style>
-	/* button {
-		background-color: #333;
-		color: white;
-		padding: 0.5rem 1rem;
-		border: none;
-		border-radius: 0.5rem;
-		cursor: pointer;
-	} */
-</style>

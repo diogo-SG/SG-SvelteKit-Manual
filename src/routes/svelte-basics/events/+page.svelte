@@ -20,7 +20,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.EVENTS}
+		showHeader={false}
 		code={CODE.CLICK} />
 </div>
 <p>
@@ -67,7 +67,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.EVENTS}
+		showHeader={false}
 		code={CODE.INLINE_HANDLERS} />
 </div>
 
@@ -84,7 +84,7 @@
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
 	<CodeWrapper
-		headerText={HEADER.EVENTS}
+		showHeader={false}
 		code={CODE.MODIFIERS} />
 </div>
 
@@ -98,9 +98,9 @@
 	{/each}
 </ul>
 
-<div class="flex flex-col gap-2">
-	<h5>Note</h5>
-	<p>
+<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
+	<h5 class="text-sm text-primary-600">Note</h5>
+	<p class="text-sm">
 		You can even chain modifiers together. For example:
 		<code>on:click|preventDefault|stopPropagation=&#123;handleClick&#125;</code>
 	</p>
@@ -115,7 +115,7 @@
 
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>parent.svelte</code>
+		On our <code>Parent.svelte</code>
 		component:
 	</p>
 
@@ -126,7 +126,7 @@
 
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>child.svelte</code>
+		On our <code>Child.svelte</code>
 		component:
 	</p>
 
@@ -152,23 +152,18 @@
 	Unlike DOM events, component events don't bubble. If you want to listen to an event on
 	some deeply nested component, the intermediate components must forward the event. <br />
 	Let's say we have a
-	<code>grandchild</code>
+	<code>Grandchild.svelte</code>
 	component that dispatches a
 	<code>:message</code>
-	event and we want to listen to it in the
-	<code>parent</code>
-	component. We need to forward the event from the
-	<code>grandchild</code>
-	to the
-	<code>parent</code>
-	through the
-	<code>child</code>
-	component.
+	event and we want to listen to it in the parent component. We need to forward the event from
+	the
+	<code>Grandchild.svelte</code>
+	to the parent through the child component.
 </p>
 
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>parent.svelte</code>
+		On our <code>Parent.svelte</code>
 		component:
 	</p>
 	<CodeWrapper
@@ -177,7 +172,7 @@
 </div>
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>child.svelte</code>
+		On our <code>Child.svelte</code>
 		component:
 	</p>
 	<CodeWrapper
@@ -186,7 +181,7 @@
 </div>
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>grandchild</code>
+		On our <code>Grandchild.svelte</code>
 		component:
 	</p>
 	<CodeWrapper
@@ -197,7 +192,7 @@
 <p>
 	In the example above, an <code>on:message</code>
 	event directive is passed to the
-	<code>grandchild</code>
+	<code>Grandchild.svelte</code>
 	component without a value, which means 'forward all message events'. Again,
 	<span class="underline">the name of the event can be anything</span>
 	, just have in mind that it's a good practice to use a descriptive name.
@@ -207,15 +202,15 @@
 
 <p>
 	Event forwarding works for DOM events too. Imagine that we want to get notified of
-	clicks on our <code>child</code>
+	clicks on our <code>Child.svelte</code>
 	component, to do that we just need to forward click events to the button element in our
-	<code>child</code>
+	<code>Child.svelte</code>
 	component.
 </p>
 
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>parent.svelte</code>
+		On our <code>Parent.svelte</code>
 		component:
 	</p>
 	<CodeWrapper
@@ -224,7 +219,7 @@
 </div>
 <div class="flex flex-col gap-2">
 	<p>
-		On our <code>child.svelte</code>
+		On our <code>Child.svelte</code>
 		component:
 	</p>
 	<CodeWrapper
