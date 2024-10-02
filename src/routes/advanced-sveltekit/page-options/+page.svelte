@@ -78,10 +78,9 @@
 </p>
 
 <p>
-	Keep in mind that for pages to be prerenderable, <span class="underline">
-		any two users visiting them directly must get the same content from the server and the
-		page must not contain any form actions.
-	</span>
+	Keep in mind that for pages to be prerenderable, any two users visiting them directly
+	must get the same content from the server and the page must not contain any form
+	actions.
 </p>
 
 <p>

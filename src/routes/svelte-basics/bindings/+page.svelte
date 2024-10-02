@@ -186,8 +186,8 @@
 <div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
 	<h5 class="text-sm text-primary-600">Note</h5>
 	<p class="text-sm">
-		<span class="underline">This trick applies to all bindings, not just textareas.</span>
-		And that's it! Now you know how to use bindings in Svelte. They are a powerful feature
-		that can help you create more interactive components with less code.
+		This trick applies to all bindings, not just textareas. And that's it! Now you know
+		how to use bindings in Svelte. They are a powerful feature that can help you create
+		more interactive components with less code.
 	</p>
 </div>

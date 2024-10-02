@@ -141,9 +141,8 @@
 	<code>Hello from child component!</code>
 	when the button is clicked. The parent component listens for the
 	<code>:message</code>
-	event and logs the text to the console.
-	<span class="underline">The name of the event can be anything</span>
-	, just have in mind that it's a good practice to use a descriptive name.
+	event and logs the text to the console. The name of the event can be anything, just have
+	in mind that it's a good practice to use a descriptive name.
 </p>
 
 <h2>Event forwarding</h2>
@@ -193,9 +192,8 @@
 	In the example above, an <code>on:message</code>
 	event directive is passed to the
 	<code>Grandchild.svelte</code>
-	component without a value, which means 'forward all message events'. Again,
-	<span class="underline">the name of the event can be anything</span>
-	, just have in mind that it's a good practice to use a descriptive name.
+	component without a value, which means 'forward all message events'. Again, the name of the
+	event can be anything, just have in mind that it's a good practice to use a descriptive name.
 </p>
 
 <h2>DOM event forwarding</h2>

@@ -71,18 +71,15 @@
 	<h5 class="text-sm text-primary-600">Note</h5>
 	<p class="text-sm">
 		Another nifty trick that Svelte allows is to access props that were not
-		exported/declared on the component. Imagine that the component is only exporting
+		exported/declared on the component. Imagine that the component is only receiving
 		<code>firstName</code>
-		, but we are passing
+		as a prop , but we are passing
 		<code>lastName</code>
-		prop as well. The
+		as well. The
 		<code>lastName</code>
 		can still be used and we can access it by writing
 		<code>&#123;$$props.lastName&#125;</code>
-		.
-		<span class="underline">
-			It's not generally recommended, since it's difficult for Svelte to optimise.
-		</span>
-		But it can still be a very useful trick in some rare cases.
+		. It's not generally recommended, but it can still be a very useful trick in some rare
+		cases.
 	</p>
 </div>

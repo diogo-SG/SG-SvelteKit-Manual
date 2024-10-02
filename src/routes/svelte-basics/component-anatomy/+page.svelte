@@ -45,11 +45,8 @@
 	<p class="text-sm">
 		For a component to be valid, we only really need the HTML section, everything else is
 		optional. Svelte also allows us to use a shorthand syntax when an element's dynamic
-		attribute has the same name and value. For example, instead of
-		<code>{`<img src={src} />`}</code>
-		we could use simply
-		<code>{`<img {src} />`}</code>
-		.
+		attribute has the same name and value. We could write <code>{`<img {src} />`}</code>
+		and it would still work.
 	</p>
 </div>
 
@@ -74,14 +71,11 @@
 <div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
 	<h5 class="text-sm text-primary-600">Note</h5>
 	<p class="text-sm">
-		<span class="underline">
-			Svelte doesn't perform any sanitization of the expression before it gets inserted
-			into the DOM.
-		</span>
-		This isn't an issue if the content is something you trust like an article you wrote yourself.
-		However, if the content is user-generated or you don't know its source, you should sanitize
-		it before rendering. For this, you can use the
+		Svelte doesn't perform any sanitization of the expression before it gets inserted into
+		the DOM. This isn't an issue if the content is something you trust like an article you
+		wrote yourself. However, if the content is user-generated or you don't know its
+		source, you should sanitize it before rendering. For this, you can use the
 		<Link {href}>sanitize-html</Link>
-		package. Click the link to learn more about it.
+		package.
 	</p>
 </div>

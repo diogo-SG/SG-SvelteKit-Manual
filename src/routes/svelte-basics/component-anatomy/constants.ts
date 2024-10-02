@@ -16,11 +16,11 @@ export const COMPONENT_CODE = {
         <img src={src} alt="Party parrot" />
     
     <style>
-            p {
+        p {
         color: goldenrod;
         font-family: 'Comic Sans MS', cursive;
-            font-size: 2em;
-            }
+        font-size: 2rem;
+        }
     </style>
         `
 };
