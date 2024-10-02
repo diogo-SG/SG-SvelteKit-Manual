@@ -1,5 +1,3 @@
-export const href = '/advanced-svelte/motion';
-
 export const HEADERS = {
 	STORES: 'stores.ts',
 	DERIVEDSTORE: 'derivedStore.ts',

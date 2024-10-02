@@ -18,15 +18,18 @@
 	Try hovering the first link for two seconds before clicking it, and contrast by clicking
 	immediately on the second one:
 </p>
-<div class="flex justify-center gap-5">
+<div class="flex justify-center gap-3">
 	<a
-		class="link"
+		class="internal_link"
 		href="./link-options/slow-route1"
 		data-sveltekit-preload-data>
-		Slow route with preloading
+		With preloading
 	</a>
-	|
-	<Link href="./link-options/slow-route2">Slow route without preloading</Link>
+	<Link
+		isInternal
+		href="./link-options/slow-route2">
+		Without preloading
+	</Link>
 </div>
 
 <div class="flex flex-col gap-2">
@@ -136,12 +139,16 @@
 </div>
 
 <style>
-	.link {
-		color: gray;
-		text-decoration: none;
+	.internal_link {
+		width: fit-content;
+		padding: 0.5rem 1rem;
+		color: #fff;
+		border-radius: 0.5rem;
+		background-color: #eb4f27;
 	}
-
-	.link:hover {
-		text-decoration: underline;
+	.internal_link:hover {
+		background-color: #fff;
+		color: #eb4f27;
+		outline: 2px solid #eb4f27;
 	}
 </style>

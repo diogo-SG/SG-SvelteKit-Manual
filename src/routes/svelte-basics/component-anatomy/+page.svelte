@@ -12,11 +12,13 @@
 	<code>.svelte</code>
 	file.
 </p>
-<p>Here is an example of a simple component:</p>
 
-<CodeWrapper
-	headerText={HEADER.SAMPLE}
-	code={COMPONENT_CODE.SAMPLE} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.SAMPLE}
+		code={COMPONENT_CODE.SAMPLE} />
+</div>
 
 <ul>
 	<p>The component is composed of three parts:</p>
@@ -40,16 +42,18 @@
 	</li>
 </ul>
 
-<h2>Notes</h2>
-<p>
-	For a component to be valid, we only really need the HTML section, everything else is
-	optional. Svelte also allows us to use a shorthand syntax when an element's dynamic
-	attribute has the same name and value. For example, instead of
-	<code>{`<img src={src} />`}</code>
-	we could use simply
-	<code>{`<img {src} />`}</code>
-	.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		For a component to be valid, we only really need the HTML section, everything else is
+		optional. Svelte also allows us to use a shorthand syntax when an element's dynamic
+		attribute has the same name and value. For example, instead of
+		<code>{`<img src={src} />`}</code>
+		we could use simply
+		<code>{`<img {src} />`}</code>
+		.
+	</p>
+</div>
 
 <h2>Styling</h2>
 <p>
@@ -66,26 +70,27 @@
 <p>
 	In order to render/inject HTML code directly in a component, we should use the special
 	<code>&#123;@html ...&#125;</code>
-	. This is useful when we want to render HTML code that is dynamically generated.
+	. This is useful when we want to render a string with HTML code that is dynamically generated.
 </p>
-<div class="flex flex-col gap-2">
-	<p>If we have a string with HTML code, we can render it like this:</p>
+<div class="flex flex-col items-center gap-2">
 	{@html CODE_EXAMPLE.SAMPLE_1}
 </div>
-<p>
-	<span class="underline">
-		Svelte doesn't perform any sanitization of the expression before it gets inserted into
-		the DOM.
-	</span>
-	This isn't an issue if the content is something you trust like an article you wrote yourself.
-	However, if the content is user-generated or you don't know its source, you should sanitize
-	it before rendering. For this, you can use the
-	<Link {href}>sanitize-html</Link>
-	package. Click the link to learn more about it.
-</p>
 <div class="flex flex-col gap-2">
-	<p>The HTML below was sanitized:</p>
-	<div class="flex w-fit flex-col rounded-lg bg-[lightgray] p-3">
+	<h5>Note</h5>
+	<p>
+		<span class="underline">
+			Svelte doesn't perform any sanitization of the expression before it gets inserted
+			into the DOM.
+		</span>
+		This isn't an issue if the content is something you trust like an article you wrote yourself.
+		However, if the content is user-generated or you don't know its source, you should sanitize
+		it before rendering. For this, you can use the
+		<Link {href}>sanitize-html</Link>
+		package. Click the link to learn more about it.
+	</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+	<div class="w-fit rounded-lg bg-[lightgray] p-3">
 		{@html sanitizedHTML}
 	</div>
 </div>

@@ -23,11 +23,27 @@
 		code={CODE_EXAMPLES.optionalRouteParams} />
 </div>
 
-<div class="flex justify-center gap-3">
-	<Link href="./advanced-routing/optional-params/">Go to /[[lang]] page</Link> |
-	<Link href="./advanced-routing/optional-params/en/">Go to /en page</Link> |
-	<Link href="./advanced-routing/optional-params/pt/">Go to /pt page</Link> |
-	<Link href="./advanced-routing/optional-params/hi/">Go to /hi page</Link>
+<div class="flex items-center justify-center gap-3">
+	<Link
+		isInternal
+		href="./advanced-routing/optional-params/">
+		Default page
+	</Link>
+	<Link
+		isInternal
+		href="./advanced-routing/optional-params/en/">
+		/en page 🇬🇧
+	</Link>
+	<Link
+		isInternal
+		href="./advanced-routing/optional-params/pt/">
+		/pt page 🇵🇹
+	</Link>
+	<Link
+		isInternal
+		href="./advanced-routing/optional-params/hi/">
+		/hi page 🇮🇳
+	</Link>
 </div>
 
 <h2>Rest parameters</h2>
@@ -76,13 +92,25 @@
 </p>
 
 <div class="flex items-center justify-center gap-3">
-	<Link href="./advanced-routing/colors/ff0000">
-		<code>/color/ff0000</code>
-	</Link> |
-	<Link href="./advanced-routing/colors/123456"><code>/color/123456</code></Link> |
-	<Link href="./advanced-routing/colors/abcdef"><code>/color/abcdef</code></Link> |
-	<Link href="./advanced-routing/colors/ghijkl">
-		<code>/color/ghijkl</code>
+	<Link
+		isInternal
+		href="./advanced-routing/colors/ff0000">
+		Red
+	</Link>
+	<Link
+		isInternal
+		href="./advanced-routing/colors/123456">
+		Deep Sea Blue
+	</Link>
+	<Link
+		isInternal
+		href="./advanced-routing/colors/abcdef">
+		Pale Blue
+	</Link>
+	<Link
+		isInternal
+		href="./advanced-routing/colors/ghijkl">
+		???
 	</Link>
 </div>
 
@@ -106,11 +134,13 @@
 		code={CODE_EXAMPLES.routeGroupsLayout} />
 </div>
 
-<p>
-	Go to <Link href="./advanced-routing/account-settings">
-		<code>/restricted/account-settings</code>
-	</Link> to see the result.
-</p>
+<div class="flex justify-center">
+	<Link
+		isInternal
+		href="./advanced-routing/account-settings">
+		Account settings
+	</Link>
+</div>
 
 <h2>Breaking out of layouts</h2>
 <p>

@@ -31,11 +31,18 @@
 		headerText={HEADER.REACTIVE}
 		code={REACTIVE_CODE.EXAMPLE} />
 
-	<button on:click={increment}>This was clicked {count} times</button>
+	<div class="flex justify-center">
+		<button
+			class="rounded-lg border-none bg-[#333] px-[1rem] py-[0.5rem] font-normal text-[#fff]"
+			on:click={increment}>
+			Clicks: {count}
+			{count === 1 ? 'time' : 'times'}
+		</button>
+	</div>
 </div>
 
 <div class="flex flex-col gap-2">
-	<h5>Notes</h5>
+	<h5>Note</h5>
 	<p>
 		As a follow up to the previous page - if you inspect this button's attributes, you'll
 		notice that Svelte has assigned a unique class to it, since it's styles are declared
@@ -55,9 +62,21 @@
 		headerText={HEADER.REACTIVE}
 		code={REACTIVE_CODE.DECLARATIONS} />
 
-	<button on:click={increment}>Increment count</button>
-	<p>Count is: {count}</p>
-	<p>Doubled: {doubled}</p>
+	<div class="flex items-center justify-center gap-3">
+		<button
+			class="rounded-lg border-none bg-[#333] px-[1rem] py-[0.5rem] font-normal text-[#fff]"
+			on:click={increment}>
+			Increment
+		</button>
+		<div
+			class="rounded-lg bg-[#fff] px-[1rem] py-[0.5rem] font-normal text-[##333] outline outline-[#333]">
+			<p>Count: {count}</p>
+		</div>
+		<div
+			class="rounded-lg bg-[#fff] px-[1rem] py-[0.5rem] font-normal text-[##333] outline outline-[#333]">
+			<p>Doubled: {doubled}</p>
+		</div>
+	</div>
 </div>
 
 <h2>Reactive Statements</h2>
@@ -105,13 +124,12 @@
 </div>
 
 <style>
-	button {
+	/* button {
 		background-color: #333;
 		color: white;
 		padding: 0.5rem 1rem;
 		border: none;
-		border-radius: 0.25rem;
+		border-radius: 0.5rem;
 		cursor: pointer;
-		width: 300px;
-	}
+	} */
 </style>

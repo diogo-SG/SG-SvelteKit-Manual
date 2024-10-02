@@ -3,13 +3,6 @@ export const HEADER = {
 };
 
 export const CODE = {
-	IF_ELSE: `
-{#if condition}
-    <p>Render this content if the condition is true</p>
-{:else}
-    <p>Render this content if the condition is false</p>
-{/if}
-`,
 	ELSE_IF: `
 {#if condition1}
     <p>Render this content if condition1 is true</p>
@@ -27,7 +20,8 @@ export const CODE = {
 	EACH_DESTRUCTURING: `
 {#each array as { id, name }}
 	<p>{id}: {name}</p>
-{/each}`,
+{/each}
+`,
 	KEYED_EACH: `
 {#each array as item, i}
 	<p>{i}: {item}</p>
