@@ -107,10 +107,8 @@
 <p>
 	Now the store will be unsubscribed from when the component is destroyed, preventing
 	memory leaks and unexpected behaviour. This is a good practice to follow when working
-	with stores in Svelte but <span class="underline">
-		there's even a cleaner and better way
-	</span>
-	of solving this issue. Svelte provides an
+	with stores in Svelte but there's even a cleaner and better way of solving this issue.
+	Svelte provides an
 	<span class="font-bold">auto-subscription</span>
 	feature that automatically subscribes and unsubscribes from the store when the component
 	is mounted and destroyed.

@@ -173,10 +173,7 @@
 <div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
 	<h5 class="text-sm text-primary-600">Note</h5>
 	<p class="text-sm">
-		Keep in mind
-		<span class="underline">
-			that the root layout applies to every page in our app and it cannot be broken out
-			of.
-		</span>
+		Keep in mind that the root layout applies to every page in our app and it cannot be
+		broken out of.
 	</p>
 </div>

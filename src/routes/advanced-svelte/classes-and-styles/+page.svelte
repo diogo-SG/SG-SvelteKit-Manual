@@ -37,11 +37,8 @@
 		This directive means "add the <code>isActive</code>
 		class if
 		<code>isActive</code>
-		is true".
-		<span class="underline">
-			Since the name of the class will be the same as the value it depends on, we can even
-			go a little further and use this syntax
-		</span>
+		is true". Since the name of the class will be the same as the value it depends on, we can
+		even go a little further and use this syntax
 		<code>class:isActive</code>
 		.
 	</p>
