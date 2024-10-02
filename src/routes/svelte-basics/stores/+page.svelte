@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import { Accordion, AccordionItem } from 'flowbite-svelte';
 	import {
 		href,
 		HEADERS,
@@ -8,7 +9,8 @@
 		AUTOSUBSCRIPTION,
 		READABLESTORE,
 		CUSTOMSTORE,
-		STORE_BINDINGS
+		STORE_BINDINGS,
+		EXAMPLE_PAGE
 	} from './constants';
 </script>
 
@@ -277,6 +279,38 @@
 	<code>name.set($name + "!")</code>
 	.
 </p>
+
+<h2>Stores example page</h2>
+<p>
+	Now that you've learned the basics of Svelte stores, let's see them in action. Click on
+	the link below to see a page that uses writable, readable, and derived stores.
+</p>
+
+<Link href="../examples/stores">Stores example page</Link>
+
+<Accordion flush>
+	<AccordionItem>
+		<span slot="header">Stores file</span>
+
+		<CodeWrapper
+			headerText="src/lib/stores/stores.ts"
+			code={EXAMPLE_PAGE.STORES_FILE} />
+	</AccordionItem>
+	<AccordionItem>
+		<span slot="header">+page.svelte</span>
+
+		<CodeWrapper
+			headerText="routes/examples/stores/+page.svelte"
+			code={EXAMPLE_PAGE.SVELTE_PAGE} />
+	</AccordionItem>
+	<AccordionItem>
+		<span slot="header">One of the hacker components</span>
+
+		<CodeWrapper
+			headerText="src/components/examples/gurgaon-hacker.svelte"
+			code={EXAMPLE_PAGE.GURGAON_HACKER} />
+	</AccordionItem>
+</Accordion>
 
 <p>
 	Hope you liked the content so far and that you had time to practice the basics of
