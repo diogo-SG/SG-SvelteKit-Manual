@@ -34,12 +34,15 @@
 	<code>setContext</code>
 	method to set a value for a context key called
 	<code>color</code>
-	:
+	.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SET_CONTEXT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SET_CONTEXT} />
+</div>
 
 <h2>getContext</h2>
 
@@ -51,22 +54,26 @@
 	<code>Card.svelte</code>
 	as an example to consume the context value set by the
 	<code>App.svelte</code>
-	component:
+	component.
 </p>
 
-<CodeWrapper
-	headerText={cardHeaderText}
-	code={CODE.GET_CONTEXT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={cardHeaderText}
+		code={CODE.GET_CONTEXT} />
+</div>
 
 <p>
 	Your context object can include anything you want, including stores. This makes it
 	possible to pass values that change over time to any component down the component tree.
-	Here's just a small example for you to have a reference:
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SET_CONTEXT_WITH_STORE} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SET_CONTEXT_WITH_STORE} />
 
 <CodeWrapper
 	headerText={cardHeaderText}

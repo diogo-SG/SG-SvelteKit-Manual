@@ -26,7 +26,8 @@ export const COMPONENT_CODE = {
 };
 
 export const CODE_EXAMPLE = {
-	SAMPLE_1:
-		'<div class="bg-[lightgray] flex flex-col items-center p-3"><h4 class="text-[red]">This is an H4 tag</h4><p class="text-[1rem] text-[#fff]">This is a p tag</p></div>',
-	SAMPLE_2: '<strong>hello world</strong><p>I was sanitized before rendering!</p>'
+	SAMPLE_1: `
+        <div class="rounded-lg bg-[lightgray] flex flex-col w-fit p-3"><h4>This is an H4 tag</h4><p class="text-[1rem] text-[#fff]">This is a p tag</p></div>
+        `,
+	SAMPLE_2: '<h4>hello world</h4><p>I was sanitized before rendering!</p>'
 };

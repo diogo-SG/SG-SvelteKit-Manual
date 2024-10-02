@@ -20,11 +20,11 @@
 
 <ul>
 	<p class="font-bold">Here's a small list of the most common use cases:</p>
-	<li>- When loading data from an external API;</li>
-	<li>- If we want to use in-memory data if it's available;</li>
-	<li>- Delay navigation until an image has been preloaded, to avoid pop-in;</li>
+	<li>When loading data from an external API;</li>
+	<li>If we want to use in-memory data if it's available;</li>
+	<li>Delay navigation until an image has been preloaded, to avoid pop-in;</li>
 	<li>
-		- Return something from load that can't be serialized, like a component or a store.
+		Return something from load that can't be serialized, like a component or a store.
 	</li>
 </ul>
 
@@ -40,36 +40,42 @@
 	to
 	<code>+layout.ts</code>
 	. Here's how we can use a universal load function to fetch the very first example component
-	we've made and return it to this page:
+	we've made and return it to this page.
 </p>
 
-<CodeWrapper
-	headerText="+page.ts"
-	code={CODE_EXAMPLES.universalLoad1} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="+page.ts"
+		code={CODE_EXAMPLES.universalLoad1} />
 
-{#if $page.data.component}
-	<p>Here's the component we fetched from the server:</p>
-	<svelte:component this={$page.data.component} />
-{/if}
+	<CodeWrapper
+		headerText="+page.svelte"
+		code={CODE_EXAMPLES.universalLoad2} />
+</div>
 
-<CodeWrapper
-	headerText="+page.svelte"
-	code={CODE_EXAMPLES.universalLoad2} />
+<div class="flex flex-col gap-2">
+	{#if $page.data.component}
+		<p>Here's the component we fetched from the server:</p>
+		<svelte:component this={$page.data.component} />
+	{/if}
+</div>
 
-<p>
-	You can even use a server load function and a universal load function together - for
-	example, when returning data from the server, but also a value that can't be serialized.
-	The order of execution will be first on the server, then on the universal load function
-	in <code>+page.ts</code>
-	.
-</p>
-<p>
-	You can read more about the differences between each type of <code>load</code>
-	function in the official SvelteKit documentation <Link
-		href="https://kit.svelte.dev/docs/load#universal-vs-server">
-		here
-	</Link>.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		You can even use a server load function and a universal load function together - for
+		example, when returning data from the server, but also a value that can't be
+		serialized. The order of execution will be first on the server, then on the universal
+		load function in <code>+page.ts</code>
+		. You can read more about the differences between each type of
+		<code>load</code>
+		function in the official SvelteKit documentation <Link
+			href="https://kit.svelte.dev/docs/load#universal-vs-server">
+			here
+		</Link>.
+	</p>
+</div>
 
 <h2>Using parent data</h2>
 <p>
@@ -83,88 +89,96 @@
 	functions to be able to access the data from their parents themselves, which it's possible
 	to do with
 	<code>await parent()</code>
-	. Here's an example:
+	.
 </p>
 
-<CodeWrapper
-	headerText="+layout.server.ts"
-	code={CODE_EXAMPLES.parentLoad1} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="+layout.server.ts"
+		code={CODE_EXAMPLES.parentLoad1} />
 
-<CodeWrapper
-	headerText="/joke/+layout.ts"
-	code={CODE_EXAMPLES.parentLoad2} />
+	<CodeWrapper
+		headerText="/joke/+layout.ts"
+		code={CODE_EXAMPLES.parentLoad2} />
+</div>
 
-<Link href="./advanced-loading/joke">Go to the joke page</Link>
+<Link href="./advanced-loading/joke">Go to the joke page.</Link>
 
-<p>
-	While a universal <code>load</code>
-	function can access data from a parent server
-	<code>load</code>
-	function, the reverse is not possible. A server
-	<code>load</code>
-	function can only retrieve data from its parent server
-	<code>load</code>
-	functions.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		While a universal <code>load</code>
+		function can access data from a parent server
+		<code>load</code>
+		function, the reverse is not possible. A server
+		<code>load</code>
+		function can only retrieve data from its parent server
+		<code>load</code>
+		functions.
+	</p>
+</div>
 
-<p>
-	For a somewhat more intricate example, here's something you could use to dynamically
-	generate breadcrumbs for the different sections of this manual:
-</p>
+<div class="flex flex-col gap-2">
+	<p>
+		For a somewhat more intricate example, here's something you could use to dynamically
+		generate breadcrumbs for the different sections of this manual:
+	</p>
 
-<Accordion flush>
-	<AccordionItem>
-		<span slot="header">Root +layout.server.ts</span>
+	<Accordion flush>
+		<AccordionItem>
+			<span slot="header">Root +layout.server.ts</span>
 
-		<p>
-			We start by importing a list of all svelte files, formatting them into an object
-			with title and link, and identifying the current route and its title:
-		</p>
-		<CodeWrapper
-			headerText="src/routes/+layout.server.ts"
-			code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_ROOT} />
-	</AccordionItem>
-	<AccordionItem>
-		<span slot="header">+layout.server.ts for each section</span>
+			<p>
+				We start by importing a list of all svelte files, formatting them into an object
+				with title and link, and identifying the current route and its title.
+			</p>
+			<CodeWrapper
+				headerText="src/routes/+layout.server.ts"
+				code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_ROOT} />
+		</AccordionItem>
+		<AccordionItem>
+			<span slot="header">+layout.server.ts for each section</span>
 
-		<p>
-			Then each section has its own <code>+layout.server.ts</code>
-			file, which uses the data from the root layout to generate the breadcrumbs:
-		</p>
+			<p>
+				Then each section has its own <code>+layout.server.ts</code>
+				file, which uses the data from the root layout to generate the breadcrumbs.
+			</p>
 
-		<CodeWrapper
-			headerText="src/routes/advanced-sveltekit/+layout.server.ts"
-			code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_SECTION} />
+			<CodeWrapper
+				headerText="src/routes/advanced-sveltekit/+layout.server.ts"
+				code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_SECTION} />
 
-		<CodeWrapper
-			headerText="$lib/helpers/helpers"
-			code={CODE_EXAMPLES.BREADCRUMBS_GET_BREADCRUMBS_PROPS} />
-	</AccordionItem>
-	<AccordionItem>
-		<span slot="header">+layout.svelte</span>
+			<CodeWrapper
+				headerText="$lib/helpers/helpers"
+				code={CODE_EXAMPLES.BREADCRUMBS_GET_BREADCRUMBS_PROPS} />
+		</AccordionItem>
+		<AccordionItem>
+			<span slot="header">+layout.svelte</span>
 
-		<p>
-			Finally, the svelte file for the layout receives the data from the server file, and
-			passes it on to the Breadcrumbs component.
-		</p>
+			<p>
+				Finally, the svelte file for the layout receives the data from the server file,
+				and passes it on to the Breadcrumbs component.
+			</p>
 
-		<CodeWrapper
-			headerText="src/routes/advanced-sveltekit/+layout.svelte"
-			code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_SVELTE} />
+			<CodeWrapper
+				headerText="src/routes/advanced-sveltekit/+layout.svelte"
+				code={CODE_EXAMPLES.BREADCRUMBS_LAYOUT_SVELTE} />
 
-		<p>
-			As a final note, since this is all done on the server, it may lead to issues when
-			the app switches to CSR from SSR (after hydration), and breadcrumbs may go out of
-			sync with the actual page (this is partly why this approach was abandoned, but we
-			still felt it was a good example to explore). To fix this, we can add the <code>
-				data-sveltekit-reload
-			</code>
-			attribute. to other navigation triggers on the Front End, for instance, the Navbar items.
-			This will force the page to reload the data from the server, and the breadcrumbs will
-			be updated accordingly.
-		</p>
-	</AccordionItem>
-</Accordion>
+			<p>
+				As a final note, since this is all done on the server, it may lead to issues when
+				the app switches to CSR from SSR (after hydration), and breadcrumbs may go out of
+				sync with the actual page (this is partly why this approach was abandoned, but we
+				still felt it was a good example to explore). To fix this, we can add the <code>
+					data-sveltekit-reload
+				</code>
+				attribute. to other navigation triggers on the Front End, for instance, the Navbar
+				items. This will force the page to reload the data from the server, and the breadcrumbs
+				will be updated accordingly.
+			</p>
+		</AccordionItem>
+	</Accordion>
+</div>
 
 <h2>Invalidation</h2>
 <p>
@@ -174,12 +188,15 @@
 	<code>invalidate(...)</code>
 	method, which takes an URL and re-runs any
 	<code>load</code>
-	functions that depend on it. Here's an example that invalidates an API endpoint every 5 seconds:
+	functions that depend on it. Here's an example that invalidates an API endpoint every 5 seconds.
 </p>
 
-<CodeWrapper
-	headerText="+page.svelte"
-	code={CODE_EXAMPLES.invalidate} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="+page.svelte"
+		code={CODE_EXAMPLES.invalidate} />
+</div>
 
 <p>
 	You can even pass a function to the <code>invalidate</code>

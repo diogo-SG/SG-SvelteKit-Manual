@@ -1,7 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import Link from '$lib/components/ui/link/link.svelte';
-	import { CODE, HEADER, href } from './constants';
+	import { CODE, HEADER } from './constants';
 </script>
 
 <h1>Component lifecycle</h1>
@@ -25,9 +24,12 @@
 	removed from the DOM.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LIFECYCLE}
-	code={CODE.ON_MOUNT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LIFECYCLE}
+		code={CODE.ON_MOUNT} />
+</div>
 
 <h2>beforeUpdate and afterUpdate</h2>
 
@@ -43,15 +45,21 @@
 	a purely state-driven way.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LIFECYCLE}
-	code={CODE.BEFORE_AND_AFTER_UPDATE} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LIFECYCLE}
+		code={CODE.BEFORE_AND_AFTER_UPDATE} />
+</div>
 
-<p>
-	Bare in mind that <code>beforeUpdate</code>
-	will first run before the component has mounted, so you'll need to check if the component
-	is mounted before running any code that interacts with the DOM.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		Bare in mind that <code>beforeUpdate</code>
+		will first run before the component has mounted, so you'll need to check if the component
+		is mounted before running any code that interacts with the DOM.
+	</p>
+</div>
 
 <h2>onDestroy</h2>
 
@@ -61,9 +69,12 @@
 	up any resources that the component is using, such as event listeners, timers or store subsctiptions.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LIFECYCLE}
-	code={CODE.ON_DESTROY} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LIFECYCLE}
+		code={CODE.ON_DESTROY} />
+</div>
 
 <h2>tick</h2>
 
@@ -77,19 +88,18 @@
 	work and allows the browser to batch things more effectively.
 </p>
 
-<CodeWrapper
-	headerText={HEADER.LIFECYCLE}
-	code={CODE.TICK} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={HEADER.LIFECYCLE}
+		code={CODE.TICK} />
+</div>
 
-<p>
-	<code>tick</code>
-	is useful when you need to interact with the DOM after updating component state, such as
-	manipulating the DOM directly or focusing an input element.
-</p>
-
-<p>
-	Now that we covered component lifecycles in Svelte, let's move on to the next <Link
-		{href}>
-		section
-	</Link>.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		<code>tick</code>
+		is useful when you need to interact with the DOM after updating component state, such as
+		manipulating the DOM directly or focusing an input element.
+	</p>
+</div>

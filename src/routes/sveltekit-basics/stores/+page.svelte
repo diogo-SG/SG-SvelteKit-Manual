@@ -8,12 +8,12 @@
 
 <h1>SvelteKit stores</h1>
 
-<p>
-	Like in Svelte, you can use stores to share state between components. SvelteKit provides
-	three readonly stores via the <code>$app/stores</code>
-	module:
-</p>
+<p>Like in Svelte, you can use stores to share state between components.</p>
 <ul>
+	<p>
+		SvelteKit provides three readonly stores via the <code>$app/stores</code>
+		module:
+	</p>
 	{#each LIST_ITEMS.STORES as { title, desc }}
 		<li>
 			<code>{title}</code>
@@ -26,9 +26,10 @@
 
 <p>
 	The page store is likely the most frequently used and, as you might expect, provides
-	information about the current page:
+	information about the current page.
 </p>
 <ul>
+	<p>Here are some of the properties available:</p>
 	{#each LIST_ITEMS.PAGE as { title, desc, link }}
 		<li>
 			<code>{title}</code>
@@ -64,9 +65,10 @@
 	a link click, a back/forward navigation, or a programatting goto, the value of <code>
 		navigating
 	</code>
-	will become an object with these properties:
+	will become an object.
 </p>
 <ul>
+	<p>The object contains the following properties:</p>
 	<li>
 		<code>from</code>
 		and
@@ -100,7 +102,10 @@
 	<code>kit.version.pollInterval</code>
 	.
 </p>
-<p>
-	You can also manually check for new versions by calling <code>updated.check()</code>
-	.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		You can also manually check for new versions by calling <code>updated.check()</code>
+		.
+	</p>
+</div>

@@ -19,13 +19,16 @@
 	element.
 </p>
 
-<CodeWrapper
-	headerText={buttonHeaderText}
-	code={CODE.SLOTS_CHILD} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={buttonHeaderText}
+		code={CODE.SLOTS_CHILD} />
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SLOTS_PARENT} />
+	<CodeWrapper
+		{headerText}
+		code={CODE.SLOTS_PARENT} />
+</div>
 
 <h2>Named slots</h2>
 
@@ -36,13 +39,16 @@
 	<em>named slots.</em>
 </p>
 
-<CodeWrapper
-	headerText={buttonHeaderText}
-	code={CODE.NAMED_SLOTS_CHILD} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={buttonHeaderText}
+		code={CODE.NAMED_SLOTS_CHILD} />
 
-<CodeWrapper
-	{headerText}
-	code={CODE.NAMED_SLOTS_PARENT} />
+	<CodeWrapper
+		{headerText}
+		code={CODE.NAMED_SLOTS_PARENT} />
+</div>
 
 <h2>Slot fallbacks</h2>
 
@@ -54,9 +60,12 @@
 	element.
 </p>
 
-<CodeWrapper
-	headerText={buttonHeaderText}
-	code={CODE.SLOTS_FALLBACK} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={buttonHeaderText}
+		code={CODE.SLOTS_FALLBACK} />
+</div>
 
 <h2>Slot props</h2>
 
@@ -65,20 +74,23 @@
 	elements can also receive props. Here's an example of how you can pass props to a slot.
 </p>
 
-<CodeWrapper
-	headerText={cardHeaderText}
-	code={CODE.SLOTS_PROPS_CHILD} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={cardHeaderText}
+		code={CODE.SLOTS_PROPS_CHILD} />
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SLOTS_PROPS_PARENT} />
+	<CodeWrapper
+		{headerText}
+		code={CODE.SLOTS_PROPS_PARENT} />
+</div>
 
 <ul>
-	<p class="font-bold">Let's review the code above:</p>
+	<p>Let's review the code above:</p>
 	{#each SLOT_PROPS_LIST as { page, description }}
 		<li>
 			<p>
-				<span class="font-bold">{page}</span>
+				<em>{page}</em>
 				- {description}
 			</p>
 		</li>
@@ -94,9 +106,12 @@
 	object.
 </p>
 
-<CodeWrapper
-	headerText={cardHeaderText}
-	code={CODE.SLOTS_CHECK} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText={cardHeaderText}
+		code={CODE.SLOTS_CHECK} />
+</div>
 
 <p>
 	In the example above, if a <code>lastName</code>

@@ -29,28 +29,32 @@
 	<Link href="./link-options/slow-route2">Slow route without preloading</Link>
 </div>
 
-<CodeWrapper
-	headerText="+page.svelte"
-	code={CODE_EXAMPLES.preloading} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="+page.svelte"
+		code={CODE_EXAMPLES.preloading} />
+</div>
 
-<p>
-	You can put this attribute on individual links, or on any element that contains links.
-	In fact, the default project template includes this on the <code>{'<body>'}</code>
-	element.
-</p>
-<p>
-	You can customise this further by specifying one of the following values for the
-	attribute:
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		You can put this attribute on individual links, or on any element that contains links.
+		In fact, the default project template includes this on the <code>{'<body>'}</code>
+		element.
+	</p>
+</div>
+<p>You can customise this further by specifying values for the attribute.</p>
 
 <ul>
+	<p>It's possible to specify the following values:</p>
 	<li>
 		<code>hover</code>
-		- default, falls back to "tap" on mobile.
+		- default, falls back to "tap" on mobile;
 	</li>
 	<li>
 		<code>tap</code>
-		- only begin preloading on tap.
+		- only begin preloading on tap;
 	</li>
 	<li>
 		<code>off</code>
@@ -62,26 +66,26 @@
 	Using this attribute can sometimes result in false positives, like loading data in
 	anticipation of a navigation that doesn't end up happening. As an alternative, you can
 	use <code>data-sveltekit-preload-code</code>
-	to preload the JavaScript needeed by a given route without eagerly loading its data. This
-	attribute can have the following values:
+	to preload the JavaScript needeed by a given route without eagerly loading its data.
 </p>
 
 <ul>
+	<p>This attribute can have the following values:</p>
 	<li>
 		<code>eager</code>
-		- preload everything on the page following a navigation.
+		- preload everything on the page following a navigation;
 	</li>
 	<li>
 		<code>viewport</code>
-		- preload everything as it appears in the viewport.
+		- preload everything as it appears in the viewport;
 	</li>
 	<li>
 		<code>hover</code>
-		- default, same as with the first preload attribute above.
+		- default, same as with the first preload attribute above;
 	</li>
 	<li>
 		<code>tap</code>
-		- same as above.
+		- same as above;
 	</li>
 	<li>
 		<code>off</code>
@@ -95,12 +99,15 @@
 	<code>preloadData</code>
 	, imported from
 	<code>$app/navigation</code>
-	:
+	.
 </p>
 
-<CodeWrapper
-	headerText="+page.svelte"
-	code={CODE_EXAMPLES.preloading2} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="+page.svelte"
+		code={CODE_EXAMPLES.preloading2} />
+</div>
 
 <h2>Reloading the page</h2>
 <p>
@@ -108,20 +115,25 @@
 	want to disable this behaviour, we can easily do so by adding <code>
 		data-sveltekit-reload
 	</code>
-	to an individual link, or any element which contains links, such as in the example below:
+	to an individual link, or any element which contains links.
 </p>
 
-<CodeWrapper
-	headerText="+layout.svelte"
-	code={CODE_EXAMPLES.reloading} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="+layout.svelte"
+		code={CODE_EXAMPLES.reloading} />
+</div>
 
-<h2>More about link options</h2>
-<p>
-	You can read more about available link options and their values in the SvelteKit
-	documentation for link options <Link href="https://kit.svelte.dev/docs/link-options">
-		here
-	</Link>.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		You can read more about available link options and their values in the SvelteKit
+		documentation for link options <Link href="https://kit.svelte.dev/docs/link-options">
+			here
+		</Link>.
+	</p>
+</div>
 
 <style>
 	.link {

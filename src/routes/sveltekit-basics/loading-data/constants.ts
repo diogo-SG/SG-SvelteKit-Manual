@@ -2,28 +2,28 @@ export const LOAD_FUNCTIONS_PARAMS = [
 	{
 		param: 'url',
 		description:
-			'An instance of URL, which provides properties like origin, hostname, pathname and searchParams'
+			'An instance of URL, which provides properties like origin, hostname, pathname and searchParams;'
 	},
 	{
 		param: 'route',
-		description: 'The name of the current route directory, relative to src/routes'
+		description: 'The name of the current route directory, relative to src/routes;'
 	},
-	{ param: 'params', description: 'Derived from url.pathname and route.id' },
+	{ param: 'params', description: 'Derived from url.pathname and route.id;' },
 	{
 		param: 'fetch',
 		description:
-			'A function which behaves identically to the native fetch API, but with a few additional features.',
-		link: '/kit.svelte.dev/docs/load#making-fetch-requestss'
+			'A function which behaves identically to the native fetch API, but with a few additional features;',
+		link: 'https://kit.svelte.dev/docs/load#making-fetch-requests'
 	},
-	{ param: 'cookies', description: 'Provides getters and setters for cookies' },
+	{ param: 'cookies', description: 'Provides getters and setters for cookies;' },
 	{
 		param: 'setHeaders',
 		description:
-			'Sets headers for the response (available when running on the server only)'
+			'Sets headers for the response (available when running on the server only);'
 	},
 	{
 		param: 'parents',
-		description: 'Allows for accessing data from a parent load function'
+		description: 'Allows for accessing data from a parent load function.'
 	}
 ];
 

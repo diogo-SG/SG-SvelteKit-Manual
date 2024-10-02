@@ -26,9 +26,12 @@
 	to render both the strings and the nested array elements.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_SELF} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_SELF} />
+</div>
 
 <h2>svelte:component</h2>
 
@@ -45,17 +48,20 @@
 	we'll have a button that toggles between the two components.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_COMPONENT_APP} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_COMPONENT_APP} />
 
-<CodeWrapper
-	headerText={redSquareHeaderText}
-	code={CODE.SVELTE_COMPONENT_RED_SQUARE} />
+	<CodeWrapper
+		headerText={redSquareHeaderText}
+		code={CODE.SVELTE_COMPONENT_RED_SQUARE} />
 
-<CodeWrapper
-	headerText={blueSquareHeaderText}
-	code={CODE.SVELTE_COMPONENT_BLUE_SQUARE} />
+	<CodeWrapper
+		headerText={blueSquareHeaderText}
+		code={CODE.SVELTE_COMPONENT_BLUE_SQUARE} />
+</div>
 
 <h2>svelte:element</h2>
 
@@ -73,9 +79,12 @@
 	tag.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_ELEMENT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_ELEMENT} />
+</div>
 
 <h2>svelte:window</h2>
 
@@ -96,9 +105,12 @@
 	event and update the value saved on a variable.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_WINDOW} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_WINDOW} />
+</div>
 
 <h2>svelte:body</h2>
 
@@ -116,9 +128,12 @@
 	events.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_BODY} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_BODY} />
+</div>
 
 <h2>svelte:document</h2>
 
@@ -127,12 +142,15 @@
 	. This is useful when you want to listen to events that are not available on the window object,
 	such as
 	<code>selectionchange</code>
-	. Here's a simple example.
+	.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_DOCUMENT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_DOCUMENT} />
+</div>
 
 <h2>svelte:head</h2>
 
@@ -146,14 +164,20 @@
 	of the document . We'll create an example where we add a title tag to the document.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_HEAD} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_HEAD} />
+</div>
 
-<p>
-	In server-side rendering (SSR), contents of <code>svelte:head</code>
-	are returned separately from the rest of your HTML.
-</p>
+<div class="flex flex-col gap-2">
+	<h5>Note</h5>
+	<p>
+		In server-side rendering (SSR), contents of <code>svelte:head</code>
+		are returned separately from the rest of your HTML.
+	</p>
+</div>
 
 <h2>svelte:options</h2>
 
@@ -163,13 +187,15 @@
 	in the component.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_OPTIONS} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_OPTIONS} />
+</div>
 
 <ul>
-	<strong>Here's a list of some options you can use:</strong>
-
+	<p>Here's a list of some options you can use:</p>
 	{#each SVELTE_OPTIONS_LIST as { name, description }}
 		<li>
 			<code>{name}</code>
@@ -186,10 +212,13 @@
 	element.
 </p>
 
-<CodeWrapper
-	{headerText}
-	code={CODE.SVELTE_FRAGMENT_PARENT} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		{headerText}
+		code={CODE.SVELTE_FRAGMENT_PARENT} />
 
-<CodeWrapper
-	headerText={cardHeaderText}
-	code={CODE.SVELTE_FRAGMENT_CHILD} />
+	<CodeWrapper
+		headerText={cardHeaderText}
+		code={CODE.SVELTE_FRAGMENT_CHILD} />
+</div>

@@ -11,21 +11,23 @@
 
 <h2>API Routes</h2>
 
-<p>
-	API routes are a way to create serverless functions in SvelteKit. They are similar to
-	<Link href="https://nextjs.org/docs/api-routes/introduction">Next.js API routes</Link> and
-	<Link href="https://vercel.com/docs/serverless-functions/introduction">
-		Vercel serverless functions
-	</Link>.
-</p>
-
-<p>
-	API routes are created in the <code>src/routes</code>
-	directory as
-	<code>server.(js/ts)</code>
-	files. They work by exporting functions with names corresponding to the HTTP methods they
-	handle (GET, POST, PUT, DELETE, etc).
-</p>
+<div>
+	<p>
+		API routes are a way to create serverless functions in SvelteKit. They are similar to
+		<Link href="https://nextjs.org/docs/api-routes/introduction">Next.js API routes</Link>
+		and
+		<Link href="https://vercel.com/docs/serverless-functions/introduction">
+			Vercel serverless functions
+		</Link>.
+	</p>
+	<p>
+		API routes are created in the <code>src/routes</code>
+		directory as
+		<code>server.(js/ts)</code>
+		files. They work by exporting functions with names corresponding to the HTTP methods they
+		handle (GET, POST, PUT, DELETE or PATCH).
+	</p>
+</div>
 
 <Accordion flush>
 	<AccordionItem>

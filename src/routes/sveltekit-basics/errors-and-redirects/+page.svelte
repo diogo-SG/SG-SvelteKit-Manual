@@ -29,11 +29,12 @@
 	file. This will display the error message to the user in the page.
 </p>
 
-<h3>Example</h3>
-<CodeWrapper
-	headerText="/expected-error/+page.svelte.ts"
-	code={CODE_EXAMPLES.expectedError} />
-
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="/expected-error/+page.svelte.ts"
+		code={CODE_EXAMPLES.expectedError} />
+</div>
 <Link href={$page.route.id + '/expected-error'}>Go to the expected error page</Link>
 
 <h2>Unexpected errors</h2>
@@ -46,9 +47,12 @@
 	since error messages can contain sensitive information.
 </p>
 
-<CodeWrapper
-	headerText="/unexpected-error/+page.svelte.ts"
-	code={CODE_EXAMPLES.unexpectedError} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="/unexpected-error/+page.svelte.ts"
+		code={CODE_EXAMPLES.unexpectedError} />
+</div>
 <Link href={$page.route.id + '/unexpected-error'}>Go to the unexpected error page</Link>
 
 <h2>Customizing error pages</h2>
@@ -56,9 +60,12 @@ We can customize error pages by creating a +error.svelte component. If placed in
 directory, it will be used for all errors. If placed in a specific route directory, it will
 be used for all errors in that route.
 
-<CodeWrapper
-	headerText="/custom-error-page/+error.svelte"
-	code={CODE_EXAMPLES.customErrorPage} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="/custom-error-page/+error.svelte"
+		code={CODE_EXAMPLES.customErrorPage} />
+</div>
 
 <Link href={$page.route.id + '/custom-error-page'}>Go to the custom error page</Link>
 
@@ -84,9 +91,12 @@ be used for all errors in that route.
 	</li>
 </ul>
 
-<CodeWrapper
-	headerText="src/error.html"
-	code={CODE_EXAMPLES.fallbackErrorPage} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="src/error.html"
+		code={CODE_EXAMPLES.fallbackErrorPage} />
+</div>
 
 <h2>Redirects</h2>
 <p>
@@ -97,9 +107,12 @@ be used for all errors in that route.
 	later).
 </p>
 
-<CodeWrapper
-	headerText="/redirect/+page.svelte"
-	code={CODE_EXAMPLES.redirects} />
+<div class="flex flex-col gap-2">
+	<h5>Example:</h5>
+	<CodeWrapper
+		headerText="/redirect/+page.svelte"
+		code={CODE_EXAMPLES.redirects} />
+</div>
 
 <Link href={$page.route.id + '/redirects'}>
 	Go to the redirect page, which will bring you back to this one
