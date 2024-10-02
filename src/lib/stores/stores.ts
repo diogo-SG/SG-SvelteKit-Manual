@@ -1,4 +1,4 @@
-import { writable, readable } from 'svelte/store';
+import { writable, readable, derived } from 'svelte/store';
 
 // Readable store example
 
@@ -43,3 +43,9 @@ function decideBestOffice() {
 }
 
 export const bestOffice = decideBestOffice();
+
+// Derived store example
+// Kind of a useless one to be honest
+export const bestOfficeAllCaps = derived(bestOffice, ($bestOffice) =>
+	$bestOffice.toUpperCase()
+);

@@ -2,7 +2,13 @@
 	import GurgaonHacker from '$lib/components/examples/gurgaon-hacker.svelte/gurgaon-hacker.svelte';
 	import LisbonHacker from '$lib/components/examples/lisbon-hacker/lisbon-hacker.svelte';
 	import LondonHacker from '$lib/components/examples/london-hacker/london-hacker.svelte';
-	import { bestOffice, timeInIndia, timeInPortugal, timeInUK } from '$lib/stores/stores';
+	import {
+		bestOffice,
+		bestOfficeAllCaps,
+		timeInIndia,
+		timeInPortugal,
+		timeInUK
+	} from '$lib/stores/stores';
 </script>
 
 <div class="bg-white">
@@ -37,7 +43,7 @@
 		</div>
 		<div class="flex flex-col text-center">
 			<b>Our best office is:</b>
-			<p class="text-3xl font-extrabold">{$bestOffice}</p>
+			<p class="text-3xl font-extrabold">{$bestOfficeAllCaps}</p>
 		</div>
 		{#if $bestOffice !== 'All of them are great!'}
 			<div class="flex justify-center py-5">
