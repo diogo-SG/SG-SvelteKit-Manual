@@ -168,13 +168,12 @@
 	<code>document.querySelector</code>
 	.
 </p>
-<h5>Example:</h5>
 
 {#if !theyTouchedMySon}
 	<div class="align-center flex flex-col">
 		<h4 class="pb-2 text-center text-primary-700">Do NOT touch my son 😠</h4>
 		<img
-			class="mx-auto w-1/2"
+			class="mx-auto w-1/4"
 			bind:this={boundImage}
 			src={'../../img/minion.png'}
 			alt="My son" />
@@ -184,7 +183,7 @@
 		class="align-center flex flex-col"
 		in:angryShake={{ duration: 1000000 }}>
 		<h4 class="pb-2 text-center text-primary-700">
-			Time to face the consequences of your actions 😠
+			Time to face the consequences of your actions 😡
 		</h4>
 		<img
 			class="mx-auto w-1/2"
@@ -201,17 +200,20 @@
 			code={CODE.THIS} />
 	</AccordionItem>
 </Accordion>
+<Note>
+	<p>
+		For a bonus example on custom transitions, check out the file <code>
+			angry-shake.ts
+		</code>
+		in the directory
+		<code>src/lib/transitions</code>
+	</p>
+</Note>
 
 <p>
 	It's also possible to <code>bind:this</code>
 	to component instances.
 </p>
-
-<Note>
-	For a bonus example on custom transitions, check out: <code>
-		src/lib/transitions/angry-shake.ts
-	</code>
-</Note>
 
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
