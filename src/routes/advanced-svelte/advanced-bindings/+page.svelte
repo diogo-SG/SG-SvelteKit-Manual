@@ -1,7 +1,17 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
-	import { Checkbox, Input, Label } from 'flowbite-svelte';
+	import {
+		Accordion,
+		AccordionItem,
+		Checkbox,
+		Input,
+		Label,
+		Textarea
+	} from 'flowbite-svelte';
 	import { CODE, MEDIA_BINDS_LIST } from './constants';
+	import { angryShake } from '$lib/transitions/angry-shake';
+	import Note from '$lib/components/ui/note/note.svelte';
+
 	const headerText = 'App.svelte';
 	const counterHeader = 'Counter.svelte';
 
@@ -11,7 +21,15 @@
 		{ done: false, text: 'Take Jyo out for some spicy ramen' }
 	];
 
-	$: console.log('todos', todos);
+	$: console.log(todos);
+	let cH: number;
+	let boundImage: HTMLImageElement;
+	let theyTouchedMySon = false;
+	$: if (boundImage) {
+		boundImage.onclick = () => {
+			theyTouchedMySon = true;
+		};
+	}
 </script>
 
 <h1>Advanced Bindings</h1>
@@ -47,6 +65,10 @@
 		code={CODE.EACH_BLOCK} />
 </div>
 
+<p>
+	Check out the console.logs to see the values of "todos" being updated as you edit them!
+</p>
+
 <div class="flex flex-wrap justify-center gap-4">
 	{#each todos as todo}
 		<div class="flex w-1/4 flex-col gap-5 rounded-sm border-2 border-primary-700 p-5">
@@ -64,9 +86,7 @@
 		</div>
 	{/each}
 </div>
-<p>
-	Check out the console.logs to see the values of "todos" being updated as you edit them!
-</p>
+
 <h2>Media elements</h2>
 
 <p>
@@ -132,25 +152,66 @@
 		code={CODE.DIMENSIONS} />
 </div>
 
+<div bind:clientHeight={cH}>
+	<Label for="textarea">Resize me!</Label>
+	<Textarea
+		id="textarea"
+		placeholder={`The height of this textarea is ${cH}px`} />
+</div>
+
 <h2>This</h2>
 
 <p>
 	You can bind the readonly
 	<code>this</code>
-	to get a reference to a DOM node.
+	to get a reference to a DOM node. This is similar to using the standard JavaScript
+	<code>document.querySelector</code>
+	.
 </p>
+<h5>Example:</h5>
 
-<div class="flex flex-col gap-2">
-	<h5>Example:</h5>
-	<CodeWrapper
-		showHeader={false}
-		code={CODE.THIS} />
-</div>
+{#if !theyTouchedMySon}
+	<div class="align-center flex flex-col">
+		<h4 class="pb-2 text-center text-primary-700">Do NOT touch my son 😠</h4>
+		<img
+			class="mx-auto w-1/2"
+			bind:this={boundImage}
+			src={'../../img/minion.png'}
+			alt="My son" />
+	</div>
+{:else}
+	<div
+		class="align-center flex flex-col"
+		in:angryShake={{ duration: 1000000 }}>
+		<h4 class="pb-2 text-center text-primary-700">
+			Time to face the consequences of your actions 😠
+		</h4>
+		<img
+			class="mx-auto w-1/2"
+			src={'../../img/pointed_gun.jpg'}
+			alt="Uh oh" />
+	</div>
+{/if}
+
+<Accordion flush>
+	<AccordionItem>
+		<span slot="header">Code for example</span>
+		<CodeWrapper
+			showHeader={false}
+			code={CODE.THIS} />
+	</AccordionItem>
+</Accordion>
 
 <p>
 	It's also possible to <code>bind:this</code>
 	to component instances.
 </p>
+
+<Note>
+	For a bonus example on custom transitions, check out: <code>
+		src/lib/transitions/angry-shake.ts
+	</code>
+</Note>
 
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
@@ -185,8 +246,7 @@
 		code={CODE.COMPONENT_CHILD} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		While Svelte props are reactive without binding, that reactivity only flows downward
 		into the component by default. Using <code>bind:property</code>
@@ -196,4 +256,4 @@
 		<code>bind:property</code>
 		with caution.
 	</p>
-</div>
+</Note>

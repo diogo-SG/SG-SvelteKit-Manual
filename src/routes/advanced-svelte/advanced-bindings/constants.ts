@@ -1,84 +1,122 @@
 export const CODE = {
 	CONTENTEDITABLE: `
-    <div bind:innerHTML={html} contenteditable></div>
-    `,
+		<div bind:innerHTML={html} contenteditable></div>
+	`,
 	EACH_BLOCK: `
-    {#each todos as todo}
-	    <div>
-		    <input
-			type="checkbox"
-			bind:checked={todo.done}
-		    />
-
-		    <input
-			type="text"
-			bind:value={todo.text}
-		    />
-	    </div>
-    {/each}
-`,
+		<div class="flex flex-wrap justify-center gap-4">
+			{#each todos as todo}
+				<div class="flex w-1/4 flex-col gap-5 rounded-sm border-2 border-primary-700 p-5">
+					<Checkbox
+						class="mr-auto"
+						bind:checked={todo.done}>
+						Done?
+					</Checkbox>
+					<div class="flex flex-col">
+						<Label for="todo">Task:</Label>
+						<Input
+							id="todo"
+							bind:value={todo.text} />
+					</div>
+				</div>
+			{/each}
+		</div>
+	`,
 	MEDIA: `
-<video
-	src={clip}
-	bind:duration
-	bind:videoWidth
-	bind:videoHeight
-/>
+		<video
+			src={clip}
+			bind:duration
+			bind:videoWidth
+			bind:videoHeight
+		/>
 
-<audio
-    src={clip}
-    bind:paused
-    bind:volume
-    bind:muted
-/>
-`,
+		<audio
+			src={clip}
+			bind:paused
+			bind:volume
+			bind:muted
+		/>
+	`,
 	DIMENSIONS: `
-<div 
-    bind:clientWidth
-    bind:clientHeight
-    bind:offsetWidth
-    bind:offsetHeight
-    bind:scrollWidth
-/>
-`,
+		<script lang="ts">
+			let cH: number;
+		</script>
+
+		<div bind:clientHeight={cH}>
+			<Label for="textarea">Resize me!</Label>
+			<Textarea
+				id="textarea"
+				placeholder={\`The height of this textarea is \${cH}px\`} />
+		</div>
+	`,
 	THIS: `
-<img bind:this />
-`,
+		<script lang="ts">
+			let boundImage: HTMLImageElement;
+			let theyTouchedMySon = false;
+			$: if (boundImage) {
+				boundImage.onclick = () => {
+					theyTouchedMySon = true;
+				};
+			}
+		</script>
+
+		{#if !theyTouchedMySon}
+			<div class="align-center flex flex-col">
+				<h4 class="pb-2 text-center text-primary-700">Do NOT touch my son 😠</h4>
+				<img
+					class="mx-auto w-1/2"
+					bind:this={boundImage}
+					src={'../../img/minion.png'}
+					alt="My son" />
+			</div>
+		{:else}
+			<div
+				class="align-center flex flex-col"
+				in:angryShake={{ duration: 1000000 }}>
+				<h4 class="pb-2 text-center text-primary-700">
+					Time to face the consequences of your actions 😠
+				</h4>
+				<img
+					class="mx-auto w-1/2"
+					src={'../../img/pointed_gun.jpg'}
+					alt="Uh oh" />
+			</div>
+		{/if}
+	`,
 	THIS_COMPONENT_PARENT: `
-    <script>
-        import Counter from './Counter.svelte';
-        let value;
-    </script>
+		<script>
+			import Counter from './Counter.svelte';
+			let value;
+		</script>
 
-    <button on:click={() => value.clear()}>Clear counter</button>
-    <Counter bind:this={value} />
-    `,
+		<button on:click={() => value.clear()}>Clear counter</button>
+		<Counter bind:this={value} />
+	`,
 	THIS_COMPONENT_CHILD: `
-    <script>
-        export let count = 0;
-        export const clear = () => count = 0;
-    </script>
+		<script>
+			export let count = 0;
+			export const clear = () => count = 0;
+		</script>
 
-    <button on:click={() => count += 1}>Add</button> 
-    <p>{count}</p>
-    `,
+		<button on:click={() => count += 1}>Add</button> 
+		<p>{count}</p>
+	`,
 	COMPONENT_CHILD: `
-    <script>
-        export let count = 0;
-    </script>
+		<script>
+			export let count = 0;
+		</script>
 
-    <button on:click={() => count += 1}>Add</button> 
-    <p>{count}</p>
-`,
+		<button on:click={() => count += 1}>Add</button> 
+		<p>{count}</p>
+	`,
 	COMPONENT_PARENT: `
-    <script>
-        import Counter from './Counter.svelte';
-        let value;
-    </script>
+		<script>
+			import Counter from './Counter.svelte';
+			let value;
+		</script>
 
-    <button on:click={() => value -= 1}>Subtract</button>
-    <Counter bind:count={value} />
-`
+		<button on:click={() => value -= 1}>Subtract</button>
+		<Counter bind:count={value} />
+	`
 };
 
 export const MEDIA_BINDS_LIST = [
