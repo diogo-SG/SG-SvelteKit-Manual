@@ -1,8 +1,17 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import { Checkbox, Input, Label } from 'flowbite-svelte';
 	import { CODE, MEDIA_BINDS_LIST } from './constants';
 	const headerText = 'App.svelte';
 	const counterHeader = 'Counter.svelte';
+
+	let todos = [
+		{ done: true, text: 'Learn Svelte' },
+		{ done: false, text: 'Do the macarena' },
+		{ done: false, text: 'Take Jyo out for some spicy ramen' }
+	];
+
+	$: console.log('todos', todos);
 </script>
 
 <h1>Advanced Bindings</h1>
@@ -38,6 +47,26 @@
 		code={CODE.EACH_BLOCK} />
 </div>
 
+<div class="flex flex-wrap justify-center gap-4">
+	{#each todos as todo}
+		<div class="flex w-1/4 flex-col gap-5 rounded-sm border-2 border-primary-700 p-5">
+			<Checkbox
+				class="mr-auto"
+				bind:checked={todo.done}>
+				Done?
+			</Checkbox>
+			<div class="flex flex-col">
+				<Label for="todo">Task:</Label>
+				<Input
+					id="todo"
+					bind:value={todo.text} />
+			</div>
+		</div>
+	{/each}
+</div>
+<p>
+	Check out the console.logs to see the values of "todos" being updated as you edit them!
+</p>
 <h2>Media elements</h2>
 
 <p>
