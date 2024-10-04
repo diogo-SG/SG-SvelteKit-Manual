@@ -173,7 +173,7 @@
 	<div class="align-center flex flex-col">
 		<h4 class="pb-2 text-center text-primary-700">Do NOT touch my son 😠</h4>
 		<img
-			class="mx-auto w-1/4"
+			class="mx-auto w-1/4 cursor-not-allowed"
 			bind:this={boundImage}
 			src={'../../img/minion.png'}
 			alt="My son" />

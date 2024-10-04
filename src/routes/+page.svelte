@@ -1,8 +1,12 @@
-<script>
+<script lang="ts">
+	import Card from '$lib/components/ui/card/card.svelte';
+	import { NAVBAR } from '$lib/components/ui/navbar/constants';
 	import { ChevronRightOutline } from 'flowbite-svelte-icons';
+	const svelteKontent = NAVBAR.filter((item) => item.label.includes('SvelteKit'));
+	const svelteContent = NAVBAR.filter((item) => !item.label.includes('SvelteKit'));
 </script>
 
-<section class="background-pattern flex items-center justify-center">
+<section class="background-pattern section">
 	<div class="w-1/3 rounded-3xl bg-[#fff] px-12 py-12 drop-shadow-2xl">
 		<div class="flex flex-col gap-[1.5rem]">
 			<h1 class="font-thin">
@@ -30,8 +34,18 @@
 		</div>
 	</div>
 </section>
+<section class="section my-[3rem] flex-col gap-[4rem]">
+	<Card contentList={svelteContent} />
+	<Card contentList={svelteKontent} />
+</section>
 
 <style>
+	.section {
+		display: flex;
+		min-height: 90vh;
+		justify-content: center;
+		align-items: center;
+	}
 	/* .slanted {
 		transform: skew(-25deg);
 	} */
@@ -52,7 +66,7 @@
 		background-image: url('/img/svelte_logo.svg');
 		background-size: 50px;
 		background-repeat: repeat;
-		opacity: 0.6;
+		opacity: 0.8;
 		z-index: -1;
 		filter: blur(0.8px);
 	}
