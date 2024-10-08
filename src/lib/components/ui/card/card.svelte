@@ -15,7 +15,7 @@
 		{contentList[0].label.includes('SvelteKit') ? 'SvelteKit' : 'Svelte'}
 	</h2>
 	<div>
-		<div class="flex gap-[6rem]">
+		<div class="flex justify-between">
 			<div>
 				<div class="flex items-center gap-2">
 					{#if contentList[0].label === 'Svelte Basics'}

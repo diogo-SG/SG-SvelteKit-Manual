@@ -5,7 +5,7 @@
 	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
-<h1>Component Anatomy</h1>
+<h1 class="text-primary-700">Component Anatomy</h1>
 <p>
 	A Svelte component encapsulates HTML, CSS and JS (or TS), all written into a single
 	<code>.svelte</code>

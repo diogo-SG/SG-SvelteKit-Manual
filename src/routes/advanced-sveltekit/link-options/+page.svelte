@@ -5,7 +5,7 @@
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
-<h1>Link options</h1>
+<h1 class="text-primary-700">Link options</h1>
 
 <p>
 	SvelteKit can speed up app navigation by anticipating them. When an <code>{'<a>'}</code>

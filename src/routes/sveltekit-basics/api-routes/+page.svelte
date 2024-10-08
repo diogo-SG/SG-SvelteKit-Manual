@@ -9,7 +9,7 @@
 	}
 </script>
 
-<h2>API Routes</h2>
+<h1 class="text-primary-700">API Routes</h1>
 
 <div>
 	<p>

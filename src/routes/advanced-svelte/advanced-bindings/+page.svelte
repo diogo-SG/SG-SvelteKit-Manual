@@ -32,7 +32,7 @@
 	}
 </script>
 
-<h1>Advanced Bindings</h1>
+<h1 class="text-primary-700">Advanced Bindings</h1>
 
 <h2>Contenteditable bindings</h2>
 

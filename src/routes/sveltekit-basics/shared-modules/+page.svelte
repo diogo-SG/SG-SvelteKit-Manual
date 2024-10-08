@@ -3,7 +3,7 @@
 	import { CODE, HEADER } from './constants';
 </script>
 
-<h1>Sharing modules</h1>
+<h1 class="text-primary-700">Sharing modules</h1>
 
 <p>
 	Shared modules are a way to share code between different parts of your SvelteKit

@@ -5,7 +5,7 @@
 	const headerText = 'App.svelte';
 </script>
 
-<h1>Classes and Styles</h1>
+<h1 class="text-primary-700">Classes and Styles</h1>
 
 <h2>Class directive</h2>
 

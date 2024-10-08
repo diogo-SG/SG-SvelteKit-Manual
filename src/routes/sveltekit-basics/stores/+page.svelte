@@ -7,7 +7,7 @@
 	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
-<h1>SvelteKit stores</h1>
+<h1 class="text-primary-700">SvelteKit stores</h1>
 
 <p>Like in Svelte, you can use stores to share state between components.</p>
 <ul>
@@ -80,7 +80,7 @@
 		<code>route</code>
 		, and
 		<code>url</code>
-		properties.
+		properties;
 	</li>
 	<li>
 		<code>type</code>

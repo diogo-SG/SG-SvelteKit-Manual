@@ -7,7 +7,7 @@
 	const href = 'https://svelte.dev/docs/svelte-easing';
 </script>
 
-<h1>Motion</h1>
+<h1 class="text-primary-700">Motion</h1>
 
 <p>
 	The <code>svelte/motion</code>

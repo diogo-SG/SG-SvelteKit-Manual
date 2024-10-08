@@ -13,7 +13,7 @@
 	};
 </script>
 
-<h1>Props</h1>
+<h1 class="text-primary-700">Props</h1>
 <h2>Introduction</h2>
 <p>
 	Props are a way to pass data from a parent component to a child component. In Svelte,

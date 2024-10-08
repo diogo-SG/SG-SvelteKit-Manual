@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<h1>Custom error page</h1>
+<h1 class="text-primary-700">Custom error page</h1>
 
 <p>
 	This is a custom error page. It will be displayed when an error occurs in this route.

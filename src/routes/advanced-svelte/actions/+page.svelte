@@ -6,7 +6,7 @@
 	const href = 'https://github.com/swyxio/svelte-actions?tab=readme-ov-file#readme';
 </script>
 
-<h1>Actions</h1>
+<h1 class="text-primary-700">Actions</h1>
 
 <p>
 	In Svelte, actions provide a way to interact with the DOM. They are functions invoked

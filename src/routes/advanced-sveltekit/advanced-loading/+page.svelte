@@ -7,7 +7,7 @@
 	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
-<h1>Advanced Loading</h1>
+<h1 class="text-primary-700">Advanced Loading</h1>
 
 <h2>Universal load functions</h2>
 <p>

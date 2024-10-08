@@ -7,7 +7,7 @@
 	} from './constants';
 </script>
 
-<h1>Extra info and resources</h1>
+<h1 class="text-primary-700">Extra info and resources</h1>
 
 <p>
 	Svelte is a great choice for building web applications, but it's not perfect. Let's go

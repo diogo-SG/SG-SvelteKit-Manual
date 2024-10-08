@@ -5,7 +5,7 @@
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
-<h1>Advanced routing</h1>
+<h1 class="text-primary-700">Advanced routing</h1>
 
 <h2>Optional route parameters</h2>
 <p>

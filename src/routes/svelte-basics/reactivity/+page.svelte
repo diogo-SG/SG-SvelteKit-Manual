@@ -14,7 +14,7 @@
 	}
 </script>
 
-<h1>Reactivity</h1>
+<h1 class="text-primary-700">Reactivity</h1>
 <h2>Assignments</h2>
 <p>
 	Reactivity in Svelte is achieved by using the <code>let</code>
