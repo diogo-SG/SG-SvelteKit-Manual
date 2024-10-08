@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
 <h1>Forms</h1>
@@ -95,8 +96,7 @@
 	<li>Navigate to a new page on a redirect response;</li>
 	<li>Render the nearest error page if one occurs.</li>
 </ul>
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		It's an interesting and powerful feature, and one you can customize further to improve
 		the general form submission experience for users, including things like controlling
@@ -109,7 +109,7 @@
 			here
 		</Link>.
 	</p>
-</div>
+</Note>
 
 <h2>Form validation</h2>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE } from './constants';
 </script>
 
@@ -52,14 +53,13 @@
 		code={CODE.BEFORE_AND_AFTER_UPDATE} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		Bare in mind that <code>beforeUpdate</code>
 		will first run before the component has mounted, so you'll need to check if the component
 		is mounted before running any code that interacts with the DOM.
 	</p>
-</div>
+</Note>
 
 <h2>onDestroy</h2>
 
@@ -95,11 +95,10 @@
 		code={CODE.TICK} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		<code>tick</code>
 		is useful when you need to interact with the DOM after updating component state, such as
 		manipulating the DOM directly or focusing an input element.
 	</p>
-</div>
+</Note>

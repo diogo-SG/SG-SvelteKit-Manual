@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE } from './constants';
 
 	const headerText = 'App.svelte';
@@ -80,11 +81,10 @@
 		code={CODE.GET_CONTEXT_WITH_STORE} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		While the Context API handles data in a specific portion of the component tree, stores
 		are <i>global</i>
 		, i.e, they can be accessed from any component at any time.
 	</p>
-</div>
+</Note>

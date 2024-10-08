@@ -65,9 +65,7 @@
 		code={CODE.EACH_BLOCK} />
 </div>
 
-<p>
-	Check out the console.logs to see the values of "todos" being updated as you edit them!
-</p>
+<p>Check out the console to see the values of "todos" being updated as you edit them.</p>
 
 <div class="flex flex-wrap justify-center gap-4">
 	{#each todos as todo}
@@ -200,15 +198,6 @@
 			code={CODE.THIS} />
 	</AccordionItem>
 </Accordion>
-<Note>
-	<p>
-		For a bonus example on custom transitions, check out the file <code>
-			angry-shake.ts
-		</code>
-		in the directory
-		<code>src/lib/transitions</code>
-	</p>
-</Note>
 
 <p>
 	It's also possible to <code>bind:this</code>

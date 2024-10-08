@@ -2,6 +2,7 @@
 	import PropsExample from '$lib/components/examples/props-example-component/props-example.svelte';
 	import PropsMultipleExample from '$lib/components/examples/props-multiple-example-component /props-multiple-example.svelte';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { COMPONENT_CODE, HEADER } from './constants';
 
 	const props = {
@@ -32,13 +33,12 @@
 	<PropsExample exampleName="wait a minute...am i a prop? 🤔" />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		You can define a default value for a prop by assigning it in the script tag or leave
 		it empty if no default is required.
 	</p>
-</div>
+</Note>
 
 <div class="flex flex-col gap-2">
 	<p>If we have multiple props, we can pass them like so:</p>
@@ -67,8 +67,7 @@
 		code={COMPONENT_CODE.SPREAD_PROPS} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		Another nifty trick that Svelte allows is to access props that were not
 		exported/declared on the component. Imagine that the component is only receiving
@@ -82,4 +81,4 @@
 		. It's not generally recommended, but it can still be a very useful trick in some rare
 		cases.
 	</p>
-</div>
+</Note>

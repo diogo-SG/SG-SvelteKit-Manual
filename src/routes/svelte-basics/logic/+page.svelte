@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE } from './constants';
 </script>
 
@@ -101,11 +102,10 @@
 		code={CODE.AWAIT} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		The first block - <em>"Loading..."</em>
 		- is displayed while the promise is resolving, which is a nice and convenient way to add
 		placeholders directly in the HTML.
 	</p>
-</div>
+</Note>

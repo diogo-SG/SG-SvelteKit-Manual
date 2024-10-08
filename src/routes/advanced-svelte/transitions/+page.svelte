@@ -2,6 +2,7 @@
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import { CODE, TRANSITION_FUNCTION_LIST } from './constants';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	const href = 'https://svelte.dev/docs/svelte-transition';
 	const fileTitle = 'App.svelte';
 </script>
@@ -101,15 +102,14 @@
 		code={CODE.TRANSITION_IN_OUT} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		The
 		<code>svelte/transition</code>
 		module has a handful of built-in transitions. We recommend that you check all of them
 		<Link {href}>here</Link>.
 	</p>
-</div>
+</Note>
 
 <h2>Custom transitions</h2>
 
@@ -130,15 +130,14 @@
 	{/each}
 </ul>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		Most of the time you should return the <code>css</code>
 		instead of the
 		<code>tick</code>
 		, as CSS animations run off the main thread to prevent jank where possible.
 	</p>
-</div>
+</Note>
 
 <div class="flex flex-col gap-2">
 	<p>

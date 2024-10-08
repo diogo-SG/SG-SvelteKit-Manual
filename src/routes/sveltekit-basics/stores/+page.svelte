@@ -4,6 +4,7 @@
 	import { page } from '$app/stores';
 	import { AccordionItem, Accordion } from 'flowbite-svelte';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
 <h1>SvelteKit stores</h1>
@@ -102,10 +103,9 @@
 	<code>kit.version.pollInterval</code>
 	.
 </p>
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		You can also manually check for new versions by calling <code>updated.check()</code>
 		.
 	</p>
-</div>
+</Note>

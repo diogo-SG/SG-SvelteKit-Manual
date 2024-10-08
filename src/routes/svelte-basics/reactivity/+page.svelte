@@ -1,5 +1,6 @@
 <script>
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { REACTIVE_CODE } from './constants';
 
 	let count = 0;
@@ -41,14 +42,13 @@
 	</div>
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		As a follow up to the previous page - if you inspect this button's attributes, you'll
 		notice that Svelte has assigned a unique class to it, since it's styles are declared
 		in this page.
 	</p>
-</div>
+</Note>
 
 <h2>Declarations</h2>
 

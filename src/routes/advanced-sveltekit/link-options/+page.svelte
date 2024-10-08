@@ -1,6 +1,7 @@
 <script>
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
@@ -39,14 +40,14 @@
 		code={CODE_EXAMPLES.preloading} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		You can put this attribute on individual links, or on any element that contains links.
 		In fact, the default project template includes this on the <code>{'<body>'}</code>
 		element.
 	</p>
-</div>
+</Note>
+
 <p>You can customise this further by specifying values for the attribute.</p>
 
 <ul>
@@ -128,15 +129,14 @@
 		code={CODE_EXAMPLES.reloading} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		You can read more about available link options and their values in the SvelteKit
 		documentation for link options <Link href="https://kit.svelte.dev/docs/link-options">
 			here
 		</Link>.
 	</p>
-</div>
+</Note>
 
 <style>
 	.internal_link {
