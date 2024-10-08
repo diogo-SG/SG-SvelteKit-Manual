@@ -30,8 +30,7 @@
 				<NavLi
 					class={`${activeUrl.split('/')[1] === label.toLowerCase().replaceAll(' ', '-') ? 'text-primary-700' : ''} relative cursor-pointer`}>
 					{label}
-					<ChevronDownOutline
-						class={`ms-2 inline h-6 w-6 text-primary-800 dark:text-white`} />
+					<ChevronDownOutline class="inline h-6 w-6 text-primary-800 dark:text-white" />
 				</NavLi>
 				<Dropdown class="absolute z-20 w-44 rounded-md bg-background drop-shadow-md">
 					{#each modules as { path, label }}
