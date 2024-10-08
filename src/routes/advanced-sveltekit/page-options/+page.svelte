@@ -3,7 +3,7 @@
 	import { PAGE_OPTION_ITEMS } from './constants';
 </script>
 
-<h1>Page options</h1>
+<h1 class="text-primary-700">Page options</h1>
 <p>
 	Besides the
 	<code>load</code>

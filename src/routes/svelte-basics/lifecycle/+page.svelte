@@ -4,7 +4,7 @@
 	import { CODE } from './constants';
 </script>
 
-<h1>Component lifecycle</h1>
+<h1 class="text-primary-700">Component lifecycle</h1>
 
 <p>
 	Similar to React, every component has a lifecycle that starts when it is created, and

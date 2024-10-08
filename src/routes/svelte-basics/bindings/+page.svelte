@@ -6,7 +6,7 @@
 	let selectedOptions: number[] = [];
 </script>
 
-<h1>Bindings</h1>
+<h1 class="text-primary-700">Bindings</h1>
 
 <p>
 	Bindings in Svelte are used to create a two-way data binding between a parent component

@@ -9,7 +9,7 @@
 	const cardHeaderText = 'Card.svelte';
 </script>
 
-<h1>Special Elements</h1>
+<h1 class="text-primary-700">Special Elements</h1>
 
 <p>Svelte provides a variety of built-in special elements.</p>
 

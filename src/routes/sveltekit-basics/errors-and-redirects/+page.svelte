@@ -5,7 +5,7 @@
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
-<h1>Errors and redirects</h1>
+<h1 class="text-primary-700">Errors and redirects</h1>
 
 <p>
 	SvelteKit defines two types of errors: <i>expected errors</i>

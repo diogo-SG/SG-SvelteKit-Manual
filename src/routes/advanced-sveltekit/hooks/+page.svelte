@@ -4,7 +4,7 @@
 	import { CODE_EXAMPLES, REQUEST_EVENT_ITEMS } from './constants';
 </script>
 
-<h1>SvelteKit hooks</h1>
+<h1 class="text-primary-700">SvelteKit hooks</h1>
 
 <p>
 	SvelteKit provides several hooks, which are ways to intercept and modify the default

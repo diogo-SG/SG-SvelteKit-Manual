@@ -7,7 +7,7 @@
 	const cardHeaderText = 'Card.svelte';
 </script>
 
-<h1>Context API</h1>
+<h1 class="text-primary-700">Context API</h1>
 
 <p>
 	The <code>context</code>

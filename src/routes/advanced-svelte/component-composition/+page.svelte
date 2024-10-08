@@ -7,7 +7,7 @@
 	const cardHeaderText = 'Card.svelte';
 </script>
 
-<h1>Component Composition</h1>
+<h1 class="text-primary-700">Component Composition</h1>
 
 <h2>Slots</h2>
 

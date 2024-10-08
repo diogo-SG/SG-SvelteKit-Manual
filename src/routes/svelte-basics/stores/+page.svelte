@@ -13,7 +13,7 @@
 	} from './constants';
 </script>
 
-<h1>Stores</h1>
+<h1 class="text-primary-700">Stores</h1>
 
 <p>
 	Stores are a way to store and manage the state of your application, and make it

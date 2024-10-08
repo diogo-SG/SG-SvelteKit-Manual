@@ -3,7 +3,7 @@
 	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
-<h1>Forms</h1>
+<h1 class="text-primary-700">Forms</h1>
 
 <p>
 	Forms are a fundamental part of web development. They allow users to input data and
@@ -62,7 +62,7 @@
 	Since SvelteKit uses the native html form component to build these actions, in most
 	cases they work without client-side JavaScript, which <Link
 		href="https://www.kryogenix.org/code/browser/everyonehasjs.html">
-		can be much more useful than you'd think.
+		can be much more useful than you'd think
 	</Link>.
 </p>
 <p>

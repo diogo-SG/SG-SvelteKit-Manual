@@ -5,7 +5,7 @@
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
-<h1>Environment variables</h1>
+<h1 class="text-primary-700">Environment variables</h1>
 
 <p>
 	Since SvelteKit uses Vite under the hood, you can use Vite's environment variables in

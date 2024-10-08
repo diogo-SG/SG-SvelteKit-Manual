@@ -7,7 +7,7 @@
 	const fileTitle = 'App.svelte';
 </script>
 
-<h1>Transitions</h1>
+<h1 class="text-primary-700">Transitions</h1>
 
 <p>
 	Transitions in Svelte are a way to animate elements when they are added or removed from

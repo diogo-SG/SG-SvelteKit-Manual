@@ -12,8 +12,9 @@
 			<h1 class="font-thin">
 				Welcome <br />
 				to the
-				<br />
+
 				<span class="font-bold text-primary-700">Svelte</span>
+				<br />
 				handbook
 			</h1>
 
@@ -34,7 +35,7 @@
 		</div>
 	</div>
 </section>
-<section class="section my-[3rem] flex-col gap-[4rem]">
+<section class="section flex-col gap-[4rem] py-[2rem]">
 	<Card contentList={svelteContent} />
 	<Card contentList={svelteKontent} />
 </section>
@@ -45,6 +46,7 @@
 		min-height: 90vh;
 		justify-content: center;
 		align-items: center;
+		margin: 0;
 	}
 	/* .slanted {
 		transform: skew(-25deg);
@@ -52,7 +54,7 @@
 	.background-pattern {
 		position: relative;
 		width: 100vw;
-		height: 90vh;
+		min-height: 90vh;
 		overflow: hidden;
 	}
 
@@ -62,14 +64,26 @@
 		top: 0;
 		left: 0;
 		width: 100vw;
-		height: 90vh;
+		min-height: 90vh;
 		background-image: url('/img/svelte_logo.svg');
 		background-size: 50px;
 		background-repeat: repeat;
 		opacity: 0.8;
 		z-index: -1;
 		filter: blur(0.8px);
+		background-size: 50px;
+		animation: background-animation 60s linear infinite;
 	}
+
+	@keyframes background-animation {
+		0% {
+			background-position: 0 50%;
+		}
+		100% {
+			background-position: 150% 50%;
+		}
+	}
+
 	.internal_link {
 		width: fit-content;
 		padding: 0.5rem 1rem;

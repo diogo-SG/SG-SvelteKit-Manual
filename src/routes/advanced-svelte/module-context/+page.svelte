@@ -5,7 +5,7 @@
 	const cardHeaderText = 'Card.svelte';
 </script>
 
-<h1>Module Context</h1>
+<h1 class="text-primary-700">Module Context</h1>
 
 <p>
 	A <code>script</code>

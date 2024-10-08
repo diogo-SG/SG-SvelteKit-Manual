@@ -6,7 +6,7 @@
 	export let data: any;
 </script>
 
-<h1>Loading data</h1>
+<h1 class="text-primary-700">Loading data</h1>
 
 <h2>The +page.server.ts file</h2>
 

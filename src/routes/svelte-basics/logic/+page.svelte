@@ -4,7 +4,7 @@
 	import { CODE } from './constants';
 </script>
 
-<h1>Logic</h1>
+<h1 class="text-primary-700">Logic</h1>
 <p>
 	Unlike React, Svelte doesn't use JSX/TSX to render logic in HTML. Instead, it provides
 	several block types that can be used for common operations.

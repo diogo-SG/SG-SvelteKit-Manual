@@ -4,7 +4,7 @@
 	import { CODE, EVENTS_LIST, HEADER } from './constants';
 </script>
 
-<h1>Events</h1>
+<h1 class="text-primary-700">Events</h1>
 
 <p>
 	Events in Svelte are used to handle user interactions. They can be used to listen for
