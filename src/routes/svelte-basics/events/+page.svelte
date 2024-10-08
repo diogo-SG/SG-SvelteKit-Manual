@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE, EVENTS_LIST, HEADER } from './constants';
 </script>
 
@@ -98,13 +99,12 @@
 	{/each}
 </ul>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		You can even chain modifiers together. For example:
 		<code>on:click|preventDefault|stopPropagation=&#123;handleClick&#125;</code>
 	</p>
-</div>
+</Note>
 
 <h2>Component events</h2>
 

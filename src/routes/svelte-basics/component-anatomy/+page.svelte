@@ -2,6 +2,7 @@
 	import { COMPONENT_CODE, HEADER, href } from './constants';
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
 <h1>Component Anatomy</h1>
@@ -40,15 +41,14 @@
 	</li>
 </ul>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		For a component to be valid, we only really need the HTML section, everything else is
 		optional. Svelte also allows us to use a shorthand syntax when an element's dynamic
 		attribute has the same name and value. We could write <code>{`<img {src} />`}</code>
 		and it would still work.
 	</p>
-</div>
+</Note>
 
 <h2>Styling</h2>
 <p>
@@ -68,8 +68,7 @@
 	. This is useful when we want to render a string with HTML code that is dynamically generated.
 </p>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		Svelte doesn't perform any sanitization of the expression before it gets inserted into
 		the DOM. This isn't an issue if the content is something you trust like an article you
@@ -78,4 +77,4 @@
 		<Link {href}>sanitize-html</Link>
 		package.
 	</p>
-</div>
+</Note>

@@ -4,6 +4,7 @@
 	import { CODE_EXAMPLES } from './constants';
 	import { page } from '$app/stores';
 	import { Accordion, AccordionItem } from 'flowbite-svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
 <h1>Advanced Loading</h1>
@@ -61,8 +62,7 @@
 	{/if}
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		You can even use a server load function and a universal load function together - for
 		example, when returning data from the server, but also a value that can't be
@@ -75,7 +75,7 @@
 			here
 		</Link>.
 	</p>
-</div>
+</Note>
 
 <h2>Using parent data</h2>
 <p>
@@ -111,8 +111,7 @@
 	</Link>
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		While a universal <code>load</code>
 		function can access data from a parent server
@@ -123,7 +122,7 @@
 		<code>load</code>
 		functions.
 	</p>
-</div>
+</Note>
 
 <div class="flex flex-col gap-2">
 	<p>

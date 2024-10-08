@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE, OPTIONS } from './constants';
 	const fileTitle = 'App.svelte';
 	const href = 'https://svelte.dev/docs/svelte-easing';
@@ -60,8 +61,7 @@
 		code={CODE.TWEENED_CUBIC} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		The <code>svelte/easing</code>
 		module contains some cool options that you can use out of the box. You can check them by
@@ -73,7 +73,7 @@
 		<code>t</code>
 		are both values between 0 and 1.
 	</p>
-</div>
+</Note>
 
 <h2>Spring</h2>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE, SVELTE_OPTIONS_LIST } from './constants';
 
 	const headerText = 'App.svelte';
@@ -171,13 +172,12 @@
 		code={CODE.SVELTE_HEAD} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		In server-side rendering (SSR), contents of <code>svelte:head</code>
 		are returned separately from the rest of your HTML.
 	</p>
-</div>
+</Note>
 
 <h2>svelte:options</h2>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE } from './constants';
 	let age = 0;
 	let selectedOptions: number[] = [];
@@ -183,11 +184,10 @@
 		code={CODE.SHORTHAND} />
 </div>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		This trick applies to all bindings, not just textareas. And that's it! Now you know
 		how to use bindings in Svelte. They are a powerful feature that can help you create
 		more interactive components with less code.
 	</p>
-</div>
+</Note>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE, COMMON_CASES_LIST } from './constants';
 	const href = 'https://github.com/swyxio/svelte-actions?tab=readme-ov-file#readme';
 </script>
@@ -38,12 +39,11 @@
 	{/each}
 </ul>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		Svelte actions are a very powerful feature that allows you to interact with the DOM in
 		a very simple way. If you want to check some examples and how you can apply them in
 		your future Svelte project, click <Link {href}>here</Link>
 		.
 	</p>
-</div>
+</Note>

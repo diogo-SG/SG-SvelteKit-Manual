@@ -1,6 +1,7 @@
 <script>
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE_EXAMPLES } from './constants';
 </script>
 
@@ -57,14 +58,13 @@
 	</li>
 </ul>
 
-<div class="flex flex-col gap-2 rounded-lg border-2 border-primary-600 px-4 py-4 text-sm">
-	<h5 class="text-sm text-primary-600">Note</h5>
+<Note>
 	<p class="text-sm">
 		If you try to import this in a <code>+page.svelte</code>
 		file, where it would be available on the browser, SvelteKit will throw an error to prevent
 		us from exposing it and therefore compromising our app's security.
 	</p>
-</div>
+</Note>
 
 <h2>Static vs Dynamic</h2>
 <p>
