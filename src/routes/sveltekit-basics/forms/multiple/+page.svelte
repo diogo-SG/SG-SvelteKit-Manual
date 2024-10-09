@@ -18,28 +18,28 @@
 <h1 class="text-primary-700">Multiple Actions</h1>
 <Accordion flush>
 	<AccordionItem open>
-		<span slot="header">Example</span>
+		<span slot="header">Form</span>
 		<form
 			method="POST"
 			use:enhance
 			action="?/search">
-			<label for="movieInput">Search for a movie:</label>
+			<label for="country">Search for a country:</label>
 			<input
-				id="movieInput"
-				name="movieInput"
+				id="country"
+				name="country"
 				type="text"
-				placeholder="Enter a movie title" />
+				placeholder="Enter a country name" />
 			<Button type="submit">Search</Button>
 		</form>
 
 		<form
 			method="POST"
 			use:enhance
-			action="?/getAll">
+			action="?/getTenCountries">
 			<Button
 				type="submit"
-				name="getAll">
-				Get all
+				name="getTenCountries">
+				Get 10 countries
 			</Button>
 		</form>
 
@@ -49,41 +49,41 @@
 				<div class="results">
 					{#each form.searchResults as result}
 						<div class="search-result">
-							<p class="movie-title">{result.title}</p>
+							<p class="movie-title">{result.name.common}</p>
 							<p>
-								<b>Year:</b>
-								{result.year}
+								<b>capital:</b>
+								{result.capital}
 							</p>
 							<p>
-								<b>Rating:</b>
-								{result.rating}
+								<b>region:</b>
+								{result.region}
 							</p>
 							<p>
-								<b>Plot:</b>
-								{result.plot}
+								<b>flag:</b>
+								{result.flag}
 							</p>
 						</div>
 					{/each}
 				</div>
 			{/if}
 
-			{#if form?.movies}
-				<h2>All movies</h2>
+			{#if form?.countries}
+				<h2>10 countries</h2>
 				<div class="results">
-					{#each form.movies.splice(-12) as movie}
+					{#each form.countries as country}
 						<div class="search-result">
-							<p class="movie-title">{movie.title}</p>
+							<p class="movie-title">{country.name.common}</p>
 							<p>
-								<b>Year:</b>
-								{movie.year}
+								<b>Capital:</b>
+								{country.capital}
 							</p>
 							<p>
-								<b>Rating:</b>
-								{movie.rating}
+								<b>region:</b>
+								{country.region}
 							</p>
 							<p>
-								<b>Plot:</b>
-								{movie.plot}
+								<b>Flag:</b>
+								{country.flag}
 							</p>
 						</div>
 					{/each}

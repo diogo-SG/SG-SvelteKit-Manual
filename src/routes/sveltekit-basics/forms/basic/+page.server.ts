@@ -1,9 +1,9 @@
 export const actions = {
 	default: async ({ request, fetch }) => {
 		const formData = await request.formData();
-		const movieTitle = formData.get('movieTitle');
+		const countryName = formData.get('country');
 
-		return fetch(`https://freetestapi.com/api/v1/movies?search=${movieTitle}`)
+		return fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 			.then((response) => response.json())
 			.then((data) => {
 				return {

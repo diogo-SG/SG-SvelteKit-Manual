@@ -19,14 +19,14 @@
 <h1 class="text-primary-700">Form Actions</h1>
 <Accordion flush>
 	<AccordionItem open>
-		<span slot="header">Example</span>
+		<span slot="header">Form</span>
 		<form method="POST">
-			<label for="movieInput">Search for a movie:</label>
+			<label for="country">Search for a country:</label>
 			<input
-				id="movieInput"
-				name="movieInput"
+				id="country"
+				name="country"
 				type="text"
-				placeholder="Enter a movie title" />
+				placeholder="Enter a country name" />
 			<Button type="submit">Search</Button>
 		</form>
 
@@ -36,18 +36,18 @@
 				<div class="results">
 					{#each form.searchResults as result}
 						<div class="search-result">
-							<p class="movie-title">{result.title}</p>
+							<p class="movie-title">{result.name.common}</p>
 							<p>
-								<b>Year:</b>
-								{result.year}
+								<b>capital:</b>
+								{result.capital}
 							</p>
 							<p>
-								<b>Rating:</b>
-								{result.rating}
+								<b>region:</b>
+								{result.region}
 							</p>
 							<p>
-								<b>Plot:</b>
-								{result.plot}
+								<b>flag:</b>
+								{result.flag}
 							</p>
 						</div>
 					{/each}
