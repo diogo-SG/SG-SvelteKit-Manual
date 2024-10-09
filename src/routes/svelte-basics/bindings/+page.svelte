@@ -53,6 +53,7 @@
 	<Note title={'Try it'}>
 		<div class="flex flex-col items-center gap-2">
 			<input
+				class="rounded-lg"
 				type="number"
 				bind:value={age}
 				min="0"
