@@ -7,7 +7,7 @@
 	} from './constants';
 </script>
 
-<h1 class="text-primary-700">Extra info and resources</h1>
+<h1 class="text-primary-700">Extra info</h1>
 
 <p>
 	Svelte is a great choice for building web applications, but it's not perfect. Let's go
@@ -39,7 +39,7 @@
 </ul>
 
 <ul>
-	<h3>Official resources:</h3>
+	<p>Official resources:</p>
 	{#each SVELTE_RESOURCES_LIST as { href, title }}
 		<li>
 			<Link {href}>{title}</Link>
@@ -48,7 +48,7 @@
 </ul>
 
 <ul>
-	<h3>Component libraries</h3>
+	<p>Component libraries</p>
 	{#each SVELTE_LIBRARIES_LIST as { href, title }}
 		<li>
 			<Link {href}>{title}</Link>
