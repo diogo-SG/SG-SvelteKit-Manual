@@ -1,18 +1,18 @@
 export const actions = {
-	getAll: async ({ fetch }) => {
-		return fetch('https://freetestapi.com/api/v1/movies')
+	getTenCountries: async ({ fetch }) => {
+		return fetch('https://restcountries.com/v3.1/all')
 			.then((response) => response.json())
 			.then((data) => {
 				return {
-					movies: data
+					countries: data.slice(0, 10)
 				};
 			});
 	},
 	search: async ({ request, fetch }) => {
 		const formData = await request.formData();
-		const movieTitle = formData.get('movieTitle');
+		const countryName = formData.get('country');
 
-		return fetch(`https://freetestapi.com/api/v1/movies?search=${movieTitle}`)
+		return fetch(`https://restcountries.com/v3.1/name/${countryName}`)
 			.then((response) => response.json())
 			.then((data) => {
 				return {

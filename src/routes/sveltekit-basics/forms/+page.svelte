@@ -25,7 +25,7 @@
 		<Link
 			isInternal
 			href="./forms/basic">
-			Search movies
+			Search countries
 		</Link>
 	</div>
 </Note>
@@ -55,7 +55,7 @@
 		<Link
 			isInternal
 			href="./forms/multiple">
-			Get all movies
+			Get 10 countries
 		</Link>
 	</div>
 </Note>

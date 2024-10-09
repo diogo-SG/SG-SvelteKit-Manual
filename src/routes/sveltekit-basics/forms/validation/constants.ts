@@ -1,6 +1,6 @@
 export const EXAMPLE_CODE = {
 	form: `
-<form
+		<form
 			method="POST"
 			action="?/validate">
 			<label>Enter a number between 1 and 9:</label>
