@@ -32,14 +32,19 @@
 		showHeader={false}
 		code={REACTIVE_CODE.EXAMPLE} />
 
-	<div class="flex justify-center">
-		<button
-			class="rounded-lg border-none bg-[#333] px-[1rem] py-[0.5rem] font-normal text-[#fff]"
-			on:click={increment}>
-			Clicks: {count}
-			{count === 1 ? 'time' : 'times'}
-		</button>
-	</div>
+	<Note title={'Try it'}>
+		<div class="flex items-center justify-center gap-3">
+			<button
+				class="rounded-lg bg-black px-[1rem] py-[0.5rem] font-normal text-[#fff] hover:bg-white hover:text-black hover:outline hover:outline-black"
+				on:click={increment}>
+				Click me
+			</button>
+			<p>
+				clicked <strong>{count}</strong>
+				{count === 1 ? 'time' : 'times'}
+			</p>
+		</div>
+	</Note>
 </div>
 
 <Note>
@@ -62,21 +67,25 @@
 		showHeader={false}
 		code={REACTIVE_CODE.DECLARATIONS} />
 
-	<div class="flex items-center justify-center gap-3">
-		<button
-			class="rounded-lg border-none bg-[#333] px-[1rem] py-[0.5rem] font-normal text-[#fff]"
-			on:click={increment}>
-			Increment
-		</button>
-		<div
-			class="rounded-lg bg-[#fff] px-[1rem] py-[0.5rem] font-normal text-[##333] outline outline-[#333]">
-			<p>Count: {count}</p>
+	<Note title={'Try it'}>
+		<div class="flex items-center justify-center gap-3">
+			<button
+				class="rounded-lg bg-black px-[1rem] py-[0.5rem] font-normal text-[#fff] hover:bg-white hover:text-black hover:outline hover:outline-black"
+				on:click={increment}>
+				Click me
+			</button>
+			<div class="rounded-lg bg-white px-[1rem] py-[0.5rem] font-normal text-black">
+				<p>
+					Count: <strong>{count}</strong>
+				</p>
+			</div>
+			<div class="rounded-lg bg-white px-[1rem] py-[0.5rem] font-normal text-black">
+				<p>
+					Doubled: <strong>{doubled}</strong>
+				</p>
+			</div>
 		</div>
-		<div
-			class="rounded-lg bg-[#fff] px-[1rem] py-[0.5rem] font-normal text-[##333] outline outline-[#333]">
-			<p>Doubled: {doubled}</p>
-		</div>
-	</div>
+	</Note>
 </div>
 
 <h2>Reactive Statements</h2>

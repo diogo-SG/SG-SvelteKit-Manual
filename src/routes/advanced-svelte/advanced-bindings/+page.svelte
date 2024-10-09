@@ -63,26 +63,30 @@
 	<CodeWrapper
 		showHeader={false}
 		code={CODE.EACH_BLOCK} />
-</div>
 
-<p>Check out the console to see the values of "todos" being updated as you edit them.</p>
+	<Note title="Try it">
+		<p class="text-center text-sm">
+			Check out the console to see the values of "todos" being updated as you edit them.
+		</p>
 
-<div class="flex flex-wrap justify-center gap-4">
-	{#each todos as todo}
-		<div class="flex w-1/4 flex-col gap-5 rounded-sm border-2 border-primary-700 p-5">
-			<Checkbox
-				class="mr-auto"
-				bind:checked={todo.done}>
-				Done?
-			</Checkbox>
-			<div class="flex flex-col">
-				<Label for="todo">Task:</Label>
-				<Input
-					id="todo"
-					bind:value={todo.text} />
-			</div>
+		<div class="flex flex-wrap justify-center gap-4">
+			{#each todos as todo}
+				<div class="flex w-1/4 flex-col gap-5 rounded-lg border border-2 p-5">
+					<Checkbox
+						class="mr-auto"
+						bind:checked={todo.done}>
+						Done?
+					</Checkbox>
+					<div class="flex flex-col">
+						<Label for="todo">Task:</Label>
+						<Input
+							id="todo"
+							bind:value={todo.text} />
+					</div>
+				</div>
+			{/each}
 		</div>
-	{/each}
+	</Note>
 </div>
 
 <h2>Media elements</h2>
@@ -148,13 +152,19 @@
 	<CodeWrapper
 		showHeader={false}
 		code={CODE.DIMENSIONS} />
-</div>
 
-<div bind:clientHeight={cH}>
-	<Label for="textarea">Resize me!</Label>
-	<Textarea
-		id="textarea"
-		placeholder={`The height of this textarea is ${cH}px`} />
+	<Note title="Try it">
+		<div bind:clientHeight={cH}>
+			<Label
+				class="text-center"
+				for="textarea">
+				Resize me!
+			</Label>
+			<Textarea
+				id="textarea"
+				placeholder={`The height of this textarea is ${cH}px`} />
+		</div>
+	</Note>
 </div>
 
 <h2>This</h2>
@@ -192,7 +202,7 @@
 
 <Accordion flush>
 	<AccordionItem>
-		<span slot="header">Code for example</span>
+		<span slot="header">Code</span>
 		<CodeWrapper
 			showHeader={false}
 			code={CODE.THIS} />

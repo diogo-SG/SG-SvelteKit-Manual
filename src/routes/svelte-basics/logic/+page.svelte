@@ -32,7 +32,7 @@
 	<p>An easy way to remember this syntax is as follows:</p>
 	<li>
 		<code>#if</code>
-		- A hashtag indicates a block-opening tag;
+		- An hashtag indicates a block-opening tag;
 	</li>
 	<li>
 		<code>/if</code>

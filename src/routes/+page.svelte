@@ -9,7 +9,7 @@
 <section class="background-pattern section">
 	<div class="w-1/3 rounded-3xl bg-[#fff] px-12 py-12 drop-shadow-2xl">
 		<div class="flex flex-col gap-[1.5rem]">
-			<h1 class="font-thin">
+			<h1 class="font-normal no-underline">
 				Welcome <br />
 				to the
 

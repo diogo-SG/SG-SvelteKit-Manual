@@ -69,7 +69,7 @@
 	{/if}
 </div>
 
-<h3>Where can load functions be used?</h3>
+<h2>Where can load functions be used?</h2>
 <p>
 	Load functions declared in <code>+page.server.ts</code>
 	files run exclusively on the server, which is the usual desired behaviour. However, you can

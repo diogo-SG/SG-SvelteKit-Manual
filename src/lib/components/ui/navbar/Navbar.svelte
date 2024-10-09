@@ -36,7 +36,7 @@
 					{#each modules as { path, label }}
 						<DropdownItem
 							data-sveltekit-reload
-							class={`${activeUrl.includes(path) ? 'bg-gray-50 text-primary-700' : ''}`}
+							class={`${activeUrl.includes(path) ? 'bg-gray-50 text-primary-700' : ''} hover:text-primary-700`}
 							href={path}>
 							{label}
 						</DropdownItem>

@@ -3,6 +3,7 @@
 	import Link from '$lib/components/ui/link/link.svelte';
 	import { page } from '$app/stores';
 	import { CODE_EXAMPLES } from './constants';
+	import Note from '$lib/components/ui/note/note.svelte';
 </script>
 
 <h1 class="text-primary-700">Errors and redirects</h1>
@@ -63,26 +64,28 @@ be used for all errors in that route.
 	<CodeWrapper
 		headerText="/custom-error-page/+error.svelte"
 		code={CODE_EXAMPLES.customErrorPage} />
-</div>
 
-<div class="flex justify-center gap-3">
-	<Link
-		isInternal
-		href={$page.route.id + '/expected-error'}>
-		Expected error
-	</Link>
+	<Note title="Try it">
+		<div class="flex justify-center gap-3">
+			<Link
+				isInternal
+				href={$page.route.id + '/expected-error'}>
+				Expected error
+			</Link>
 
-	<Link
-		isInternal
-		href={$page.route.id + '/unexpected-error'}>
-		Unexpected error
-	</Link>
+			<Link
+				isInternal
+				href={$page.route.id + '/unexpected-error'}>
+				Unexpected error
+			</Link>
 
-	<Link
-		isInternal
-		href={$page.route.id + '/custom-error-page'}>
-		Custom error
-	</Link>
+			<Link
+				isInternal
+				href={$page.route.id + '/custom-error-page'}>
+				Custom error
+			</Link>
+		</div>
+	</Note>
 </div>
 
 <h2>Fallback errors</h2>
@@ -128,13 +131,15 @@ be used for all errors in that route.
 	<CodeWrapper
 		headerText="/redirect/+page.svelte"
 		code={CODE_EXAMPLES.redirects} />
-</div>
 
-<p>Go to the redirect page, which will bring you back to this one.</p>
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href={$page.route.id + '/redirects'}>
-		Redirect me
-	</Link>
+	<Note title="Try it">
+		<p class="text-sm">Go to the redirect page, which will bring you back to this one.</p>
+		<div class="flex justify-center">
+			<Link
+				isInternal
+				href={$page.route.id + '/redirects'}>
+				Redirect me
+			</Link>
+		</div>
+	</Note>
 </div>

@@ -1,6 +1,7 @@
 <script>
 	import CodeWrapper from '$lib/components/ui/code-wrapper/code-wrapper.svelte';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import Note from '$lib/components/ui/note/note.svelte';
 	import { CODE_EXAMPLES, REQUEST_EVENT_ITEMS } from './constants';
 </script>
 
@@ -48,12 +49,14 @@
 	<CodeWrapper
 		headerText="src/hooks.server.ts"
 		code={CODE_EXAMPLES.handleHook2} />
-</div>
 
-<p>
-	To try this out, copy and paste the following link into your browser -
-	<code>/advanced-sveltekit/hooks/hotpink</code>
-</p>
+	<Note title="Try it">
+		<p class="text-center text-sm">
+			Copy and paste the following link into your browser -
+			<span class="bg-black px-2 text-white">/advanced-sveltekit/hooks/hotpink</span>
+		</p>
+	</Note>
+</div>
 
 <p>Or you could also create new routes by modifying the response.</p>
 
@@ -62,14 +65,16 @@
 	<CodeWrapper
 		headerText="src/hooks.server.ts"
 		code={CODE_EXAMPLES.handleHook3} />
-</div>
 
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href={'./hooks/hijacked'}>
-		Hijacked page
-	</Link>
+	<Note title="Try it">
+		<div class="flex justify-center">
+			<Link
+				isInternal
+				href={'./hooks/hijacked'}>
+				Go to hijacked page
+			</Link>
+		</div>
+	</Note>
 </div>
 
 <h2>The RequestEvent object</h2>

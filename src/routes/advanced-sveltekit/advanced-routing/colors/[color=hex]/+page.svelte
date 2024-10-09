@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Link from '$lib/components/ui/link/link.svelte';
+	import { ChevronLeftOutline } from 'flowbite-svelte-icons';
 </script>
+
+<Link href="/advanced-sveltekit/advanced-routing">
+	<div class="flex items-center text-xs">
+		<ChevronLeftOutline /> Back to the Advanced Routing section
+	</div>
+</Link>
 
 <div
 	class="color"

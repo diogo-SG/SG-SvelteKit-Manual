@@ -9,8 +9,9 @@ export const REACTIVE_CODE = {
     </script>
 
         <button on:click={increment}>
-			Clicks: {count} {count === 1 ? 'time' : 'times'}
+			Click me
 		</button>
+		<p>clicked {count} {count === 1 ? 'time' : 'times'}</p>
         `,
 	DECLARATIONS: `
     <script>

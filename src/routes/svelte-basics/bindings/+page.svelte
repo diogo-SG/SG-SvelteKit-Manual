@@ -49,18 +49,22 @@
 	<CodeWrapper
 		showHeader={false}
 		code={CODE.NUMERIC_INPUTS} />
-</div>
-<div class="flex flex-col items-center gap-2">
-	<input
-		type="number"
-		bind:value={age}
-		min="0"
-		max="10" />
-	<input
-		type="range"
-		bind:value={age}
-		min="0"
-		max="10" />
+
+	<Note title={'Try it'}>
+		<div class="flex flex-col items-center gap-2">
+			<input
+				class="rounded-lg"
+				type="number"
+				bind:value={age}
+				min="0"
+				max="10" />
+			<input
+				type="range"
+				bind:value={age}
+				min="0"
+				max="10" />
+		</div>
+	</Note>
 </div>
 
 <h2>Checkbox inputs</h2>
@@ -108,27 +112,30 @@
 	<CodeWrapper
 		showHeader={false}
 		code={CODE.MULTI_SELECT} />
-</div>
 
-<div class="flex flex-col items-center gap-2">
-	<p>
-		Press and hold the <code><kbd>Ctrl</kbd></code>
-		key or the
-		<code><kbd>command</kbd></code>
-		key on MacOS to select multiple options.
-	</p>
+	<Note title={'Try it'}>
+		<div class="flex flex-col items-center gap-2">
+			<p>
+				Press and hold the <span class="bg-black text-[#fff]"><kbd>Ctrl</kbd></span>
+				key or the
+				<span class="bg-black text-[#fff]"><kbd>command</kbd></span>
+				key on MacOS to select multiple options.
+			</p>
 
-	<select
-		multiple
-		bind:value={selectedOptions}>
-		<option value="HELP,">Option 1</option>
-		<option value="IM">Option 2</option>
-		<option value="STUCK!">Option 3</option>
-	</select>
-	<p>
-		Selected options:
-		<b>{selectedOptions.length ? selectedOptions.join(' ') : 'None'}</b>
-	</p>
+			<select
+				class="rounded-lg"
+				multiple
+				bind:value={selectedOptions}>
+				<option value="HELP,">Option 1</option>
+				<option value="IM">Option 2</option>
+				<option value="STUCK!">Option 3</option>
+			</select>
+			<p>
+				Selected options:
+				<b>{selectedOptions.length ? selectedOptions.join(' ') : 'None'}</b>
+			</p>
+		</div>
+	</Note>
 </div>
 
 <h2>Group inputs</h2>

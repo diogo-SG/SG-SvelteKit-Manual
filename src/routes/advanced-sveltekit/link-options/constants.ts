@@ -1,7 +1,7 @@
 export const CODE_EXAMPLES = {
 	preloading: `
-        <a href="/slow-route1" data-sveltekit-preload-data>Slow route with preloading</a>
-        <a href="/slow-route2">Slow route without preloading</a>
+        <a href="/slow-route1" data-sveltekit-preload-data>With preloading</a>
+        <a href="/slow-route2">Without preloading</a>
     `,
 	preloading2: `
     <script>

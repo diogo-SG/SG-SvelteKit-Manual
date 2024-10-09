@@ -11,6 +11,8 @@
 		STORE_BINDINGS,
 		EXAMPLE_PAGE
 	} from './constants';
+	import Note from '$lib/components/ui/note/note.svelte';
+	import { goto } from '$app/navigation';
 </script>
 
 <h1 class="text-primary-700">Stores</h1>
@@ -277,19 +279,19 @@
 	.
 </p>
 
-<h2>Stores example page</h2>
-<p>
-	Now that you've learned the basics of Svelte stores, let's see them in action. Click on
-	the link below to see a page that uses writable, readable, and derived stores.
-</p>
-
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href="../examples/stores">
-		Example page
-	</Link>
-</div>
+<Note title="Try it">
+	<div class="flex flex-col items-center justify-center gap-4">
+		<p class="text-sm">
+			Click on the link below to see a page that uses writable, readable, and derived
+			stores.
+		</p>
+		<Link
+			isInternal
+			href={'../examples/stores'}>
+			Stores page
+		</Link>
+	</div>
+</Note>
 
 <Accordion flush>
 	<AccordionItem>
