@@ -1,4 +1,15 @@
-<h1>Your account settings</h1>
+<script>
+	import Link from '$lib/components/ui/link/link.svelte';
+	import { ChevronLeftOutline } from 'flowbite-svelte-icons';
+</script>
+
+<Link href="/advanced-sveltekit/advanced-routing">
+	<div class="flex items-center text-xs">
+		<ChevronLeftOutline /> Back to the Advanced Routing section
+	</div>
+</Link>
+
+<h1 class="text-primary-700">Your account settings</h1>
 
 <p><i>This doesn't actually do anything.</i></p>
 <form method="POST">

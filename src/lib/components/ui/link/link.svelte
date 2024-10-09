@@ -29,11 +29,11 @@
 		padding: 0.5rem 1rem;
 		color: #fff;
 		border-radius: 0.5rem;
-		background-color: #eb4f27;
+		background-color: black;
 	}
 	.internal_link:hover {
 		background-color: #fff;
-		color: #eb4f27;
-		outline: 2px solid #eb4f27;
+		color: black;
+		outline: 2px solid black;
 	}
 </style>

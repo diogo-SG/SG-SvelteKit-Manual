@@ -20,13 +20,15 @@
 	</code>
 	to handle the form submission. Here's an example of a basic form in SvelteKit:
 </p>
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href="./forms/basic">
-		Movie search
-	</Link>
-</div>
+<Note title="Try it">
+	<div class="flex justify-center">
+		<Link
+			isInternal
+			href="./forms/basic">
+			Search movies
+		</Link>
+	</div>
+</Note>
 <p class="mt-5">
 	The request here is a standard <Link
 		href="https://developer.mozilla.org/en-US/docs/Web/API/Request">
@@ -48,15 +50,17 @@
 	. Have a look at the example below to see the code and the results:
 </p>
 
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href="./forms/multiple">
-		Get all movies
-	</Link>
-</div>
+<Note title="Try it">
+	<div class="flex justify-center">
+		<Link
+			isInternal
+			href="./forms/multiple">
+			Get all movies
+		</Link>
+	</div>
+</Note>
 
-<h3>Progressive enhancement</h3>
+<h2>Progressive enhancement</h2>
 
 <p>
 	Since SvelteKit uses the native html form component to build these actions, in most
@@ -121,10 +125,12 @@
 	module. You can check out and example and the code behind it below:
 </p>
 
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href="./forms/validation">
-		Form validation
-	</Link>
-</div>
+<Note title="Try it">
+	<div class="flex justify-center">
+		<Link
+			isInternal
+			href="./forms/validation">
+			Form validation
+		</Link>
+	</div>
+</Note>

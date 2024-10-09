@@ -22,29 +22,31 @@
 	<CodeWrapper
 		headerText="advanced-routing/optional-params/[[lang]]/+page.server.ts"
 		code={CODE_EXAMPLES.optionalRouteParams} />
-</div>
 
-<div class="flex items-center justify-center gap-3">
-	<Link
-		isInternal
-		href="./advanced-routing/optional-params/">
-		Default 🏳️
-	</Link>
-	<Link
-		isInternal
-		href="./advanced-routing/optional-params/en/">
-		English 🇬🇧
-	</Link>
-	<Link
-		isInternal
-		href="./advanced-routing/optional-params/pt/">
-		Portuguese 🇵🇹
-	</Link>
-	<Link
-		isInternal
-		href="./advanced-routing/optional-params/hi/">
-		Indian 🇮🇳
-	</Link>
+	<Note title="Try it">
+		<div class="flex items-center justify-center gap-3">
+			<Link
+				isInternal
+				href="./advanced-routing/optional-params/">
+				Default 🏳️
+			</Link>
+			<Link
+				isInternal
+				href="./advanced-routing/optional-params/en/">
+				English 🇬🇧
+			</Link>
+			<Link
+				isInternal
+				href="./advanced-routing/optional-params/pt/">
+				Portuguese 🇵🇹
+			</Link>
+			<Link
+				isInternal
+				href="./advanced-routing/optional-params/hi/">
+				Hindi 🇮🇳
+			</Link>
+		</div>
+	</Note>
 </div>
 
 <h2>Rest parameters</h2>
@@ -92,28 +94,30 @@
 	the browser. Click on the links below to see the different results.
 </p>
 
-<div class="flex items-center justify-center gap-3">
-	<Link
-		isInternal
-		href="./advanced-routing/colors/ff0000">
-		Red
-	</Link>
-	<Link
-		isInternal
-		href="./advanced-routing/colors/123456">
-		Deep Sea Blue
-	</Link>
-	<Link
-		isInternal
-		href="./advanced-routing/colors/abcdef">
-		Pale Blue
-	</Link>
-	<Link
-		isInternal
-		href="./advanced-routing/colors/ghijkl">
-		???
-	</Link>
-</div>
+<Note title="Try it">
+	<div class="flex items-center justify-center gap-3">
+		<Link
+			isInternal
+			href="./advanced-routing/colors/ff0000">
+			Red
+		</Link>
+		<Link
+			isInternal
+			href="./advanced-routing/colors/123456">
+			Deep Sea Blue
+		</Link>
+		<Link
+			isInternal
+			href="./advanced-routing/colors/abcdef">
+			Pale Blue
+		</Link>
+		<Link
+			isInternal
+			href="./advanced-routing/colors/ghijkl">
+			???
+		</Link>
+	</div>
+</Note>
 
 <h2>Route groups</h2>
 <p>
@@ -133,14 +137,16 @@
 	<CodeWrapper
 		headerText="src/routes/(restricted)/account-settings/+page.svelte"
 		code={CODE_EXAMPLES.routeGroupsLayout} />
-</div>
 
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href="./advanced-routing/account-settings">
-		Account settings
-	</Link>
+	<Note title="Try it">
+		<div class="flex justify-center">
+			<Link
+				isInternal
+				href="./advanced-routing/account-settings">
+				Account settings
+			</Link>
+		</div>
+	</Note>
 </div>
 
 <h2>Breaking out of layouts</h2>

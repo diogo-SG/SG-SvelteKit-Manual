@@ -15,23 +15,25 @@
 	taps it, if on mobile).
 </p>
 
-<p>
-	Try hovering the first link for two seconds before clicking it, and contrast by clicking
-	immediately on the second one:
-</p>
-<div class="flex justify-center gap-3">
-	<a
-		class="internal_link"
-		href="./link-options/slow-route1"
-		data-sveltekit-preload-data>
-		With preloading
-	</a>
-	<Link
-		isInternal
-		href="./link-options/slow-route2">
-		Without preloading
-	</Link>
-</div>
+<Note title="Try it">
+	<p class="text-center text-sm">
+		Try hovering the first link for two seconds before clicking it, and contrast by
+		clicking immediately on the second one.
+	</p>
+	<div class="flex justify-center gap-3">
+		<a
+			class="internal_link"
+			href="./link-options/slow-route1"
+			data-sveltekit-preload-data>
+			With preloading
+		</a>
+		<Link
+			isInternal
+			href="./link-options/slow-route2">
+			Without preloading
+		</Link>
+	</div>
+</Note>
 
 <div class="flex flex-col gap-2">
 	<h5>Example:</h5>
@@ -144,11 +146,23 @@
 		padding: 0.5rem 1rem;
 		color: #fff;
 		border-radius: 0.5rem;
+		background-color: black;
+	}
+	.internal_link:hover {
+		background-color: #fff;
+		color: black;
+		outline: 2px solid black;
+	}
+	/* .internal_link {
+		width: fit-content;
+		padding: 0.5rem 1rem;
+		color: #fff;
+		border-radius: 0.5rem;
 		background-color: #eb4f27;
 	}
 	.internal_link:hover {
 		background-color: #fff;
 		color: #eb4f27;
 		outline: 2px solid #eb4f27;
-	}
+	} */
 </style>

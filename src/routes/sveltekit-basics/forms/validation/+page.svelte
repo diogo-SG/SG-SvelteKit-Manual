@@ -5,12 +5,19 @@
 	import { EXAMPLE_CODE } from './constants.js';
 	import { enhance } from '$app/forms';
 	import Link from '$lib/components/ui/link/link.svelte';
+	import { ChevronLeftOutline } from 'flowbite-svelte-icons';
 
 	export let form;
 	$: console.log(form);
 </script>
 
-<h1>Form validation example</h1>
+<Link href="../forms">
+	<div class="flex items-center text-xs">
+		<ChevronLeftOutline /> Back to the Forms section
+	</div>
+</Link>
+
+<h1 class="text-primary-700">Form Validation</h1>
 <Accordion flush>
 	<AccordionItem open>
 		<span slot="header">Example</span>
@@ -45,8 +52,6 @@
 			code={EXAMPLE_CODE.form_action} />
 	</AccordionItem>
 </Accordion>
-
-<Link href="../forms">Back to the Forms section</Link>
 
 <style>
 	form {

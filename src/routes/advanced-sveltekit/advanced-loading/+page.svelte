@@ -101,14 +101,16 @@
 	<CodeWrapper
 		headerText="/joke/+layout.ts"
 		code={CODE_EXAMPLES.parentLoad2} />
-</div>
 
-<div class="flex justify-center">
-	<Link
-		isInternal
-		href="./advanced-loading/joke">
-		Jokes here
-	</Link>
+	<Note title="Try it">
+		<div class="flex justify-center">
+			<Link
+				isInternal
+				href="./advanced-loading/joke">
+				Click here for jokes
+			</Link>
+		</div>
+	</Note>
 </div>
 
 <Note>

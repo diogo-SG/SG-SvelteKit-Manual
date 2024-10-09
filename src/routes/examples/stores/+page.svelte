@@ -2,6 +2,7 @@
 	import GurgaonHacker from '$lib/components/examples/gurgaon-hacker.svelte/gurgaon-hacker.svelte';
 	import LisbonHacker from '$lib/components/examples/lisbon-hacker/lisbon-hacker.svelte';
 	import LondonHacker from '$lib/components/examples/london-hacker/london-hacker.svelte';
+	import Link from '$lib/components/ui/link/link.svelte';
 	import {
 		bestOffice,
 		bestOfficeAllCaps,
@@ -9,7 +10,14 @@
 		timeInPortugal,
 		timeInUK
 	} from '$lib/stores/stores';
+	import { ChevronLeftOutline } from 'flowbite-svelte-icons';
 </script>
+
+<Link href="/svelte-basics/stores">
+	<div class="flex items-center text-xs">
+		<ChevronLeftOutline /> Back to the Stores section
+	</div>
+</Link>
 
 <div class="bg-white">
 	<img
