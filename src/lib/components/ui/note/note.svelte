@@ -6,7 +6,7 @@
 <div
 	class="flex flex-col gap-2 rounded-lg border-2 px-4 py-4 pb-6 text-sm"
 	class:border-primary-600={isNote}
-	class:border-[#cccccc]={!isNote}>
+	class:bg-muted={!isNote}>
 	<h5
 		class="text-sm"
 		class:text-primary-600={isNote}>

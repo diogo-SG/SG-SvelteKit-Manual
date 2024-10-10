@@ -37,7 +37,9 @@
 			: 'h-[1rem] border-t pt-2'} px-3 text-xs">
 		<div class="text-left">
 			{#if prevPage && prevPage?.label}
-				<Link href={prevPage?.path}>
+				<Link
+					isNavigation
+					href={prevPage?.path}>
 					<ChevronLeftOutline class="pb-[0.156rem]" />
 					{prevPage?.label}
 				</Link>
@@ -45,7 +47,9 @@
 		</div>
 		<div class="text-right">
 			{#if nextPage && nextPage?.label}
-				<Link href={nextPage?.path}>
+				<Link
+					href={nextPage?.path}
+					isNavigation>
 					{nextPage?.label}
 					<ChevronRightOutline class="pb-[0.156rem]" />
 				</Link>
