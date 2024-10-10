@@ -3,7 +3,6 @@
 	export let href: string = '';
 	export let isInternal: boolean = false;
 	export let isNavigation: boolean = false;
-	const isLink: boolean = !isInternal && !isNavigation;
 </script>
 
 <a
