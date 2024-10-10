@@ -2,10 +2,13 @@
 	export let extraClasses: string | undefined = undefined;
 	export let href: string = '';
 	export let isInternal: boolean = false;
+	export let isNavigation: boolean = false;
 </script>
 
 <a
-	class={isInternal ? 'internal_link' : 'link'}
+	class:internal_link={isInternal}
+	class:link={!isInternal && !isNavigation}
+	class:navigation={isNavigation}
 	target="_self"
 	rel="noopener noreferrer"
 	class:extraClasses
@@ -14,9 +17,18 @@
 </a>
 
 <style>
-	.link {
+	.navigation {
 		width: fit-content;
 		color: gray;
+		text-decoration: none;
+		display: inline-flex;
+	}
+	.navigation:hover {
+		text-decoration: underline;
+	}
+	.link {
+		width: fit-content;
+		color: #eb4f27;
 		text-decoration: none;
 		display: inline-flex;
 	}

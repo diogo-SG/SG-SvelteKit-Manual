@@ -32,7 +32,11 @@
 				<ol class="mt-2">
 					{#each contentList[0].modules as { label, path }, i}
 						<li class="pl-1 text-sm">
-							<Link href={path}>{i + 1}. {label}</Link>
+							<Link
+								isNavigation
+								href={path}>
+								{i + 1}. {label}
+							</Link>
 						</li>
 					{/each}
 				</ol>
@@ -56,7 +60,11 @@
 				<ol class="mt-2">
 					{#each contentList[1].modules as { label, path }, i}
 						<li class="pl-1 text-sm">
-							<Link href={path}>{i + 1}. {label}</Link>
+							<Link
+								isNavigation
+								href={path}>
+								{i + 1}. {label}
+							</Link>
 						</li>
 					{/each}
 				</ol>
